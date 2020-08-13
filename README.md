@@ -6,18 +6,18 @@ This is Limbic's React Native Coding Challenge which will allow us to get a glim
 
 1. **How to submit:**
 
-Option A:
-   - Fork this repo
-   - Issue a Pull Request when you're ready to start. This will count as your starting date.
-   - Setup your development environment for React Native
-   - Implement your solution
-   - Commit your changes into the forked repo
+   Option A:
+      - Fork this repo
+      - Issue a Pull Request when you're ready to start. This will count as your starting date.
+      - Setup your development environment for React Native
+      - Implement your solution
+      - Commit your changes into the forked repo
 
-Option B:
-   - Setup your development environment for React Native
-   - Implement your solution
-   - Archive your solution into a zip file
-   - Send us the zip file. We should be able to extract the content and run it from there (w/o node_modules)
+   Option B:
+      - Setup your development environment for React Native
+      - Implement your solution
+      - Archive your solution into a zip file
+      - Send us the zip file. We should be able to extract the content and run it from there (w/o node_modules)
 
 2. **Your deadline:**
 
