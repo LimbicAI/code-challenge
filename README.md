@@ -28,6 +28,7 @@ Jane is a clinical therapist and wants her clients to answer simple questionnair
 
 Your app should be able to complete the following tasks:
 
+- See a list of questions
 - Add a new question
 - Edit a question
 - Delete a question
