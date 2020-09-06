@@ -1,0 +1,23 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+  },
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "plugins": ["prettier"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "consistent-this": ["error", "DO_NOT_USE"],
+    "no-use-before-define": ["error", { "functions": false }],
+    "no-shadow": "error",
+    "no-useless-constructor": "error",
+    "prefer-arrow-callback": "error",
+    "prefer-object-spread": "error"
+  }
+}
