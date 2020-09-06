@@ -1,39 +1,28 @@
 ## React Native Coding Challenge
 
-This is Limbic's React Native Coding Challenge which will allow us to get a glimpse into our candidates' overall developer skills.
-
 ### Instructions
 
-1. **How to submit:**
+1. Add the following inside and `.env` file in the `backend` directory:
 
-   Option A:
-      - Fork this repo
-      - Issue a Pull Request when you're ready to start. This will count as your starting date.
-      - Setup your development environment for React Native
-      - Implement your solution
-      - Commit your changes into the forked repo
+```.env
+PORT=8000
+HOST=0.0.0.0
+MONGO_URL=mongodb://therapy_app:sq3UYK7FqBTuJ8e@ds115434.mlab.com:15434/therapy-questions-answers
+```
 
-   Option B:
-      - Setup your development environment for React Native
-      - Implement your solution
-      - Archive your solution into a zip file
-      - Send us the zip file. We should be able to extract the content and run it from there (w/o node_modules)
+This will make it easier to test the app as there are some sample data to play with.
 
-2. **Your deadline:**
+2. Install backend dependencies by running `npm install` inside the `backend` directory.
 
-   You have 1 week to complete as much tasks as you can from the challenge below. Countdown starts from the date you issued the PR or from the date you were invited to complete this challenge via email.
+3. Install frontend dependencies by running `yarn` inside the `TherapyApp` directory.
 
-3. **How to implement your solution:**
+4. Start GraphQL service by running `npm run start` inside the `backend` directory.
 
-   There is no correct way to do it, you are free to use whatever libraries you like.
+5. Start frontend app in an emulator by running `npx react-native run-ios` for iOS or `npx react-native run-android` for Android.
 
-### The Challenge
+### Implemented Features
 
-Jane is a clinical therapist and wants her clients to answer simple questionnaires in order to better understand them. She needs a way to add/delete/edit questions and also see the answers of each client.
-
-### Requirements
-
-Your app should be able to complete the following tasks:
+A Therapist page that lets you
 
 - See a list of questions
 - Add a new question
@@ -42,12 +31,22 @@ Your app should be able to complete the following tasks:
 - See a list of clients
 - See a client's answers
 
-### Bonus Points
+A Client page that lets you
 
-The following tasks will **NOT** have a negative impact in how well you did, but you will get bonus points for completing any of them.
+- Answer questions
 
-- Ability to persist data locally
-- Ability to select the type of answer a question will have. Types like free text, single choice from a predefined list, multiple choice from a predefined list, etc.
-- Ability for the app to answer the questions. Basically using a fake login it could determine if the user is a client and display the questionnaire they need to answer. (fake login can be two buttons chosing the type of user
+A dummy login page with 2 buttons that lead to either Client or Therapist pages.
 
-Good Luck!
+### TODO
+
+- Persist data locally
+- Add answer types for questions
+- Add pagination (cursor based) for Answers, Questions and Clients
+- Add proper login and session tokens
+- Add Dataloader
+- Optimise backend for security and performance
+- Add docker, terraform and CI for backend
+- Add CI for building frontend
+- Add latest node version for backend with nvm
+- Convert both frontend and backend to TypeScript
+- Add tests
