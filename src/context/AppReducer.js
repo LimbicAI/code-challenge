@@ -2,7 +2,7 @@ const updateLocalStorage = questions => {
 	localStorage.setItem('questions', JSON.stringify(questions));
 };
 
-export default (state, action) => {
+const reducer = (state, action) => {
 	let updatedQuestions;
 	switch (action.type) {
 		case 'REMOVE_QUESTION':
@@ -17,13 +17,16 @@ export default (state, action) => {
 				questions: updatedQuestions
 			};
 		case 'ADD_QUESTION':
-			updatedQuestions = [action.payload, ...state.questions];
+			const newQuestion = {
+				description: action.payload
+			};
+			updatedQuestions = [newQuestion, ...state.questions];
 
 			updateLocalStorage(updatedQuestions);
 
 			return {
 				...state,
-				questions: [action.payload, ...state.questions]
+				questions: updatedQuestions
 			};
 		case 'EDIT_QUESTION':
 			const updatedQuestion = action.payload;
@@ -46,3 +49,5 @@ export default (state, action) => {
 			return state;
 	}
 };
+
+export default reducer;
