@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 
 const Controls = props => {
 	return (
-		<>
+		<div className={styles.controls}>
 			<Link
 				to="/questions"
 				className={clsx(styles.link, {
@@ -22,7 +22,7 @@ const Controls = props => {
 			>
 				Clients
 			</Link>
-		</>
+		</div>
 	);
 };
 

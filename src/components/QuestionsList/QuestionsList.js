@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { AppContext } from '../../context/AppState';
 import QuestionModal from '../QuestionModal';
+import Button from '../Button';
 import styles from './styles.module.css';
 
 const QuestionsList = () => {
@@ -29,21 +30,34 @@ const QuestionsList = () => {
 	return (
 		<div className={styles.questions}>
 			{questions.map((question, index) => (
-				<span key={`${question.description}_${index}`}>
+				<div
+					className={styles.question}
+					key={`${question.description}_${index}`}
+				>
 					{question.description}{' '}
-					<button onClick={() => removeQuestion(index)}>
-						Delete
-					</button>
-					<button
-						onClick={event =>
-							openEditQuestion(event, question.description, index)
-						}
-					>
-						Edit
-					</button>
-				</span>
+					<div>
+						<Button
+							onClick={() => removeQuestion(index)}
+							type="alert"
+						>
+							Delete
+						</Button>
+						<Button
+							onClick={event =>
+								openEditQuestion(
+									event,
+									question.description,
+									index
+								)
+							}
+							type="small"
+						>
+							Edit
+						</Button>
+					</div>
+				</div>
 			))}
-			<button onClick={openCreateQuestion}>Add a Question</button>
+			<Button onClick={openCreateQuestion}>Add a Question</Button>
 			{showModal && (
 				<QuestionModal
 					type={modalType}

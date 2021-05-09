@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { AppContext } from '../../context/AppState';
 import PropTypes from 'prop-types';
+import Button from '../Button';
 import styles from './styles.module.css';
 
 const noop = () => {};
@@ -41,35 +42,39 @@ const QuestionModal = ({
 	return (
 		<>
 			<div className={styles.modal}>
-				<form onSubmit={event => onSubmit(event)}>
-					<label htmlFor="question">Question:</label>
+				<form
+					className={styles.form}
+					onSubmit={event => onSubmit(event)}
+				>
+					<label htmlFor="question">Question: </label>
 					<input
+						className={styles.input}
 						onChange={onChange}
 						type="text"
 						id="question"
 						name="question"
 						value={question.description}
 					/>
-					<button onClick={() => toggleModal(false)} type="button">
-						Cancel
-					</button>
-					{type === 'create' ? (
-						<button
-							disabled={!question}
-							onClick={createQuestion}
-							type="button"
-						>
-							Create
-						</button>
-					) : (
-						<button
-							disabled={!question}
-							onClick={updateQuestion}
-							type="button"
-						>
-							Update
-						</button>
-					)}
+					<div className={styles.buttons}>
+						<Button onClick={() => toggleModal(false)}>
+							Cancel
+						</Button>
+						{type === 'create' ? (
+							<Button
+								disabled={!question.description}
+								onClick={createQuestion}
+							>
+								Create
+							</Button>
+						) : (
+							<Button
+								disabled={!question.description}
+								onClick={updateQuestion}
+							>
+								Update
+							</Button>
+						)}
+					</div>
 				</form>
 			</div>
 		</>

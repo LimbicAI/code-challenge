@@ -1,0 +1,50 @@
+.button {
+	border-radius: 5px;
+	box-shadow: none;
+	font-size: 16px;
+	font-weight: 600;
+	padding: 8px 12px;
+	margin: 4px;
+	cursor: pointer;
+	max-width: 200px;
+}
+
+.default {
+	border: 1px solid black;
+	background-color: green;
+	color: white;
+}
+
+.default:hover {
+	background-color: lightgreen;
+}
+
+.disabled {
+	background-color: grey;
+	color: lightgrey;
+	cursor: default;
+}
+
+.disabled:hover {
+	background-color: grey;
+}
+
+.small {
+	background-color: transparent;
+	border: 1px solid black;
+	color: black;
+}
+
+.small:hover {
+	background-color: lightgrey;
+}
+
+.alert {
+	border: 1px solid black;
+	background-color: red;
+	color: white;
+}
+
+.alert:hover {
+	background-color: coral;
+}
