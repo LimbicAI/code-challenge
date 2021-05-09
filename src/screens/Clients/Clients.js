@@ -6,8 +6,8 @@ const Clients = () => {
 
 	return (
 		<div>
-			{clients.map(client => (
-				<div>{client.name}</div>
+			{clients.map((client, index) => (
+				<div key={`${client.name}_${index}`}>{client.name}</div>
 			))}
 		</div>
 	);

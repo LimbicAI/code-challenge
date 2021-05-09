@@ -11,7 +11,7 @@ const QuestionModal = ({
 	type = 'create',
 	value
 }) => {
-	const [question, setQuestion] = useState(value || null);
+	const [question, setQuestion] = useState(value || '');
 	const { addQuestion, editQuestion } = useContext(AppContext);
 
 	const onSubmit = event => {
@@ -21,17 +21,16 @@ const QuestionModal = ({
 	const createQuestion = () => {
 		addQuestion(question.description);
 		toggleModal(false);
-		setQuestion(null);
+		setQuestion('');
 	};
 
 	const updateQuestion = () => {
-		console.warn('!!!!! ', question);
 		editQuestion({
 			description: question.description,
 			id: question.index
 		});
 		toggleModal(false);
-		setQuestion(null);
+		setQuestion('');
 	};
 
 	const onChange = event => {
@@ -70,7 +69,7 @@ const QuestionModal = ({
 QuestionModal.propTypes = {
 	onClick: PropTypes.func,
 	type: PropTypes.oneOf(['create', 'edit']),
-	value: PropTypes.string
+	value: PropTypes.object
 };
 
 export default QuestionModal;

@@ -10,7 +10,7 @@ const QuestionsList = () => {
 	const [question, setQuestion] = useState({});
 
 	const openCreateQuestion = () => {
-		setQuestion({ description: null, index: null });
+		setQuestion({ description: '', index: null });
 		setShowModal(true);
 		setModalType('create');
 	};
@@ -29,7 +29,7 @@ const QuestionsList = () => {
 	return (
 		<div className={styles.questions}>
 			{questions.map((question, index) => (
-				<span>
+				<span key={`${question.description}_${index}`}>
 					{question.description}{' '}
 					<button onClick={() => removeQuestion(index)}>
 						Delete

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { AppProvider } from './context/AppState';
 import Controls from './components/Controls';
 import Clients from './screens/Clients';
