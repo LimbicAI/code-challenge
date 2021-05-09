@@ -1,11 +1,12 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Link, BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { AppProvider } from './context/AppState';
+import Controls from './components/Controls';
 import Clients from './screens/Clients';
 import Questions from './screens/Questions';
 import styles from './App.module.css';
 
-function App() {
+const App = () => {
 	return (
 		<div className={styles.app}>
 			<header className={styles.appHeader}>
@@ -13,6 +14,7 @@ function App() {
 			</header>
 			<AppProvider>
 				<Router>
+					<Controls />
 					<Switch>
 						<Route exact path="/questions" component={Questions} />
 						<Route path="/clients" component={Clients} />
@@ -21,6 +23,6 @@ function App() {
 			</AppProvider>
 		</div>
 	);
-}
+};
 
 export default App;

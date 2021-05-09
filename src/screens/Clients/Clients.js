@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AppContext } from '../../context/AppState';
 
 const Clients = () => {
-	return <div>Clients</div>;
+	const { clients } = useContext(AppContext);
+
+	return (
+		<div>
+			{clients.map(client => (
+				<div>{client.name}</div>
+			))}
+		</div>
+	);
 };
 
 export default Clients;

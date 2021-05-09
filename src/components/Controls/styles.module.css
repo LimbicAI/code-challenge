@@ -1,0 +1,10 @@
+.link {
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.disabled {
+  color: lightgrey;
+  pointer-events: none;
+}

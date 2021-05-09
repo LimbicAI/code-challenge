@@ -1,11 +1,11 @@
 import React, { createContext, useReducer } from 'react';
 import AppReducer from './AppReducer';
+import CLIENTS from '../fixtures/clients';
 
 const savedQuestions = localStorage.getItem('questions');
-// Initial State
-console.warn(JSON.parse(savedQuestions));
+
 const initialState = savedQuestions
-	? { questions: JSON.parse(savedQuestions) }
+	? { questions: JSON.parse(savedQuestions), clients: CLIENTS }
 	: {
 			questions: [
 				{
@@ -22,7 +22,8 @@ const initialState = savedQuestions
 					description: 'Sample Question?',
 					options: ['one', 'two', 'three']
 				}
-			]
+			],
+			clients: CLIENTS
 	  };
 
 export const AppContext = createContext(initialState);
@@ -30,7 +31,6 @@ export const AppContext = createContext(initialState);
 export const AppProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(AppReducer, initialState);
 
-	// Actions
 	const removeQuestion = id => {
 		dispatch({
 			type: 'REMOVE_QUESTION',
@@ -55,6 +55,7 @@ export const AppProvider = ({ children }) => {
 	return (
 		<AppContext.Provider
 			value={{
+				clients: state.clients,
 				questions: state.questions,
 				removeQuestion,
 				addQuestion,
