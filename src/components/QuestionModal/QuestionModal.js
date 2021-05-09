@@ -50,13 +50,23 @@ const QuestionModal = ({
 						name="question"
 						value={question.description}
 					/>
-					<button onClick={() => toggleModal(false)}>Cancel</button>
+					<button onClick={() => toggleModal(false)} type="button">
+						Cancel
+					</button>
 					{type === 'create' ? (
-						<button disabled={!question} onClick={createQuestion}>
+						<button
+							disabled={!question}
+							onClick={createQuestion}
+							type="button"
+						>
 							Create
 						</button>
 					) : (
-						<button disabled={!question} onClick={updateQuestion}>
+						<button
+							disabled={!question}
+							onClick={updateQuestion}
+							type="button"
+						>
 							Update
 						</button>
 					)}
