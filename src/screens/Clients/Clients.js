@@ -1,16 +1,8 @@
 import React, { useContext } from 'react';
-import { AppContext } from '../../context/AppState';
+import ClientsList from '../../components/ClientsList';
 
 const Clients = () => {
-	const { clients } = useContext(AppContext);
-
-	return (
-		<div>
-			{clients.map((client, index) => (
-				<div key={`${client.name}_${index}`}>{client.name}</div>
-			))}
-		</div>
-	);
+	return <ClientsList />;
 };
 
 export default Clients;
