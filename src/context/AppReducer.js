@@ -29,10 +29,13 @@ const reducer = (state, action) => {
 				questions: updatedQuestions
 			};
 		case 'EDIT_QUESTION':
-			const updatedQuestion = action.payload;
+			const updatedQuestion = {
+				id: action.payload.id,
+				description: action.payload.description
+			};
 
-			updatedQuestions = state.questions.map(question => {
-				if (question.id === updatedQuestion.id) {
+			updatedQuestions = state.questions.map((question, index) => {
+				if (index === updatedQuestion.id) {
 					return updatedQuestion;
 				}
 				return question;
