@@ -34,8 +34,10 @@ const QuestionsList = () => {
 					className={styles.question}
 					key={`${question.description}_${index}`}
 				>
-					{question.description}{' '}
-					<div>
+					<span className={styles.questionText}>
+						{question.description}
+					</span>
+					<div className={styles.buttonGroup}>
 						<Button
 							onClick={() =>
 								removeQuestion({

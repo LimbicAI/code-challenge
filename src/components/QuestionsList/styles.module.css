@@ -1,29 +1,49 @@
+.buttonGroup {
+	min-width: 148px;
+}
+
 .modal {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.4);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.4);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
 }
 
 .question {
-  display: flex;
-  flex-flow: row;
-  justify-content: space-between;
-  font-size: 18px;
-  font-weight: 500;
-  align-items: center;
-  width: 60%;
-  min-width: 340px;
+	display: flex;
+	flex-flow: row;
+	justify-content: space-between;
+	font-size: 18px;
+	font-weight: 500;
+	align-items: center;
+	width: 90%;
+	min-width: 340px;
+}
+
+.questionText {
+	text-align: left;
 }
 
 .questions {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+}
+
+@media only screen and (min-width: 600px) {
+	.question {
+		width: 80%;
+	}
+}
+
+@media only screen and (min-width: 960px) {
+	.question {
+		width: 60%;
+	}
 }
