@@ -9,8 +9,6 @@ const QuestionsList = () => {
 		clients.map(() => false)
 	);
 
-	console.warn(showQuestions);
-
 	return (
 		<div className={styles.questions}>
 			{clients.map((client, index) => (
@@ -18,7 +16,9 @@ const QuestionsList = () => {
 					<button
 						className={styles.client}
 						onClick={() => {
-							const updatedShowQuestions = [...showQuestions];
+							const updatedShowQuestions = clients.map(
+								() => false
+							);
 							updatedShowQuestions[index] = !showQuestions[index];
 							setShowQuestions(updatedShowQuestions);
 						}}
