@@ -48,13 +48,16 @@ const QuestionModal = ({
 					className={styles.form}
 					onSubmit={event => onSubmit(event)}
 				>
-					<label htmlFor="question">Question: </label>
+					<label className={styles.label} htmlFor="question">
+						Question:
+					</label>
 					<input
+						autoFocus
 						className={styles.input}
-						onChange={onChange}
-						type="text"
 						id="question"
 						name="question"
+						onChange={onChange}
+						type="text"
 						value={question.description}
 					/>
 					<div className={styles.buttons}>
@@ -65,6 +68,7 @@ const QuestionModal = ({
 							<Button
 								disabled={!question.description}
 								onClick={createQuestion}
+								type="submit"
 							>
 								Create
 							</Button>
@@ -72,6 +76,7 @@ const QuestionModal = ({
 							<Button
 								disabled={!question.description}
 								onClick={updateQuestion}
+								type="submit"
 							>
 								Update
 							</Button>

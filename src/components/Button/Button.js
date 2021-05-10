@@ -5,18 +5,24 @@ import styles from './styles.module.css';
 
 const noop = () => {};
 
-const Button = ({ children, disabled, onClick = noop, type = 'default' }) => {
+const Button = ({
+	children,
+	disabled,
+	onClick = noop,
+	type = 'button',
+	variation = 'default'
+}) => {
 	return (
 		<button
 			className={clsx(styles.button, {
-				[styles.default]: type === 'default',
-				[styles.small]: type === 'small',
-				[styles.alert]: type === 'alert',
+				[styles.default]: variation === 'default',
+				[styles.small]: variation === 'small',
+				[styles.alert]: variation === 'alert',
 				[styles.disabled]: disabled
 			})}
 			disabled={disabled}
 			onClick={onClick}
-			type="button"
+			type={type}
 		>
 			{children}
 		</button>
@@ -27,7 +33,7 @@ Button.propTypes = {
 	children: PropTypes.node,
 	disabled: PropTypes.bool,
 	onClick: PropTypes.func,
-	type: PropTypes.oneOf(['default', 'small', 'alert'])
+	variation: PropTypes.oneOf(['default', 'small', 'alert'])
 };
 
 export default Button;

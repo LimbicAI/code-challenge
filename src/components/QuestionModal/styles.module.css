@@ -12,14 +12,20 @@
 .input {
   border-radius: 5px;
   border: 1px solid lightgray;
-  width: 70%;
-  height: 32px;
-  outline: none;
   font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 36px;
+  outline: none;
+  padding-left: 8px;
+  width: 70%;
 }
 
 .input:focus {
   border: 1px solid black;
+}
+
+.label {
+  padding-right: 4px;
 }
 
 .modal {
@@ -38,4 +44,11 @@
 .questions {
   display: flex;
   flex-flow: column;
+}
+
+.questionText {
+  display: flex;
+  flex-flow: row;
+  align-items: flex-start;
+  justify-content: center;
 }

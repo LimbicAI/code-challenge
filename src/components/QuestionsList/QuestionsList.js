@@ -43,7 +43,7 @@ const QuestionsList = () => {
 									description: question.description
 								})
 							}
-							type="alert"
+							variation="alert"
 						>
 							Delete
 						</Button>
@@ -55,7 +55,7 @@ const QuestionsList = () => {
 									index
 								)
 							}
-							type="small"
+							variation="small"
 						>
 							Edit
 						</Button>
