@@ -8,6 +8,10 @@
 	background-color: transparent;
 }
 
+.client:hover {
+	background-color: lightgreen;
+}
+
 .clientQuestions {
 	transform: scaleY(0);
 	height: 0;
@@ -17,6 +21,10 @@
 
 .clientQuestions div:not(:last-child) {
 	border-bottom: 1px solid gray;
+}
+
+.expanded {
+	background-color: green;
 }
 
 .showQuestions {

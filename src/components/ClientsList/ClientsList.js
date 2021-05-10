@@ -14,7 +14,9 @@ const QuestionsList = () => {
 			{clients.map((client, index) => (
 				<React.Fragment key={`${client.name}_${index}`}>
 					<button
-						className={styles.client}
+						className={clsx(styles.client, {
+							[styles.expanded]: showQuestions[index]
+						})}
 						onClick={() => {
 							const updatedShowQuestions = clients.map(
 								() => false
