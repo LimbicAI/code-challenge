@@ -7,8 +7,12 @@ const clients = [
 				a: 'Not so great...'
 			},
 			{
-				q: 'Did you meditate today?',
-				a: 'No, not yet, I did not find time'
+				q: 'How stressed are you feeling today?',
+				a: 'Some stress'
+			},
+			{
+				q: 'What feelings best describe your mood today?',
+				a: ['Sad', 'Angry']
 			}
 		]
 	},
@@ -20,8 +24,12 @@ const clients = [
 				a: 'Amazing!!!'
 			},
 			{
-				q: 'Did you meditate today?',
-				a: 'Yes, but only 5 minutes'
+				q: 'How stressed are you feeling today?',
+				a: 'No stress'
+			},
+			{
+				q: 'What feelings best describe your mood today?',
+				a: ['Happy', 'Ecstatic']
 			}
 		]
 	},
@@ -33,8 +41,12 @@ const clients = [
 				a: 'I guess all okay'
 			},
 			{
-				q: 'Did you meditate today?',
-				a: 'Yes, it was really beneficial'
+				q: 'How stressed are you feeling today?',
+				a: 'No stress'
+			},
+			{
+				q: 'What feelings best describe your mood today?',
+				a: ['Happy']
 			}
 		]
 	}

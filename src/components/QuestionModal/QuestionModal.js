@@ -13,6 +13,7 @@ const QuestionModal = ({
 	value
 }) => {
 	const [question, setQuestion] = useState(value || '');
+	const [oldQuestion, setOldQuestion] = useState(value || '');
 	const { addQuestion, editQuestion } = useContext(AppContext);
 
 	const onSubmit = event => {
@@ -28,6 +29,7 @@ const QuestionModal = ({
 	const updateQuestion = () => {
 		editQuestion({
 			description: question.description,
+			oldDescription: oldQuestion.description,
 			id: question.index
 		});
 		toggleModal(false);

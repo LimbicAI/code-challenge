@@ -1,28 +1,18 @@
 import React, { createContext, useReducer } from 'react';
 import AppReducer from './AppReducer';
 import CLIENTS from '../fixtures/clients';
+import QUESTIONS from '../fixtures/questions';
 
 const savedQuestions = localStorage.getItem('questions');
+const savedClients = localStorage.getItem('clients');
 
 const initialState = savedQuestions
-	? { questions: JSON.parse(savedQuestions), clients: CLIENTS }
+	? {
+			questions: JSON.parse(savedQuestions),
+			clients: JSON.parse(savedClients)
+	  }
 	: {
-			questions: [
-				{
-					type: 'text',
-					description: 'Sample Question?'
-				},
-				{
-					type: 'multiple',
-					description: 'Sample Question?',
-					options: ['one', 'two', 'three']
-				},
-				{
-					type: 'single',
-					description: 'Sample Question?',
-					options: ['one', 'two', 'three']
-				}
-			],
+			questions: QUESTIONS,
 			clients: CLIENTS
 	  };
 
@@ -31,10 +21,10 @@ export const AppContext = createContext(initialState);
 export const AppProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(AppReducer, initialState);
 
-	const removeQuestion = id => {
+	const removeQuestion = payload => {
 		dispatch({
 			type: 'REMOVE_QUESTION',
-			payload: id
+			payload
 		});
 	};
 

@@ -37,7 +37,12 @@ const QuestionsList = () => {
 					{question.description}{' '}
 					<div>
 						<Button
-							onClick={() => removeQuestion(index)}
+							onClick={() =>
+								removeQuestion({
+									index,
+									description: question.description
+								})
+							}
 							type="alert"
 						>
 							Delete
