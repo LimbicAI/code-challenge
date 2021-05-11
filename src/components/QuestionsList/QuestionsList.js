@@ -51,6 +51,7 @@ const QuestionsList = () => {
 						>
 							<img
 								className={styles.trashCanIcon}
+								data-testid="trash-can-icon"
 								src={TrashCan}
 							/>
 						</Button>
@@ -60,7 +61,11 @@ const QuestionsList = () => {
 							}
 							variation="small"
 						>
-							<img className={styles.trashCanIcon} src={Pencil} />
+							<img
+								className={styles.trashCanIcon}
+								data-testid="pencil-icon"
+								src={Pencil}
+							/>
 						</Button>
 					</div>
 				</div>

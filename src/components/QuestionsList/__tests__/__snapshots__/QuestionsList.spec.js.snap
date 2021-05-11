@@ -20,13 +20,21 @@ exports[`test matches the snapshot 1`] = `
           class="button alert"
           type="button"
         >
-          Delete
+          <img
+            class="trashCanIcon"
+            data-testid="trash-can-icon"
+            src="delete.png"
+          />
         </button>
         <button
           class="button small"
           type="button"
         >
-          Edit
+          <img
+            class="trashCanIcon"
+            data-testid="pencil-icon"
+            src="pencil.png"
+          />
         </button>
       </div>
     </div>
@@ -45,13 +53,21 @@ exports[`test matches the snapshot 1`] = `
           class="button alert"
           type="button"
         >
-          Delete
+          <img
+            class="trashCanIcon"
+            data-testid="trash-can-icon"
+            src="delete.png"
+          />
         </button>
         <button
           class="button small"
           type="button"
         >
-          Edit
+          <img
+            class="trashCanIcon"
+            data-testid="pencil-icon"
+            src="pencil.png"
+          />
         </button>
       </div>
     </div>
@@ -70,13 +86,21 @@ exports[`test matches the snapshot 1`] = `
           class="button alert"
           type="button"
         >
-          Delete
+          <img
+            class="trashCanIcon"
+            data-testid="trash-can-icon"
+            src="delete.png"
+          />
         </button>
         <button
           class="button small"
           type="button"
         >
-          Edit
+          <img
+            class="trashCanIcon"
+            data-testid="pencil-icon"
+            src="pencil.png"
+          />
         </button>
       </div>
     </div>

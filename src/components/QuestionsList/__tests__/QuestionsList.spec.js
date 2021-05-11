@@ -40,7 +40,7 @@ describe('test', () => {
 	it('opens the modal on Edit click', () => {
 		expect(screen.queryByText(/update/i)).not.toBeInTheDocument();
 		expect(screen.queryByText(/cancel/i)).not.toBeInTheDocument();
-		fireEvent.click(screen.queryAllByText(/edit/i)[0]);
+		fireEvent.click(screen.queryAllByTestId('pencil-icon')[0]);
 		expect(screen.queryByText(/update/i)).toBeInTheDocument();
 		expect(screen.queryByText(/cancel/i)).toBeInTheDocument();
 	});
@@ -51,7 +51,7 @@ describe('test', () => {
 			screen.queryByText(QUESTIONS[0].description)
 		).toBeInTheDocument();
 		expect(screen.queryByText(updatedQuestion)).not.toBeInTheDocument();
-		fireEvent.click(screen.queryAllByText(/edit/i)[0]);
+		fireEvent.click(screen.queryAllByTestId('pencil-icon')[0]);
 		fireEvent.change(screen.getByLabelText(/question/i), {
 			target: { value: updatedQuestion }
 		});
@@ -66,7 +66,7 @@ describe('test', () => {
 		expect(
 			screen.queryByText(QUESTIONS[0].description)
 		).toBeInTheDocument();
-		fireEvent.click(screen.queryAllByText(/delete/i)[0]);
+		fireEvent.click(screen.queryAllByTestId('trash-can-icon')[0]);
 		expect(
 			screen.queryByText(QUESTIONS[0].description)
 		).not.toBeInTheDocument();
