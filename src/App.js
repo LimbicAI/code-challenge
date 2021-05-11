@@ -16,8 +16,17 @@ const App = () => {
 				<Router>
 					<Controls />
 					<Switch>
+						<Route
+							exact
+							path="/"
+							component={() => (
+								<h3 className={styles.intro}>
+									Select an Option above and get Started!
+								</h3>
+							)}
+						/>
 						<Route exact path="/questions" component={Questions} />
-						<Route path="/clients" component={Clients} />
+						<Route exact path="/clients" component={Clients} />
 					</Switch>
 				</Router>
 			</AppProvider>

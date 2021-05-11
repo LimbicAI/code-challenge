@@ -11,3 +11,7 @@
 	font-size: calc(10px + 2vmin);
 	color: #ccdbdc;
 }
+
+.intro {
+	margin-top: 32px;
+}
