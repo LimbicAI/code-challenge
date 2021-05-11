@@ -2,6 +2,8 @@ import React, { useContext, useState } from 'react';
 import { AppContext } from '../../context/AppState';
 import QuestionModal from '../QuestionModal';
 import Button from '../Button';
+import TrashCan from '../../assets/delete.png';
+import Pencil from '../../assets/pencil.png';
 import styles from './styles.module.css';
 
 const QuestionsList = () => {
@@ -47,7 +49,10 @@ const QuestionsList = () => {
 							}
 							variation="alert"
 						>
-							Delete
+							<img
+								className={styles.trashCanIcon}
+								src={TrashCan}
+							/>
 						</Button>
 						<Button
 							onClick={event =>
@@ -55,7 +60,7 @@ const QuestionsList = () => {
 							}
 							variation="small"
 						>
-							Edit
+							<img className={styles.trashCanIcon} src={Pencil} />
 						</Button>
 					</div>
 				</div>
