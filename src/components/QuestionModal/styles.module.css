@@ -7,6 +7,8 @@
 }
 
 .form {
+	animation-name: modalFade;
+	animation-duration: 0.5s;
 	border-radius: 16px;
 	background-color: white;
 	padding: 24px;
@@ -65,6 +67,18 @@
 	flex-flow: row;
 	align-items: flex-start;
 	justify-content: center;
+}
+
+@keyframes modalFade {
+  from {
+    transform: translateY(-75%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 @media only screen and (min-width: 600px) {

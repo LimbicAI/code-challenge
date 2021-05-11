@@ -10,9 +10,9 @@ const noop = () => {};
 const QuestionModal = ({ toggleModal = noop, type = 'create', value }) => {
 	const [question, setQuestion] = useState(value || '');
 	const [answerType, setAnswerType] = useState(value.type || 'text');
-	const [oldQuestion, setOldQuestion] = useState(value || '');
 	const { addQuestion, editQuestion } = useContext(AppContext);
 
+	const oldQuestion = value || '';
 	const onSubmit = event => {
 		event.preventDefault();
 	};
