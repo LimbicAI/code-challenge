@@ -24,9 +24,6 @@
 }
 
 .clientQuestions {
-	/* transform: scaleY(0); */
-	/* height: 0; */
-	opacity: 0;
 	flex-flow: column;
 	width: 90%;
 }
@@ -44,9 +41,6 @@
 .showQuestions {
 	display: flex;
 	height: auto;
-	opacity: 1;
-	transform: scaleY(1);
-	transition: opacity 1.25s ease-in-out;
 }
 
 .label {
