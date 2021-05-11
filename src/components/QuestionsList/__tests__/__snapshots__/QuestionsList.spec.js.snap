@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test matches the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="questions"
+  >
+    <div
+      class="question"
+    >
+      <span
+        class="questionText"
+      >
+        How are you feeling today?
+      </span>
+      <div
+        class="buttonGroup"
+      >
+        <button
+          class="button alert"
+          type="button"
+        >
+          Delete
+        </button>
+        <button
+          class="button small"
+          type="button"
+        >
+          Edit
+        </button>
+      </div>
+    </div>
+    <div
+      class="question"
+    >
+      <span
+        class="questionText"
+      >
+        How stressed are you feeling today?
+      </span>
+      <div
+        class="buttonGroup"
+      >
+        <button
+          class="button alert"
+          type="button"
+        >
+          Delete
+        </button>
+        <button
+          class="button small"
+          type="button"
+        >
+          Edit
+        </button>
+      </div>
+    </div>
+    <div
+      class="question"
+    >
+      <span
+        class="questionText"
+      >
+        What feelings best describe your mood today?
+      </span>
+      <div
+        class="buttonGroup"
+      >
+        <button
+          class="button alert"
+          type="button"
+        >
+          Delete
+        </button>
+        <button
+          class="button small"
+          type="button"
+        >
+          Edit
+        </button>
+      </div>
+    </div>
+    <button
+      class="button default"
+      type="button"
+    >
+      Add a Question
+    </button>
+  </div>
+</DocumentFragment>
+`;
