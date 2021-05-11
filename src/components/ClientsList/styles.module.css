@@ -24,14 +24,14 @@
 }
 
 .clientQuestions {
-	transform: scaleY(0);
-	height: 0;
+	/* transform: scaleY(0); */
+	/* height: 0; */
 	opacity: 0;
 	flex-flow: column;
 	width: 90%;
 }
 
-.clientQuestions div:not(:last-child) {
+.clientQuestions > div:not(:last-child) {
 	border-bottom: 1px solid gray;
 }
 
@@ -94,7 +94,7 @@
 	align-items: center;
 }
 
-.questionsAnswers > p {
+.questionsAnswers > div {
 	text-align: left;
 	width: 100%;
 }

@@ -27,44 +27,48 @@ const QuestionsList = () => {
 					>
 						{client.name}
 					</button>
-					<div
-						className={clsx(styles.clientQuestions, {
-							[styles.showQuestions]: showQuestions[index]
-						})}
-					>
-						{client.questions.map(question => (
-							<div
-								className={styles.questionsAnswers}
-								key={client.name + question.q}
-							>
-								<p>
-									<span className={styles.label}>Q:</span>
-									{question.q}
-								</p>
-								<p
-									className={clsx({
-										[styles.answerText]:
-											typeof question.a === 'string',
-										[styles.answerChoices]:
-											typeof question.a !== 'string'
-									})}
+					{showQuestions[index] && (
+						<div
+							className={clsx(styles.clientQuestions, {
+								[styles.showQuestions]: showQuestions[index]
+							})}
+						>
+							{client.questions.map(question => (
+								<div
+									className={styles.questionsAnswers}
+									key={client.name + question.q}
 								>
-									<span className={styles.label}>A:</span>
 									<div>
+										<span className={styles.label}>Q:</span>
+										{question.q}
+									</div>
+									<div
+										className={clsx({
+											[styles.answerText]:
+												typeof question.a === 'string',
+											[styles.answerChoices]:
+												typeof question.a !== 'string'
+										})}
+									>
+										<span className={styles.label}>A:</span>
 										{typeof question.a !== 'string' ? (
 											<ul className={styles.list}>
 												{question.a.map(choice => (
-													<li>{choice}</li>
+													<li
+														key={`${choice}_${client.name}`}
+													>
+														{choice}
+													</li>
 												))}
 											</ul>
 										) : (
 											question.a
 										)}
 									</div>
-								</p>
-							</div>
-						))}
-					</div>
+								</div>
+							))}
+						</div>
+					)}
 				</React.Fragment>
 			))}
 		</div>
