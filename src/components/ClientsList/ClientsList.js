@@ -38,12 +38,29 @@ const QuestionsList = () => {
 								key={client.name + question.q}
 							>
 								<p>
-									<span className={styles.label}>Q: </span>
+									<span className={styles.label}>Q:</span>
 									{question.q}
 								</p>
-								<p>
-									<span className={styles.label}>A: </span>
-									{question.a}
+								<p
+									className={clsx({
+										[styles.answerText]:
+											typeof question.a === 'string',
+										[styles.answerChoices]:
+											typeof question.a !== 'string'
+									})}
+								>
+									<span className={styles.label}>A:</span>
+									<div>
+										{typeof question.a !== 'string' ? (
+											<ul className={styles.list}>
+												{question.a.map(choice => (
+													<li>{choice}</li>
+												))}
+											</ul>
+										) : (
+											question.a
+										)}
+									</div>
 								</p>
 							</div>
 						))}

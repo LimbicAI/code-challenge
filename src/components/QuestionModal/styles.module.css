@@ -1,67 +1,80 @@
 .buttons {
-  margin: 16px 0 0 0;
+	margin: 16px 0 0 0;
+}
+
+.choices:disabled {
+	background-color: lightgrey;
 }
 
 .form {
-  border-radius: 16px;
-  background-color: white;
-  padding: 24px;
-  width: 80vw;
+	border-radius: 16px;
+	background-color: white;
+	padding: 24px;
+	width: 80vw;
 }
 
 .input {
-  background-color: #CCDBDC;
-  border-radius: 5px;
-  border: 1px solid lightgray;
-  font-size: 18px;
-  font-family: Arial, Helvetica, sans-serif;
-  height: 36px;
-  outline: none;
-  padding-left: 8px;
-  width: 70%;
+	background-color: #ccdbdc;
+	border-radius: 5px;
+	border: 1px solid lightgray;
+	font-size: 18px;
+	font-family: Arial, Helvetica, sans-serif;
+	height: 36px;
+	outline: none;
+	padding-left: 8px;
+	margin-top: 4px;
+	width: 70%;
 }
 
 .input:focus {
-  border: 1px solid black;
+	border: 1px solid black;
+}
+
+.inputGroup {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 8px;
 }
 
 .label {
-  padding-right: 4px;
+	padding-right: 4px;
+	min-width: 64px;
 }
 
 .modal {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.4);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.4);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
 }
 
 .questions {
-  display: flex;
-  flex-flow: column;
+	display: flex;
+	flex-flow: column;
 }
 
 .questionText {
-  display: flex;
-  flex-flow: row;
-  align-items: flex-start;
-  justify-content: center;
+	display: flex;
+	flex-flow: row;
+	align-items: flex-start;
+	justify-content: center;
 }
 
 @media only screen and (min-width: 600px) {
-  .form {
-    width: 70vw;
-  }
+	.form {
+		width: 70vw;
+	}
 }
 
 @media only screen and (min-width: 960px) {
-  .form {
-    width: 60vw;
-  }
+	.form {
+		width: 60vw;
+	}
 }

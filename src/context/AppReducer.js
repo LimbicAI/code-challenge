@@ -30,13 +30,16 @@ const reducer = (state, action) => {
 				clients: updatedClients
 			};
 		case 'ADD_QUESTION':
+			const { description, choices, type } = action.payload;
 			const newQuestion = {
-				description: action.payload
+				description,
+				choices,
+				type
 			};
 			updatedQuestions = [newQuestion, ...state.questions];
 			updatedClients = state.clients.map(client => client);
 			updatedClients.forEach(client => {
-				client.questions.push({ q: action.payload, a: '-' });
+				client.questions.push({ q: description, a: '-' });
 			});
 
 			updateLocalStorage('questions', updatedQuestions);
@@ -49,7 +52,9 @@ const reducer = (state, action) => {
 		case 'EDIT_QUESTION':
 			const updatedQuestion = {
 				id: action.payload.id,
-				description: action.payload.description
+				description: action.payload.description,
+				type: action.payload.type,
+				choices: action.payload.choices
 			};
 
 			updatedQuestions = state.questions.map((question, index) => {
@@ -65,7 +70,6 @@ const reducer = (state, action) => {
 					name: client.name,
 					questions: client.questions.map((question, index) => {
 						if (action.payload.oldDescription === question.q) {
-							console.warn('here!!!');
 							return {
 								...question,
 								q: action.payload.description

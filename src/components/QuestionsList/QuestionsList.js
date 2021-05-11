@@ -16,9 +16,9 @@ const QuestionsList = () => {
 		setModalType('create');
 	};
 
-	const openEditQuestion = (event, description, index) => {
+	const openEditQuestion = (event, question, index) => {
 		event.preventDefault();
-		setQuestion({ description, index });
+		setQuestion({ ...question, id: index });
 		setShowModal(true);
 		setModalType('edit');
 	};
@@ -51,11 +51,7 @@ const QuestionsList = () => {
 						</Button>
 						<Button
 							onClick={event =>
-								openEditQuestion(
-									event,
-									question.description,
-									index
-								)
+								openEditQuestion(event, question, index)
 							}
 							variation="small"
 						>
