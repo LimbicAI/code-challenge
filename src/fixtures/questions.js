@@ -4,14 +4,14 @@ const questions = [
 		description: 'How are you feeling today?'
 	},
 	{
-		type: 'single',
+		type: 'singleChoice',
 		description: 'How stressed are you feeling today?',
-		choices: ['No stress', 'Some stress', 'A lot of stress']
+		choices: 'No stress, Some stress, A lot of stress'
 	},
 	{
-		type: 'multiple',
+		type: 'multipleChoice',
 		description: 'What feelings best describe your mood today?',
-		choices: ['Happy', 'Angry', 'Ecstatic', 'Tired', 'Sad', 'Confused']
+		choices: 'Happy, Angry, Ecstatic, Tired, Sad, Confused'
 	}
 ];
 

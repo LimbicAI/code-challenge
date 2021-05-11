@@ -7,17 +7,12 @@ import styles from './styles.module.css';
 
 const noop = () => {};
 
-const QuestionModal = ({
-	onClick = noop, // TODO - REMOVE
-	toggleModal = noop,
-	type = 'create',
-	value
-}) => {
+const QuestionModal = ({ toggleModal = noop, type = 'create', value }) => {
 	const [question, setQuestion] = useState(value || '');
 	const [answerType, setAnswerType] = useState(value.type || 'text');
 	const [oldQuestion, setOldQuestion] = useState(value || '');
 	const { addQuestion, editQuestion } = useContext(AppContext);
-
+	console.warn(value);
 	const onSubmit = event => {
 		event.preventDefault();
 	};
@@ -58,6 +53,7 @@ const QuestionModal = ({
 		if (answerType !== 'text' && !question.choices) {
 			return true;
 		}
+		console.warn(question.choices);
 		if (
 			answerType !== 'text' &&
 			question.choices.length > 1 &&
