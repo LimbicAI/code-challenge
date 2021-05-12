@@ -17,6 +17,11 @@
 	height: 100vh;
 }
 
+.noQuestions {
+	margin: 16px 0;
+	font-size: 20px;
+}
+
 .question {
 	display: flex;
 	flex-flow: row;

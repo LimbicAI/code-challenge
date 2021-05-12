@@ -31,6 +31,11 @@ const QuestionsList = () => {
 
 	return (
 		<div className={styles.questions}>
+			{questions.length < 1 && (
+				<span className={styles.noQuestions}>
+					No questions available <br /> Add a new question below
+				</span>
+			)}
 			{questions.map((question, index) => (
 				<div
 					className={styles.question}
