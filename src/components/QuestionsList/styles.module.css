@@ -1,86 +1,87 @@
 .buttonGroup {
-  animation-name: buttonSlide;
-  animation-duration: 0.25s;
-  min-width: 148px;
+	animation-name: buttonSlide;
+	animation-duration: 0.25s;
+	min-width: 148px;
 }
 
 .modal {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.4);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.4);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
 }
 
 .noQuestions {
-  margin: 16px 0;
-  font-size: 20px;
+	margin: 16px 0;
+	font-size: 20px;
 }
 
 .question {
-  display: flex;
-  flex-flow: row;
-  justify-content: space-between;
-  font-size: 18px;
-  font-weight: 500;
-  align-items: center;
-  width: 90%;
-  min-width: 340px;
+	align-items: center;
+	display: flex;
+	flex-flow: row;
+	font-size: 18px;
+	font-weight: 500;
+	justify-content: space-between;
+	margin: 4px 0;
+	min-width: 340px;
+	width: 90%;
 }
 
 .questionText {
-  text-align: left;
-  animation-name: questionSlide;
-  animation-duration: 0.25s;
+	text-align: left;
+	animation-name: questionSlide;
+	animation-duration: 0.25s;
 }
 
 .questions {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
 }
 
 .buttonIcon {
-  height: 16px;
+	height: 16px;
 }
 
 @keyframes questionSlide {
-  from {
-    transform: translateX(-50%);
-    opacity: 0;
-  }
+	from {
+		transform: translateX(-50%);
+		opacity: 0;
+	}
 
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
 }
 
 @keyframes buttonSlide {
-  from {
-    transform: translateX(50%);
-    opacity: 0;
-  }
+	from {
+		transform: translateX(50%);
+		opacity: 0;
+	}
 
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
 }
 
 @media only screen and (min-width: 600px) {
-  .question {
-    width: 80%;
-  }
+	.question {
+		width: 80%;
+	}
 }
 
 @media only screen and (min-width: 960px) {
-  .question {
-    width: 60%;
-  }
+	.question {
+		width: 60%;
+	}
 }
