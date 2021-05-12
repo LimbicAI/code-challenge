@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { parseCookies, setCookie, destroyCookie } from 'nookies';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { AppProvider } from './context/AppState';
 import Controls from './components/Controls';
@@ -10,14 +9,7 @@ import Questions from './screens/Questions';
 import styles from './App.module.scss';
 
 const App = () => {
-	useEffect(() => {
-		destroyCookie(null, 'loggedIn');
-		destroyCookie(null, 'initial');
-		setCookie(null, 'initial', true);
-	}, []);
-
-	const cookies = parseCookies();
-	const [loggedIn, setLoggedIn] = useState(!cookies.initial);
+	const [loggedIn, setLoggedIn] = useState(false);
 
 	const handleLogin = type => event => {
 		event.preventDefault();
