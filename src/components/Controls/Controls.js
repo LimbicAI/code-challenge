@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import { Link, withRouter } from 'react-router-dom';
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 
 const Controls = props => {
 	return (

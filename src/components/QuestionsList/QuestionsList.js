@@ -6,7 +6,7 @@ import Button from '../Button';
 import TrashCan from '../../assets/delete.png';
 import Pencil from '../../assets/pencil.png';
 import View from '../../assets/view.png';
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 
 const QuestionsList = () => {
 	const { questions, removeQuestion } = useContext(AppContext);

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import clsx from 'clsx';
 import { AppContext } from '../../context/AppState';
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 
 const QuestionsList = () => {
 	const { clients } = useContext(AppContext);

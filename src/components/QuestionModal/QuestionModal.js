@@ -4,7 +4,7 @@ import checkIfDisabled from '../../helpers/formChecks';
 import { AppContext } from '../../context/AppState';
 import PropTypes from 'prop-types';
 import Button from '../Button';
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 
 const noop = () => {};
 

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import Button from '../Button';
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 
 const noop = () => {};
 

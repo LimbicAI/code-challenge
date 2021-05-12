@@ -1,9 +1,7 @@
+@import '../../styles/colors.scss';
+
 .buttons {
 	margin: 16px 0 0 0;
-}
-
-.choices:disabled {
-	background-color: lightgrey;
 }
 
 .form {
@@ -16,7 +14,7 @@
 }
 
 .input {
-	background-color: #ccdbdc;
+	background-color: $shade1;
 	border-radius: 5px;
 	border: 1px solid lightgray;
 	font-size: 18px;
@@ -35,13 +33,12 @@
 .inputGroup {
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
+	align-items: flex-start;
 	margin-bottom: 8px;
 }
 
 .label {
 	padding-right: 4px;
-	min-width: 64px;
 }
 
 .modal {
@@ -57,28 +54,36 @@
 	height: 100vh;
 }
 
-.questions {
+.multiChoice {
 	display: flex;
 	flex-flow: column;
+	align-items: flex-start;
+}
+
+.question {
+	border-bottom: 1px dashed lightgray;
+	padding-bottom: 4px;
 }
 
 .questionText {
-	display: flex;
-	flex-flow: row;
-	align-items: flex-start;
-	justify-content: center;
+	text-align: right;
+}
+
+.title {
+	font-size: 24px;
+	margin: 16px;
 }
 
 @keyframes modalFade {
-  from {
-    transform: translateY(-75%);
-    opacity: 0;
-  }
+	from {
+		transform: translateY(75%);
+		opacity: 0;
+	}
 
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
 }
 
 @media only screen and (min-width: 600px) {

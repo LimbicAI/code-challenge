@@ -4,7 +4,7 @@ import { AppProvider } from './context/AppState';
 import Controls from './components/Controls';
 import Clients from './screens/Clients';
 import Questions from './screens/Questions';
-import styles from './App.module.css';
+import styles from './App.module.scss';
 
 const App = () => {
 	return (

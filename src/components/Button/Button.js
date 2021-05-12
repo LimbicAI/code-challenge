@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 
 const noop = () => {};
 

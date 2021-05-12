@@ -1,5 +1,7 @@
+@import '../../styles/colors.scss';
+
 .controls {
-	background-color: #003249;
+	background-color: $shade4;
 	padding: 8px 0 4px 0;
 }
 
@@ -20,7 +22,7 @@
 	color: grey;
 	box-shadow: 1px 0 lightgray;
 	pointer-events: none;
-	background-color: #ccdbdc;
+	background-color: $shade1;
 	border-radius: 10px 10px 0 0;
 	border-top: 1px solid lightgrey;
 	border-left: 1px solid lightgrey;
