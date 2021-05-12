@@ -21,6 +21,7 @@ exports[`QuestionList tests matches the snapshot 1`] = `
           type="button"
         >
           <img
+            alt="Delete"
             class="buttonIcon"
             data-testid="trash-can-icon"
             src="delete.png"
@@ -31,6 +32,7 @@ exports[`QuestionList tests matches the snapshot 1`] = `
           type="button"
         >
           <img
+            alt="Edit"
             class="buttonIcon"
             data-testid="pencil-icon"
             src="pencil.png"
@@ -41,6 +43,7 @@ exports[`QuestionList tests matches the snapshot 1`] = `
           type="button"
         >
           <img
+            alt="View"
             class="buttonIcon"
             data-testid="view-icon"
             src="view.png"
@@ -64,6 +67,7 @@ exports[`QuestionList tests matches the snapshot 1`] = `
           type="button"
         >
           <img
+            alt="Delete"
             class="buttonIcon"
             data-testid="trash-can-icon"
             src="delete.png"
@@ -74,6 +78,7 @@ exports[`QuestionList tests matches the snapshot 1`] = `
           type="button"
         >
           <img
+            alt="Edit"
             class="buttonIcon"
             data-testid="pencil-icon"
             src="pencil.png"
@@ -84,6 +89,7 @@ exports[`QuestionList tests matches the snapshot 1`] = `
           type="button"
         >
           <img
+            alt="View"
             class="buttonIcon"
             data-testid="view-icon"
             src="view.png"
@@ -107,6 +113,7 @@ exports[`QuestionList tests matches the snapshot 1`] = `
           type="button"
         >
           <img
+            alt="Delete"
             class="buttonIcon"
             data-testid="trash-can-icon"
             src="delete.png"
@@ -117,6 +124,7 @@ exports[`QuestionList tests matches the snapshot 1`] = `
           type="button"
         >
           <img
+            alt="Edit"
             class="buttonIcon"
             data-testid="pencil-icon"
             src="pencil.png"
@@ -127,6 +135,7 @@ exports[`QuestionList tests matches the snapshot 1`] = `
           type="button"
         >
           <img
+            alt="View"
             class="buttonIcon"
             data-testid="view-icon"
             src="view.png"

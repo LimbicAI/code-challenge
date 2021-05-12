@@ -64,6 +64,7 @@ const QuestionsList = () => {
 							variation="alert"
 						>
 							<img
+								alt="Delete"
 								className={styles.buttonIcon}
 								data-testid="trash-can-icon"
 								src={TrashCan}
@@ -76,6 +77,7 @@ const QuestionsList = () => {
 							variation="small"
 						>
 							<img
+								alt="Edit"
 								className={styles.buttonIcon}
 								data-testid="pencil-icon"
 								src={Pencil}
@@ -86,6 +88,7 @@ const QuestionsList = () => {
 							variation="small"
 						>
 							<img
+								alt="View"
 								className={styles.buttonIcon}
 								data-testid="view-icon"
 								src={View}
