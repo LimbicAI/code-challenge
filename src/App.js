@@ -10,7 +10,11 @@ const App = () => {
 	return (
 		<div className={styles.app}>
 			<header className={styles.appHeader}>
-				<h2>Therapy Portal</h2>
+				<h2>
+					<a className={styles.headerTitle} href="/">
+						Therapy Portal
+					</a>
+				</h2>
 			</header>
 			<AppProvider>
 				<Router>

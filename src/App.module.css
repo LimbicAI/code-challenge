@@ -12,6 +12,11 @@
 	color: #ccdbdc;
 }
 
+.headerTitle {
+	color: white;
+	text-decoration: none;
+}
+
 .intro {
 	margin-top: 32px;
 }
