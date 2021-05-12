@@ -1,14 +1,17 @@
 import React, { useContext, useState } from 'react';
 import { AppContext } from '../../context/AppState';
 import QuestionModal from '../QuestionModal';
+import ViewQuestionModal from '../ViewQuestionModal';
 import Button from '../Button';
 import TrashCan from '../../assets/delete.png';
 import Pencil from '../../assets/pencil.png';
+import View from '../../assets/view.png';
 import styles from './styles.module.css';
 
 const QuestionsList = () => {
 	const { questions, removeQuestion } = useContext(AppContext);
 	const [showModal, setShowModal] = useState(false);
+	const [showViewModal, setShowViewModal] = useState(false);
 	const [modalType, setModalType] = useState('create');
 	const [question, setQuestion] = useState({});
 
@@ -27,6 +30,12 @@ const QuestionsList = () => {
 
 	const toggleModal = value => {
 		setShowModal(value);
+	};
+
+	const viewQuestion = (event, question) => {
+		event.preventDefault();
+		setQuestion({ ...question });
+		setShowViewModal(true);
 	};
 
 	return (
@@ -55,7 +64,7 @@ const QuestionsList = () => {
 							variation="alert"
 						>
 							<img
-								className={styles.trashCanIcon}
+								className={styles.buttonIcon}
 								data-testid="trash-can-icon"
 								src={TrashCan}
 							/>
@@ -67,9 +76,19 @@ const QuestionsList = () => {
 							variation="small"
 						>
 							<img
-								className={styles.trashCanIcon}
+								className={styles.buttonIcon}
 								data-testid="pencil-icon"
 								src={Pencil}
+							/>
+						</Button>
+						<Button
+							onClick={event => viewQuestion(event, question)}
+							variation="small"
+						>
+							<img
+								className={styles.buttonIcon}
+								data-testid="view-icon"
+								src={View}
 							/>
 						</Button>
 					</div>
@@ -81,6 +100,12 @@ const QuestionsList = () => {
 					type={modalType}
 					toggleModal={toggleModal}
 					value={question}
+				/>
+			)}
+			{showViewModal && (
+				<ViewQuestionModal
+					question={question}
+					toggleModal={() => setShowViewModal(false)}
 				/>
 			)}
 		</div>

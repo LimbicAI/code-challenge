@@ -27,7 +27,6 @@ describe('QuestionList tests', () => {
 				<QuestionsList />
 			</AppContext.Provider>
 		);
-		screen.debug();
 		expect(
 			screen.queryByText(/no questions available/i)
 		).toBeInTheDocument();
@@ -90,5 +89,12 @@ describe('QuestionList tests', () => {
 		expect(
 			screen.queryByText(QUESTIONS[0].description)
 		).not.toBeInTheDocument();
+	});
+
+	it('opens the modal on View click', () => {
+		setup();
+		expect(screen.queryByText(/sample question/i)).not.toBeInTheDocument();
+		fireEvent.click(screen.queryAllByTestId('view-icon')[0]);
+		expect(screen.queryByText(/sample question/i)).toBeInTheDocument();
 	});
 });

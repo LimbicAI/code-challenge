@@ -21,7 +21,7 @@ exports[`QuestionList tests matches the snapshot 1`] = `
           type="button"
         >
           <img
-            class="trashCanIcon"
+            class="buttonIcon"
             data-testid="trash-can-icon"
             src="delete.png"
           />
@@ -31,9 +31,19 @@ exports[`QuestionList tests matches the snapshot 1`] = `
           type="button"
         >
           <img
-            class="trashCanIcon"
+            class="buttonIcon"
             data-testid="pencil-icon"
             src="pencil.png"
+          />
+        </button>
+        <button
+          class="button small"
+          type="button"
+        >
+          <img
+            class="buttonIcon"
+            data-testid="view-icon"
+            src="view.png"
           />
         </button>
       </div>
@@ -54,7 +64,7 @@ exports[`QuestionList tests matches the snapshot 1`] = `
           type="button"
         >
           <img
-            class="trashCanIcon"
+            class="buttonIcon"
             data-testid="trash-can-icon"
             src="delete.png"
           />
@@ -64,9 +74,19 @@ exports[`QuestionList tests matches the snapshot 1`] = `
           type="button"
         >
           <img
-            class="trashCanIcon"
+            class="buttonIcon"
             data-testid="pencil-icon"
             src="pencil.png"
+          />
+        </button>
+        <button
+          class="button small"
+          type="button"
+        >
+          <img
+            class="buttonIcon"
+            data-testid="view-icon"
+            src="view.png"
           />
         </button>
       </div>
@@ -87,7 +107,7 @@ exports[`QuestionList tests matches the snapshot 1`] = `
           type="button"
         >
           <img
-            class="trashCanIcon"
+            class="buttonIcon"
             data-testid="trash-can-icon"
             src="delete.png"
           />
@@ -97,9 +117,19 @@ exports[`QuestionList tests matches the snapshot 1`] = `
           type="button"
         >
           <img
-            class="trashCanIcon"
+            class="buttonIcon"
             data-testid="pencil-icon"
             src="pencil.png"
+          />
+        </button>
+        <button
+          class="button small"
+          type="button"
+        >
+          <img
+            class="buttonIcon"
+            data-testid="view-icon"
+            src="view.png"
           />
         </button>
       </div>
