@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import clsx from 'clsx';
+import checkIfDisabled from '../../helpers/formChecks';
 import { AppContext } from '../../context/AppState';
 import PropTypes from 'prop-types';
 import Button from '../Button';
@@ -8,14 +9,11 @@ import styles from './styles.module.css';
 const noop = () => {};
 
 const QuestionModal = ({ toggleModal = noop, type = 'create', value }) => {
+	const { addQuestion, editQuestion } = useContext(AppContext);
 	const [question, setQuestion] = useState(value || '');
 	const [answerType, setAnswerType] = useState(value.type || 'text');
-	const { addQuestion, editQuestion } = useContext(AppContext);
 
 	const oldQuestion = value || '';
-	const onSubmit = event => {
-		event.preventDefault();
-	};
 
 	const createQuestion = () => {
 		addQuestion({ ...question, type: answerType });
@@ -35,6 +33,15 @@ const QuestionModal = ({ toggleModal = noop, type = 'create', value }) => {
 		setQuestion('');
 	};
 
+	const onSubmit = event => {
+		event.preventDefault();
+		if (type === 'create') {
+			createQuestion();
+		} else {
+			updateQuestion();
+		}
+	};
+
 	const handleSelect = event => {
 		event.preventDefault();
 		setAnswerType(event.target.value);
@@ -42,28 +49,11 @@ const QuestionModal = ({ toggleModal = noop, type = 'create', value }) => {
 
 	const onChange = event => {
 		event.preventDefault();
-		const { id } = event.target;
-		setQuestion({ ...question, [id]: event.target.value });
+		const { name } = event.target;
+		setQuestion({ ...question, [name]: event.target.value });
 	};
 
-	const isDisabled = () => {
-		if (!question.description) {
-			return true;
-		}
-		if (answerType !== 'text' && !question.choices) {
-			return true;
-		}
-		if (
-			answerType !== 'text' &&
-			question.choices.length > 1 &&
-			question.choices.split(',').length > 1
-		) {
-			const choices = question.choices
-				.split(',')
-				.map(choice => choice.length > 2);
-			return choices.includes(false);
-		}
-	};
+	const isSubmitDisabled = checkIfDisabled(question, answerType);
 
 	return (
 		<div className={styles.modal}>
@@ -88,8 +78,8 @@ const QuestionModal = ({ toggleModal = noop, type = 'create', value }) => {
 					</label>
 					<select
 						className={styles.input}
-						name="answerType"
 						id="answerType"
+						name="answerType"
 						onChange={handleSelect}
 						value={answerType}
 					>
@@ -114,19 +104,11 @@ const QuestionModal = ({ toggleModal = noop, type = 'create', value }) => {
 				<div className={styles.buttons}>
 					<Button onClick={() => toggleModal(false)}>Cancel</Button>
 					{type === 'create' ? (
-						<Button
-							disabled={isDisabled()}
-							onClick={createQuestion}
-							type="submit"
-						>
+						<Button disabled={isSubmitDisabled} type="submit">
 							Create
 						</Button>
 					) : (
-						<Button
-							disabled={isDisabled()}
-							onClick={updateQuestion}
-							type="submit"
-						>
+						<Button disabled={isSubmitDisabled} type="submit">
 							Update
 						</Button>
 					)}
@@ -137,7 +119,7 @@ const QuestionModal = ({ toggleModal = noop, type = 'create', value }) => {
 };
 
 QuestionModal.propTypes = {
-	onClick: PropTypes.func,
+	toggleModal: PropTypes.func,
 	type: PropTypes.oneOf(['create', 'edit']),
 	value: PropTypes.object
 };
