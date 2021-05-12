@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import clsx from 'clsx';
 import Button from '../Button';
 import styles from './styles.module.css';
 
@@ -9,7 +10,7 @@ const ViewQuestionModal = ({ toggleModal = noop, question }) => {
 	const renderChoices = (type, choices) => {
 		const options = choices.split(',').map(choice => choice.trim());
 		return options.map(option => (
-			<span>
+			<span key={`${type}_${option}`}>
 				<input
 					disabled
 					type={type === 'multipleChoice' ? 'checkbox' : 'radio'}
@@ -17,7 +18,7 @@ const ViewQuestionModal = ({ toggleModal = noop, question }) => {
 					name={option}
 					value={option}
 				/>
-				<label for="male">{option}</label>
+				<label htmlFor="male">{option}</label>
 			</span>
 		));
 	};
@@ -28,7 +29,7 @@ const ViewQuestionModal = ({ toggleModal = noop, question }) => {
 		<div className={styles.modal}>
 			<form className={styles.form}>
 				<p className={styles.title}>Sample Question</p>
-				<div className={styles.inputGroup}>
+				<div className={clsx(styles.inputGroup, styles.question)}>
 					<label className={styles.label} htmlFor="description">
 						Question:
 					</label>

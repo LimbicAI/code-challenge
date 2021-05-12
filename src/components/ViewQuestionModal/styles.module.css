@@ -58,6 +58,11 @@
 	align-items: flex-start;
 }
 
+.question {
+	border-bottom: 1px dashed lightgray;
+	padding-bottom: 4px;
+}
+
 .questionText {
 	text-align: right;
 }
