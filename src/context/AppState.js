@@ -6,15 +6,10 @@ import QUESTIONS from '../fixtures/questions';
 const savedQuestions = localStorage.getItem('questions');
 const savedClients = localStorage.getItem('clients');
 
-const initialState = savedQuestions
-	? {
-			questions: JSON.parse(savedQuestions),
-			clients: JSON.parse(savedClients)
-	  }
-	: {
-			questions: QUESTIONS,
-			clients: CLIENTS
-	  };
+const initialState = {
+	questions: savedQuestions ? JSON.parse(savedQuestions) : QUESTIONS,
+	clients: savedClients ? JSON.parse(savedClients) : CLIENTS
+};
 
 export const AppContext = createContext(initialState);
 
@@ -42,6 +37,13 @@ export const AppProvider = ({ children }) => {
 		});
 	};
 
+	const updateAnswers = (client, answers, questions) => {
+		dispatch({
+			type: 'UPDATE_ANSWERS',
+			payload: { client, answers, questions }
+		});
+	};
+
 	return (
 		<AppContext.Provider
 			value={{
@@ -49,7 +51,8 @@ export const AppProvider = ({ children }) => {
 				questions: state.questions,
 				removeQuestion,
 				addQuestion,
-				editQuestion
+				editQuestion,
+				updateAnswers
 			}}
 		>
 			{children}

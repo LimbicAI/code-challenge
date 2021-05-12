@@ -1,8 +1,16 @@
 @import '../../styles/colors.scss';
 
+.button {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+
 .controls {
 	background-color: $shade4;
-	padding: 8px 0 4px 0;
+	display: flex;
+	justify-content: center;
+	padding: 8px 0 0 0;
 }
 
 .link {
@@ -15,16 +23,18 @@
 }
 
 .link:hover {
-	color: lightgrey;
+	background-color: $shade1;
+	border-radius: 10px 10px 0 0;
+	color: black;
 }
 
 .disabled {
-	color: grey;
 	box-shadow: 1px 0 lightgray;
-	pointer-events: none;
 	background-color: $shade1;
 	border-radius: 10px 10px 0 0;
 	border-top: 1px solid lightgrey;
 	border-left: 1px solid lightgrey;
 	border-right: 1px solid lightgrey;
+	color: grey;
+	pointer-events: none;
 }

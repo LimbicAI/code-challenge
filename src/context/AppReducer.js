@@ -89,6 +89,32 @@ const reducer = (state, action) => {
 				clients: updatedClients
 			};
 
+		case 'UPDATE_ANSWERS':
+			const clientName = action.payload.client.name;
+			const updatedClient = {
+				name: clientName
+			};
+			updatedClient.questions = Object.values(action.payload.answers).map(
+				(answer, index) => {
+					return {
+						q: action.payload.client.questions[index].q,
+						a: answer
+					};
+				}
+			);
+
+			const position = state.clients.findIndex(
+				client => client.name === clientName
+			);
+			updatedClients = [...state.clients];
+			updatedClients[position] = updatedClient;
+			updateLocalStorage('clients', updatedClients);
+
+			return {
+				...state,
+				clients: updatedClients
+			};
+
 		default:
 			return state;
 	}
