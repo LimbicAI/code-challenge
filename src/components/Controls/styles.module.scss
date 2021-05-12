@@ -1,40 +1,40 @@
 @import '../../styles/colors.scss';
 
 .button {
-	background-color: transparent;
-	border: none;
-	cursor: pointer;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .controls {
-	background-color: $shade4;
-	display: flex;
-	justify-content: center;
-	padding: 8px 0 0 0;
+  background-color: $shade4;
+  display: flex;
+  justify-content: center;
+  padding: 8px 0 0 0;
 }
 
 .link {
-	color: white;
-	font-size: 22px;
-	font-weight: 500;
-	margin: 0 8px;
-	padding: 4px 8px;
-	text-decoration: none;
+  color: white;
+  font-size: 22px;
+  font-weight: 500;
+  margin: 0 8px;
+  padding: 4px 8px;
+  text-decoration: none;
 }
 
 .link:hover {
-	background-color: $shade1;
-	border-radius: 10px 10px 0 0;
-	color: black;
+  background-color: $shade1;
+  border-radius: 10px 10px 0 0;
+  color: black;
 }
 
 .disabled {
-	box-shadow: 1px 0 lightgray;
-	background-color: $shade1;
-	border-radius: 10px 10px 0 0;
-	border-top: 1px solid lightgrey;
-	border-left: 1px solid lightgrey;
-	border-right: 1px solid lightgrey;
-	color: grey;
-	pointer-events: none;
+  box-shadow: 1px 0 lightgray;
+  background-color: $shade1;
+  border-radius: 10px 10px 0 0;
+  border-top: 1px solid lightgrey;
+  border-left: 1px solid lightgrey;
+  border-right: 1px solid lightgrey;
+  color: grey;
+  pointer-events: none;
 }

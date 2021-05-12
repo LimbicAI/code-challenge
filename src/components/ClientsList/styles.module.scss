@@ -1,140 +1,140 @@
 @import '../../styles/colors.scss';
 
 .answerText {
-	display: flex;
-	flex-flow: row;
+  display: flex;
+  flex-flow: row;
 }
 
 .answerChoices {
-	display: flex;
-	flex-flow: column;
+  display: flex;
+  flex-flow: column;
 }
 
 .client {
-	border: 1px solid gray;
-	border-radius: 5px;
-	cursor: pointer;
-	margin: 4px 0;
-	padding: 4px 0;
-	width: 90%;
-	background-color: transparent;
+  border: 1px solid gray;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 4px 0;
+  padding: 4px 0;
+  width: 90%;
+  background-color: transparent;
 }
 
 .client:hover {
-	border-color: $shade2;
-	background-color: $shade2;
+  border-color: $shade2;
+  background-color: $shade2;
 }
 
 .clientQuestions {
-	flex-flow: column;
-	width: 90%;
+  flex-flow: column;
+  width: 90%;
 }
 
 .clientQuestions > div:not(:last-child) {
-	border-bottom: 1px solid gray;
+  border-bottom: 1px solid gray;
 }
 
 .expanded {
-	background-color: $shade4;
-	color: white;
-	font-weight: 600;
+  background-color: $shade4;
+  color: white;
+  font-weight: 600;
 }
 
 .showQuestions {
-	animation-name: expand;
-	animation-duration: 0.2s;
-	display: flex;
-	height: auto;
+  animation-name: expand;
+  animation-duration: 0.2s;
+  display: flex;
+  height: auto;
 }
 
 .label {
-	font-weight: 500;
-	padding-right: 4px;
+  font-weight: 500;
+  padding-right: 4px;
 }
 
 .list {
-	text-align: left;
-	margin: 0;
+  text-align: left;
+  margin: 0;
 }
 
 .modal {
-	display: flex;
-	flex-flow: column;
-	justify-content: center;
-	align-items: center;
-	background-color: rgba(0, 0, 0, 0.4);
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	height: 100vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
 }
 
 .question {
-	display: flex;
-	flex-flow: row;
-	justify-content: space-between;
-	font-size: 18px;
-	font-weight: 500;
-	align-items: center;
-	width: 80%;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: 500;
+  align-items: center;
+  width: 80%;
 }
 
 .questions {
-	align-items: center;
-	animation-name: fadeIn;
-	animation-duration: 0.5s;
-	display: flex;
-	flex-flow: column;
-	margin-top: 16px;
+  align-items: center;
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
+  display: flex;
+  flex-flow: column;
+  margin-top: 16px;
 }
 
 .questionsAnswers {
-	display: flex;
-	flex-flow: column;
-	align-items: center;
-	padding: 0 8px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding: 0 8px;
 }
 
 .questionsAnswers > div {
-	text-align: left;
-	width: 100%;
+  text-align: left;
+  width: 100%;
 }
 
 @keyframes expand {
-	from {
-		transform: translateY(50%);
-		opacity: 0;
-	}
+  from {
+    transform: translateY(50%);
+    opacity: 0;
+  }
 
-	to {
-		transform: translateY(0);
-		opacity: 1;
-	}
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 @keyframes fadeIn {
-	from {
-		opacity: 0;
-	}
+  from {
+    opacity: 0;
+  }
 
-	to {
-		opacity: 1;
-	}
+  to {
+    opacity: 1;
+  }
 }
 
 @media only screen and (min-width: 600px) {
-	.clientQuestions {
-		width: 80%;
-	}
+  .clientQuestions {
+    width: 80%;
+  }
 }
 
 @media only screen and (min-width: 960px) {
-	.client {
-		width: 60%;
-	}
+  .client {
+    width: 60%;
+  }
 
-	.clientQuestions {
-		width: 60%;
-	}
+  .clientQuestions {
+    width: 60%;
+  }
 }

@@ -1,24 +1,24 @@
 @import './styles/colors.scss'; // assuming a styles directory under src/
 
 .app {
-	text-align: center;
+  text-align: center;
 }
 
 .appHeader {
-	background-color: $shade4;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	font-size: calc(10px + 2vmin);
-	color: $shade1;
+  background-color: $shade4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: $shade1;
 }
 
 .headerTitle {
-	color: white;
-	text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 .intro {
-	margin-top: 32px;
+  margin-top: 32px;
 }
