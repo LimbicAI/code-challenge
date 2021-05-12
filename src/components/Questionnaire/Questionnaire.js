@@ -1,11 +1,12 @@
 import React, { useContext, useState } from 'react';
+import PropTypes from 'prop-types';
 import sortByName from '../../helpers/sorting';
 import { AppContext } from '../../context/AppState';
 import clsx from 'clsx';
 import Button from '../Button';
 import styles from './styles.module.scss';
 
-const Questionnaire = () => {
+const Questionnaire = ({ onClick }) => {
 	const { clients, questions, updateAnswers } = useContext(AppContext);
 	const sortedClientQuestions = sortByName(clients[0].questions, 'q');
 	const sortedQuestions = sortByName(questions, 'description');
@@ -56,12 +57,7 @@ const Questionnaire = () => {
 
 	return (
 		<div className={styles.modal}>
-			<form
-				className={styles.form}
-				onSubmit={() =>
-					updateAnswers(clients[0], answers, sortedQuestions)
-				}
-			>
+			<form className={styles.form}>
 				<h2 className={styles.title}>Welcome Back Andy!</h2>
 				<p>Please make any necessary changes and press Done.</p>
 				<div className={clsx(styles.section, styles.question)}>
@@ -95,11 +91,22 @@ const Questionnaire = () => {
 					})}
 				</div>
 				<div className={styles.buttons}>
-					<Button type="submit">Done</Button>
+					<Button
+						onClick={() => {
+							updateAnswers(clients[0], answers, sortedQuestions);
+							onClick();
+						}}
+					>
+						Done
+					</Button>
 				</div>
 			</form>
 		</div>
 	);
+};
+
+Questionnaire.propTypes = {
+	onClick: PropTypes.func
 };
 
 export default Questionnaire;

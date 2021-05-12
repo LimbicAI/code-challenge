@@ -58,7 +58,9 @@ const App = () => {
 						)}
 					</Switch>
 					{!loggedIn && <SignInModal onSelect={handleLogin} />}
-					{loggedIn === 'patient' && <Questionnaire />}
+					{loggedIn === 'patient' && (
+						<Questionnaire onClick={logout} />
+					)}
 				</Router>
 			</AppProvider>
 		</div>
