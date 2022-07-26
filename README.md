@@ -1,5 +1,34 @@
 ## Front End Code Challenge
 
+### React Client App
+
+Configuration files app `./src/config`
+
+Runs the app in the development mode.
+
+`npm start`
+
+Build the app for production.
+
+`npm run build`
+
+### api-server
+- Mongo (local) `mongodb://localhost:27018`
+
+- Runs the app in the development mode.
+
+`npm run dev`
+
+- Runs the app in the production mode.
+
+`npm run start`
+
+### Mongo DB default user (admin) credential
+user name:  Jane
+email:      jane@gmail.come
+password:   Jane123!@#
+
+
 This is Limbic's React/React Native Coding Challenge which will allow us to get a glimpse into our candidates' overall developer skills.
 
 You are free to create a React web app, or a React Native mobile app, it's up to you. We'd rather you use something you are comfortable with so that time isn't wasted on project setup and we can get a real feel for your coding patterns and understanding of best practices with React and/or React Native, regardless of the end use case.
@@ -53,31 +82,3 @@ The following tasks will **NOT** have a negative impact in how well you did, but
 - Ability for the app to answer the questions. Basically using a fake login it could determine if the user is a client and display the questionnaire they need to answer. (fake login can be two buttons chosing the type of user
 
 Good Luck!
-
-### api-server
-- Mongo (local) `mongodb://localhost:27018`
-
-- Runs the app in the development mode.
-
-`npm run dev`
-
-- Runs the app in the production mode.
-
-`npm run start`
-
-# React Client App
-
-Configuration files app `./src/config`
-
-Runs the app in the development mode.
-
-`npm start`
-
-Build the app for production.
-
-`npm run build`
-
-### Mongo DB default user (admin) credential
-user name:  Jane
-email:      jane@gmail.come
-password:   Jane123!@#
