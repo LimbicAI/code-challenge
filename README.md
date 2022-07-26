@@ -53,3 +53,31 @@ The following tasks will **NOT** have a negative impact in how well you did, but
 - Ability for the app to answer the questions. Basically using a fake login it could determine if the user is a client and display the questionnaire they need to answer. (fake login can be two buttons chosing the type of user
 
 Good Luck!
+
+### api-server
+- Mongo (local) `mongodb://localhost:27018`
+
+- Runs the app in the development mode.
+
+`npm run dev`
+
+- Runs the app in the production mode.
+
+`npm run start`
+
+# React Client App
+
+Configuration files app `./src/config`
+
+Runs the app in the development mode.
+
+`npm start`
+
+Build the app for production.
+
+`npm run build`
+
+### Mongo DB default user (admin) credential
+user name:  Jane
+email:      jane@gmail.come
+password:   Jane123!@#
