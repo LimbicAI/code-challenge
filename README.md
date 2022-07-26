@@ -25,7 +25,7 @@ Build the app for production.
 
 ### Mongo DB default user (admin) credential
 - user name:  Jane
-- email:      jane@gmail.come
+- email:      jane@gmail.com
 - password:   Jane123!@#
 
 This is Limbic's React/React Native Coding Challenge which will allow us to get a glimpse into our candidates' overall developer skills.
