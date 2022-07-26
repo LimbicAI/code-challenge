@@ -1,0 +1,24 @@
+# host options
+PORT=3003
+HOST='http://localhost'
+FRONTEND_HOST='http://localhost:3000'
+
+# mongo uri
+MONGO_URI='mongodb://mongo/test'
+
+# secrets for api token
+SECRET_TOKEN_ACCESS='secret'
+EXPIRE_TOKEN_ACCESS='1d'
+
+SECRET_TOKEN_REFRESH='secret'
+EXPIRE_TOKEN_REFRESH='30d'
+
+SECRET_TOKEN_RESTORE_PASSWORD='secret'
+EXPIRE_TOKEN_RESTORE_PASSWORD='5min'
+
+TOKEN_LIMIT_COUNT_DIVICE=5
+
+#mail options
+API_KEY_MAILGUN='test'
+DOMAIN_MAILGUN='test'
+FROM_DEFAULT_MAIL='Test <new-app@test.com>'
