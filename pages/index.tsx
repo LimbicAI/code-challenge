@@ -1,17 +1,9 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
+import type { NextPage } from 'next';
 
-const Home: NextPage = () => {
+export default function Home():NextPage {
   return (
     <div>
-      <Head>
-        <title>Limbic code challenge </title>
-        <meta name="description" content="Limbic code challenge" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      This is a code challenge for Limbic. You can add your own questions and answers.
     </div>
-  )
+  );
 }
-
-export default Home
