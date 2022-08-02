@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:14
+    restart: always
+    ports:
+      - "5444:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    env_file:
+      - ./.env.pg
+  graphql-engine:
+    image: hasura/graphql-engine:v2.9.0
+    ports:
+      - "8080:8080"
+    depends_on:
+      - "postgres"
+    restart: always
+    env_file:
+      - ./.env.hasura
+volumes:
+  db_data:
