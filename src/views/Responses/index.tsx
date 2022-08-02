@@ -5,12 +5,12 @@ const Wrapper = styled.div`
   display: flex;
 `;
 
-const TemplatesView = () => {
+const ResponsesView = () => {
   return (
     <Wrapper>
-      <div>Hello</div>
+      <div>Responses</div>
     </Wrapper>
   );
 };
 
-export default TemplatesView;
+export default ResponsesView;
