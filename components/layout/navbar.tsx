@@ -7,7 +7,7 @@ export default function Navbar() {
       style={{ backgroundColor: '#ffffffbf' }}
       className="h-14 m-3 text-gray-700 bg-lime-700 flex flex-row"
     >
-      <div className="basis-10/12">
+      <div className="basis-10/12 cursor-pointer">
         <Link href="/">
           <Image src="/limbic.svg" alt="limbic logo" width={100} height={24} />
         </Link>
