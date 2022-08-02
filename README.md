@@ -1,34 +1,55 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Front End Code Challenge
 
-## Getting Started
+This is Limbic's React/React Native Coding Challenge which will allow us to get a glimpse into our candidates' overall developer skills.
 
-First, run the development server:
+You are free to create a React web app, or a React Native mobile app, it's up to you. We'd rather you use something you are comfortable with so that time isn't wasted on project setup and we can get a real feel for your coding patterns and understanding of best practices with React and/or React Native, regardless of the end use case.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+### Instructions
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. **Submitting Code:**
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+   Option A:
+      - Fork this repo
+      - Issue a Pull Request when you're ready to start. This will count as your starting date.
+      - Setup your development environment for React or React Native
+      - Implement your solution
+      - Commit your changes into the forked repo
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+   Option B:
+      - Setup your development environment for React or React Native
+      - Implement your solution
+      - Archive your solution into a zip file
+      - Send us the zip file. We should be able to extract the content and run it from there (w/o node_modules)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+2. **Deadline:**
 
-## Learn More
+   You have 1 week to complete as much tasks as you can from the challenge below. Countdown starts from the date you issued the PR or from the date you were invited to complete this challenge via email.
 
-To learn more about Next.js, take a look at the following resources:
+3. **Implementation:**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   There is no correct way to do it, you are free to use whatever libraries you like.  We want to see what you come up with on your own.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### The Challenge
 
-## Deploy on Vercel
+Jane is a clinical therapist and wants her clients to answer simple questionnaires in order to better understand them. She needs a way to add/delete/edit questions and also see the answers of each client.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Requirements
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Your app should be able to complete the following tasks:
+
+- See a list of questions
+- Add a new question
+- Edit a question
+- Delete a question
+- See a list of clients
+- See a client's answers
+
+### Bonus Points
+
+The following tasks will **NOT** have a negative impact in how well you did, but you will get bonus points for completing any of them.
+
+- Ability to persist data locally
+- Ability to select the type of answer a question will have. Types like free text, single choice from a predefined list, multiple choice from a predefined list, etc.
+- Ability for the app to answer the questions. Basically using a fake login it could determine if the user is a client and display the questionnaire they need to answer. (fake login can be two buttons chosing the type of user
+
+Good Luck!
