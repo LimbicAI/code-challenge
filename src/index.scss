@@ -1,0 +1,11 @@
+@font-face {
+  font-family: Imported;
+  src: url('../src/assets/fonts/AltersanTrial-Regular.ttf');
+}
+
+body {
+  margin: 0;
+  font-family: Imported, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
