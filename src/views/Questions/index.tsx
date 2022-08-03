@@ -1,19 +1,13 @@
 import React from 'react';
 import { Delete } from '@mui/icons-material';
+import { Button, CircularProgress, Typography } from '@mui/material';
+import useAlert from 'hooks/useAlert';
 import {
-  Button,
-  CircularProgress,
-  IconButton,
-  Typography,
-} from '@mui/material';
-import {
-  Controller,
   FormProvider,
   SubmitHandler,
   useFieldArray,
   useForm,
 } from 'react-hook-form';
-import styled from 'styled-components';
 import { v4 } from 'uuid';
 
 import useQuestions from '../../data/useQuestions';
@@ -42,18 +36,15 @@ const defaultValues: QuestionFormValues = {
 };
 
 const Questions = () => {
-  const {
-    data: questions,
-    isFetching: isFetchingQuestions,
-    mutate,
-  } = useQuestions();
+  const alert = useAlert();
+  const { data: questions, isFetching: isFetchingQuestions } = useQuestions();
   const methods = useForm<QuestionFormValues>({
     defaultValues,
   });
   const {
     control,
     handleSubmit,
-    formState: { isDirty },
+    formState: { isDirty, isSubmitting },
   } = methods;
   const {
     fields: questionFields,
@@ -72,8 +63,13 @@ const Questions = () => {
 
   const onSubmit: SubmitHandler<QuestionFormValues> = async (values) => {
     const body = values.questions.map((q) => ({ ...q, id: q.id ?? v4() }));
-    const result = await put('http://localhost:8000/questions', body);
-    console.log(result);
+
+    try {
+      await put('http://localhost:8000/questions', body);
+      alert.onSuccess('Success');
+    } catch {
+      alert.onFailure('Something went wrong');
+    }
   };
 
   return (
@@ -103,7 +99,11 @@ const Questions = () => {
               ))}
             </Styled.QuestionsWrapper>
           )}
-          <Styled.Submit variant="outlined" disabled={!isDirty} type="submit">
+          <Styled.Submit
+            variant="outlined"
+            disabled={!isDirty || isSubmitting}
+            type="submit"
+          >
             Submit
           </Styled.Submit>
         </form>
