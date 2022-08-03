@@ -1,5 +1,6 @@
 import React from 'react';
 import { Paper } from '@mui/material';
+import ProtectedRoute from 'components/ProtectedRoute';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import styled from 'styled-components';
 import { SWRConfig } from 'swr';
@@ -35,10 +36,38 @@ function App() {
             <NavBar />
             <Routes>
               <Route path="/" element={<SignIn />} />
-              <Route path="/questions" element={<Questions />} />
-              <Route path="/responses" element={<ResponsesView />} />
-              <Route path="/responses/:userName" element={<UserResponses />} />
-              <Route path="/questionnaire" element={<Questionnaire />} />
+              <Route
+                path="/questions"
+                element={
+                  <ProtectedRoute isProtected>
+                    <Questions />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/responses"
+                element={
+                  <ProtectedRoute isProtected>
+                    <ResponsesView />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/responses/:userName"
+                element={
+                  <ProtectedRoute isProtected>
+                    <UserResponses />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/questionnaire"
+                element={
+                  <ProtectedRoute>
+                    <Questionnaire />
+                  </ProtectedRoute>
+                }
+              />
             </Routes>
           </StyledPaper>
         </WithAlert>
