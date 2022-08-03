@@ -1,6 +1,6 @@
 import React from 'react';
 import { Delete } from '@mui/icons-material';
-import { Button, CircularProgress } from '@mui/material';
+import { Button, CircularProgress, Stack } from '@mui/material';
 import Title from 'components/Title';
 import useAlert from 'hooks/useAlert';
 import {
@@ -9,40 +9,21 @@ import {
   useFieldArray,
   useForm,
 } from 'react-hook-form';
-import { PageWrapper } from 'styles/common';
+import { Content, PageWrapper } from 'styles/common';
 import { v4 } from 'uuid';
 
 import useQuestions from '../../data/useQuestions';
-import { QuestionFormValues, QuestionType } from '../../types/questions';
+import { QuestionFormValues } from '../../types/questions';
 import { put } from '../../utils/requests';
 import Question from './components/Question';
 import QuestionOptions from './components/QuestionOptions';
 import * as Styled from './styles';
 import { defaultQuestion } from './utils';
 
-const defaultValues: QuestionFormValues = {
-  questions: [
-    {
-      id: '1',
-      title: 'Question 1',
-      description: 'Description for question 1',
-      type: QuestionType.FreeText,
-    },
-    {
-      id: '2',
-      title: 'Question 2',
-      description: 'Description for question 2',
-      type: QuestionType.FreeText,
-    },
-  ],
-};
-
 const Questions = () => {
   const alert = useAlert();
   const { data: questions, isFetching: isFetchingQuestions } = useQuestions();
-  const methods = useForm<QuestionFormValues>({
-    defaultValues,
-  });
+  const methods = useForm<QuestionFormValues>();
   const {
     control,
     handleSubmit,
@@ -77,37 +58,46 @@ const Questions = () => {
   return (
     <PageWrapper>
       <Title>Questions</Title>
-      <FormProvider {...methods}>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          {isFetchingQuestions ? (
-            <CircularProgress />
-          ) : (
-            <Styled.QuestionsWrapper>
+      <Content>
+        <FormProvider {...methods}>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            {isFetchingQuestions ? (
+              <CircularProgress />
+            ) : (
+              <Styled.QuestionsWrapper>
+                {questionFields.map((field, id) => (
+                  <div key={field.id}>
+                    <Styled.Line>
+                      <Question index={id} />
+                      <Styled.IconButton onClick={() => remove(id)}>
+                        <Delete />
+                      </Styled.IconButton>
+                    </Styled.Line>
+                    <QuestionOptions questionIndex={id} />
+                  </div>
+                ))}
+              </Styled.QuestionsWrapper>
+            )}
+            <Stack
+              direction="row"
+              spacing={2}
+              marginTop={2}
+              justifyContent="center"
+            >
+              <Button
+                variant="outlined"
+                disabled={!isDirty || isSubmitting}
+                type="submit"
+              >
+                Submit
+              </Button>
               <Button onClick={() => append(defaultQuestion)}>
                 Add new question
               </Button>
-              {questionFields.map((field, id) => (
-                <Styled.QuestionWrapper key={field.id}>
-                  <Styled.Line>
-                    <Question index={id} />
-                    <Styled.IconButton onClick={() => remove(id)}>
-                      <Delete />
-                    </Styled.IconButton>
-                  </Styled.Line>
-                  <QuestionOptions questionIndex={id} />
-                </Styled.QuestionWrapper>
-              ))}
-            </Styled.QuestionsWrapper>
-          )}
-          <Styled.Submit
-            variant="outlined"
-            disabled={!isDirty || isSubmitting}
-            type="submit"
-          >
-            Submit
-          </Styled.Submit>
-        </form>
-      </FormProvider>
+            </Stack>
+          </form>
+        </FormProvider>
+      </Content>
     </PageWrapper>
   );
 };

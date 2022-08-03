@@ -1,4 +1,4 @@
-import { Button, IconButton as IButton, Paper } from '@mui/material';
+import { IconButton as IButton, Paper } from '@mui/material';
 import styled from 'styled-components';
 
 export const QuestionsWrapper = styled(Paper)`
@@ -6,7 +6,9 @@ export const QuestionsWrapper = styled(Paper)`
   flex-direction: column;
   max-width: 600px;
   flex: 1;
-  margin: 64px auto 0;
+  margin: 32px auto 0;
+  max-height: 500px;
+  overflow: scroll;
 
   > div {
     padding: 8px 8px 16px;
@@ -17,8 +19,6 @@ export const QuestionsWrapper = styled(Paper)`
     }
   }
 `;
-
-export const QuestionWrapper = styled.div``;
 
 export const Line = styled.div`
   display: flex;
@@ -35,9 +35,4 @@ export const Line = styled.div`
 
 export const IconButton = styled(IButton)`
   min-width: 50px;
-`;
-
-export const Submit = styled(Button)`
-  display: flex;
-  margin: 16px auto 0;
 `;

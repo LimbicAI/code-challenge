@@ -7,7 +7,7 @@ export const PageWrapper = styled.div`
 
   h1 {
     position: sticky;
-    top: 32px;
+    top: 48px;
     background-color: #fff;
     z-index: 2;
     padding-bottom: 24px;
@@ -18,7 +18,7 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 600px;
-  margin: 40px auto 0;
+  margin: 16px auto 0;
   flex: 1;
 `;
 
