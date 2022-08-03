@@ -1,6 +1,7 @@
 import React from 'react';
 import { Delete } from '@mui/icons-material';
-import { Button, CircularProgress, Typography } from '@mui/material';
+import { Button, CircularProgress } from '@mui/material';
+import Title from 'components/Title';
 import useAlert from 'hooks/useAlert';
 import {
   FormProvider,
@@ -8,6 +9,7 @@ import {
   useFieldArray,
   useForm,
 } from 'react-hook-form';
+import { PageWrapper } from 'styles/common';
 import { v4 } from 'uuid';
 
 import useQuestions from '../../data/useQuestions';
@@ -65,7 +67,7 @@ const Questions = () => {
     const body = values.questions.map((q) => ({ ...q, id: q.id ?? v4() }));
 
     try {
-      await put('http://localhost:8000/questions', body);
+      await put('questions', body);
       alert.onSuccess('Success');
     } catch {
       alert.onFailure('Something went wrong');
@@ -73,10 +75,8 @@ const Questions = () => {
   };
 
   return (
-    <Styled.Wrapper>
-      <Typography variant="h2" component="h1" align="center">
-        Questions
-      </Typography>
+    <PageWrapper>
+      <Title>Questions</Title>
       <FormProvider {...methods}>
         <form onSubmit={handleSubmit(onSubmit)}>
           {isFetchingQuestions ? (
@@ -108,7 +108,7 @@ const Questions = () => {
           </Styled.Submit>
         </form>
       </FormProvider>
-    </Styled.Wrapper>
+    </PageWrapper>
   );
 };
 

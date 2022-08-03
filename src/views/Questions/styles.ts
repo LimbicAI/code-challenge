@@ -37,12 +37,6 @@ export const IconButton = styled(IButton)`
   min-width: 50px;
 `;
 
-export const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 16px;
-`;
-
 export const Submit = styled(Button)`
   display: flex;
   margin: 16px auto 0;

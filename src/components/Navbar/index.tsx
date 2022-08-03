@@ -20,6 +20,7 @@ const NavBar = () => {
       <Link to="/" text="Auth" />
       <Link to="/questions" text="Questions" />
       <Link to="/responses" text="Responses" />
+      <Link to="/questionnaire" text="Questionnaire" />
     </Wrapper>
   );
 };

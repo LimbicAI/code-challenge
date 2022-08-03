@@ -15,8 +15,10 @@ export const checkStatus = (response: Response) => {
   throw error;
 };
 
+const getUrl = (url: string) => `http://localhost:8000/${url}`;
+
 export const post = async (url: string, data: Record<string, any>) => {
-  return fetch(url, {
+  return fetch(getUrl(url), {
     method: 'post',
     cache: 'no-store',
     headers,
@@ -25,7 +27,7 @@ export const post = async (url: string, data: Record<string, any>) => {
 };
 
 export const put = async (url: string, data: Record<string, any>) => {
-  return fetch(url, {
+  return fetch(getUrl(url), {
     method: 'put',
     cache: 'no-store',
     headers,
