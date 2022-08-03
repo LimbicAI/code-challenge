@@ -46,7 +46,7 @@ Your app should be able to complete the following tasks:
 
 ### Bonus Points
 
-The following tasks will **NOT** have a negative impact in how well you did, but you will get bonus points for completing any of them.
+The following tasks will **NOT** have a negative impact on how well you did, but you will get bonus points for completing any of them.
 
 - Ability to persist data locally
 - Ability to select the type of answer a question will have. Types like free text, single choice from a predefined list, multiple choice from a predefined list, etc.
