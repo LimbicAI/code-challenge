@@ -6,7 +6,7 @@ import useQuestions from 'data/useQuestions';
 import useAlert from 'hooks/useAlert';
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 import styled from 'styled-components';
-import { PageWrapper } from 'styles/common';
+import { Content, PageWrapper } from 'styles/common';
 import { QuestionType } from 'types/questions';
 import { QuestionnaireResponse, UserResponse } from 'types/responses';
 import { isOptionsQuestion } from 'utils';
@@ -93,26 +93,28 @@ const Questionnaire = () => {
 
   return (
     <PageWrapper>
-      {isFetching ? (
-        <CircularProgress />
-      ) : (
-        <FormProvider {...methods}>
-          <Title>Questionnaire</Title>
-          <StyledForm onSubmit={methods.handleSubmit(onSubmit)}>
-            <QuestionWrapper>
-              <Input name="name" label="Name" />
-            </QuestionWrapper>
-            {questions?.map((question) => (
-              <QuestionWrapper key={question.id}>
-                <FormQuestion question={question} />
+      <Content>
+        {isFetching ? (
+          <CircularProgress />
+        ) : (
+          <FormProvider {...methods}>
+            <Title>Questionnaire</Title>
+            <StyledForm onSubmit={methods.handleSubmit(onSubmit)}>
+              <QuestionWrapper>
+                <Input name="name" label="Name" />
               </QuestionWrapper>
-            ))}
-            <Button disabled={!isDirty || isSubmitting} type="submit">
-              Submit
-            </Button>
-          </StyledForm>
-        </FormProvider>
-      )}
+              {questions?.map((question) => (
+                <QuestionWrapper key={question.id}>
+                  <FormQuestion question={question} />
+                </QuestionWrapper>
+              ))}
+              <Button disabled={!isDirty || isSubmitting} type="submit">
+                Submit
+              </Button>
+            </StyledForm>
+          </FormProvider>
+        )}
+      </Content>
     </PageWrapper>
   );
 };

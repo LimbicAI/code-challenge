@@ -25,6 +25,7 @@ const ResponseQuestion = ({ userResponse }: Props) => {
           <FormGroup>
             {userResponse.options?.map(({ title }, i) => (
               <FormControlLabel
+                key={title}
                 control={
                   <Checkbox
                     inputProps={{ disabled: true }}
@@ -45,6 +46,7 @@ const ResponseQuestion = ({ userResponse }: Props) => {
           <FormGroup>
             {userResponse.options?.map(({ title }, i) => (
               <FormControlLabel
+                key={title}
                 control={
                   <Radio
                     inputProps={{ disabled: true }}

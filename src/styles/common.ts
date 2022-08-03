@@ -4,6 +4,14 @@ import styled from 'styled-components';
 export const PageWrapper = styled.div`
   padding: 16px;
   position: relative;
+
+  h1 {
+    position: sticky;
+    top: 32px;
+    background-color: #fff;
+    z-index: 2;
+    padding-bottom: 24px;
+  }
 `;
 
 export const Content = styled.div`

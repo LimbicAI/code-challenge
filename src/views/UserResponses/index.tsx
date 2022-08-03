@@ -17,16 +17,6 @@ const ResponseWrapper = styled.div`
   margin: 8px 0;
 `;
 
-const StyledWrapper = styled(PageWrapper)`
-  h1 {
-    position: sticky;
-    top: 32px;
-    background-color: #fff;
-    z-index: 2;
-    padding-bottom: 24px;
-  }
-`;
-
 const DeleteButton = styled(IconButton)`
   position: absolute;
   top: 8px;
@@ -48,7 +38,7 @@ const UserResponses = () => {
   }, [responses]);
 
   return (
-    <StyledWrapper>
+    <PageWrapper>
       <Title>{`${userName}'s responses`}</Title>
       <Content>
         {(responses[userName] || []).map((response, i) => (
@@ -81,7 +71,7 @@ const UserResponses = () => {
           </Card>
         ))}
       </Content>
-    </StyledWrapper>
+    </PageWrapper>
   );
 };
 
