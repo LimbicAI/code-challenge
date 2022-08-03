@@ -34,3 +34,12 @@ export const put = async (url: string, data: Record<string, any>) => {
     body: JSON.stringify(data),
   }).then(checkStatus);
 };
+
+export const del = async (url: string, data?: Record<string, any>) => {
+  return fetch(getUrl(url), {
+    method: 'delete',
+    cache: 'no-store',
+    headers,
+    body: JSON.stringify(data),
+  });
+};

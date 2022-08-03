@@ -11,6 +11,7 @@ import { QuestionType } from 'types/questions';
 import { QuestionnaireResponse, UserResponse } from 'types/responses';
 import { isOptionsQuestion } from 'utils';
 import { post } from 'utils/requests';
+import { v4 } from 'uuid';
 
 import FormQuestion from './components/FormQuestion';
 
@@ -78,6 +79,7 @@ const Questionnaire = () => {
     }) as UserResponse[];
     const body: QuestionnaireResponse = {
       responses,
+      id: v4(),
       date: new Date().toISOString(),
     };
 

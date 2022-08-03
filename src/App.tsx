@@ -3,6 +3,8 @@ import { Paper } from '@mui/material';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import styled from 'styled-components';
 import { SWRConfig } from 'swr';
+import Questionnaire from 'views/Questionnaire';
+import UserResponses from 'views/UserResponses';
 
 import NavBar from './components/Navbar';
 import WithAlert from './components/WithAlert';
@@ -35,6 +37,8 @@ function App() {
               <Route path="/" element={<SignIn />} />
               <Route path="/questions" element={<Questions />} />
               <Route path="/responses" element={<ResponsesView />} />
+              <Route path="/responses/:userName" element={<UserResponses />} />
+              <Route path="/questionnaire" element={<Questionnaire />} />
             </Routes>
           </StyledPaper>
         </WithAlert>
