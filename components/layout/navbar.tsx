@@ -9,7 +9,8 @@ export default function Navbar() {
     >
       <div className="basis-10/12 cursor-pointer">
         <Link href="/">
-          <Image src="/limbic.svg" alt="limbic logo" width={100} height={24} />
+          {/* <Image src="/limbic.svg" alt="limbic logo" width={100} height={24} /> */}
+          test
         </Link>
       </div>
 
