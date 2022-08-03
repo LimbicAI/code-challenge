@@ -85,13 +85,16 @@ const QuestionTypeSelect = ({ questionPath, ...rest }: Props) => {
           simpleOptions.includes(question.type) &&
           !question.options?.length
         ) {
-          setValue(`${questionPath}.options` as 'questions.0.options', [
-            ...(defaultChoiceQuestion.options as Option[]),
-          ]);
+          setValue(
+            `${questionPath}.options` as 'questions.0.options',
+            [...(defaultChoiceQuestion.options as Option[])],
+            { shouldDirty: true }
+          );
         }
         setValue(
           `${questionPath}.type` as 'questions.0.type',
-          e.target.value as unknown as QuestionType
+          e.target.value as unknown as QuestionType,
+          { shouldDirty: true }
         );
       }}
       {...rest}
