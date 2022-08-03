@@ -28,6 +28,7 @@ module.exports = {
     'react/destructuring-assignment': 0,
     'jsx-a11y/label-has-for': 0,
     'import/prefer-default-export': 0,
+    '@typescript-eslint/no-empty-function': 0,
     'prettier/prettier': [
       'warn',
       {

@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { SWRConfig } from 'swr';
 
 import NavBar from './components/Navbar';
+import WithAlert from './components/WithAlert';
 import SignIn from './views/Auth/SignIn';
 import Questions from './views/Questions';
 import ResponsesView from './views/Responses';
@@ -27,14 +28,16 @@ function App() {
       }}
     >
       <BrowserRouter>
-        <StyledPaper>
-          <NavBar />
-          <Routes>
-            <Route path="/" element={<SignIn />} />
-            <Route path="/questions" element={<Questions />} />
-            <Route path="/responses" element={<ResponsesView />} />
-          </Routes>
-        </StyledPaper>
+        <WithAlert>
+          <StyledPaper>
+            <NavBar />
+            <Routes>
+              <Route path="/" element={<SignIn />} />
+              <Route path="/questions" element={<Questions />} />
+              <Route path="/responses" element={<ResponsesView />} />
+            </Routes>
+          </StyledPaper>
+        </WithAlert>
       </BrowserRouter>
     </SWRConfig>
   );
