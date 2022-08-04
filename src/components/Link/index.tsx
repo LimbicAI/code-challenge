@@ -10,14 +10,17 @@ interface Props extends LinkProps {
 const StyledLink = styled(MuiLink)`
   display: flex;
   flex-shrink: 1;
+
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
 `;
 
 const Link = ({ to, text, ...rest }: Props) => {
   return (
     <StyledLink {...rest} as="span">
-      <RouterLink to={to} {...rest}>
-        {text}
-      </RouterLink>
+      <RouterLink to={to}>{text}</RouterLink>
     </StyledLink>
   );
 };

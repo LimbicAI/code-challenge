@@ -19,6 +19,11 @@ const Wrapper = styled(AppBar)`
   }
 `;
 
+const LogOutButton = styled(Button)`
+  color: #fff;
+  border-color: #fff;
+`;
+
 const NavBar = () => {
   const navigate = useNavigate();
   const authType = getAuthType();
@@ -39,8 +44,7 @@ const NavBar = () => {
             )}
           </Stack>
           <Stack>
-            <Button
-              color="secondary"
+            <LogOutButton
               variant="outlined"
               onClick={() => {
                 localStorage.removeItem(authKey);
@@ -48,7 +52,7 @@ const NavBar = () => {
               }}
             >
               Log out
-            </Button>
+            </LogOutButton>
           </Stack>
         </>
       ) : (
