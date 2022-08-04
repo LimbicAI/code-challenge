@@ -1,7 +1,6 @@
 import React from 'react';
-import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
-
+import Snackbar from '@mui/material/Snackbar';
 import AlertContext, { AlertParams } from 'components/AlertContext';
 
 const timeout = 5000;
@@ -9,6 +8,7 @@ const timeout = 5000;
 interface Props {
   children: React.ReactNode;
 }
+
 const WithAlert = ({ children }: Props) => {
   const [state, setState] = React.useState({
     isOpen: false,
@@ -74,7 +74,10 @@ const WithAlert = ({ children }: Props) => {
     <AlertContext.Provider value={{ onSuccess, onFailure }}>
       {children}
       <Snackbar open={state.isOpen} autoHideDuration={timeout} onClose={close}>
-        <MuiAlert onClose={close} severity={state.isError ? 'error' : 'success'}>
+        <MuiAlert
+          onClose={close}
+          severity={state.isError ? 'error' : 'success'}
+        >
           {state.message}
         </MuiAlert>
       </Snackbar>

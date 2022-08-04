@@ -29,41 +29,39 @@ const FormQuestion = ({ question }: Props) => {
   switch (question.type) {
     case QuestionType.Checkbox:
       return (
-        <>
-          <FormControl component="fieldset">
-            <Typography variant="caption">{label}</Typography>
-            <FormGroup>
-              {question.options?.map(({ title }, i) => (
-                <Controller
-                  key={title}
-                  name={`${question.id}[${i}]`}
-                  control={control}
-                  render={({ field }) => (
-                    <FormControlLabel
-                      control={
-                        <Checkbox
-                          {...field}
-                          onChange={(e) => {
-                            field.onChange(e);
-                            clearErrors(question.id);
-                          }}
-                          checked={!!field.value}
-                        />
-                      }
-                      label={title}
-                      value={title}
-                    />
-                  )}
-                />
-              ))}
-              {errors[question.id] && (
-                <FormHelperText error>
-                  {(errors[question.id] as unknown as FieldError).message}
-                </FormHelperText>
-              )}
-            </FormGroup>
-          </FormControl>
-        </>
+        <FormControl component="fieldset">
+          <Typography variant="caption">{label}</Typography>
+          <FormGroup>
+            {question.options?.map(({ title }, i) => (
+              <Controller
+                key={title}
+                name={`${question.id}[${i}]`}
+                control={control}
+                render={({ field }) => (
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        {...field}
+                        onChange={(e) => {
+                          field.onChange(e);
+                          clearErrors(question.id);
+                        }}
+                        checked={!!field.value}
+                      />
+                    }
+                    label={title}
+                    value={title}
+                  />
+                )}
+              />
+            ))}
+            {errors[question.id] && (
+              <FormHelperText error>
+                {(errors[question.id] as unknown as FieldError).message}
+              </FormHelperText>
+            )}
+          </FormGroup>
+        </FormControl>
       );
     case QuestionType.Radiobutton:
       return (
