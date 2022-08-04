@@ -7,6 +7,7 @@ const useResponses = () => {
 
   return {
     responses: data || {},
+    usernames: Object.keys(data || {}),
     ...rest,
   };
 };

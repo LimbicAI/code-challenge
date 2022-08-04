@@ -6,6 +6,7 @@ import {
   IconButton,
   Typography,
 } from '@mui/material';
+import EmptyPlaceholder from 'components/EmptyPlaceholder';
 import Title from 'components/Title';
 import useResponses from 'data/useResponses';
 import useAlert from 'hooks/useAlert';
@@ -22,7 +23,7 @@ const DeleteButton = styled(IconButton)`
 `;
 
 const ResponsesView = () => {
-  const { responses, isFetching, mutate } = useResponses();
+  const { responses, usernames, isFetching, mutate } = useResponses();
   const navigate = useNavigate();
   const alert = useAlert();
 
@@ -33,32 +34,41 @@ const ResponsesView = () => {
         {isFetching ? (
           <CircularProgress />
         ) : (
-          Object.keys(responses || {}).map((userName) => (
-            <Card key={userName}>
-              <DeleteButton
-                onClick={async () => {
-                  try {
-                    const newResponses = { ...responses };
-                    delete newResponses[userName];
-                    mutate(newResponses, false);
-                    await del(`responses/${userName}`);
-                    mutate();
-                    alert.onSuccess('Success');
-                  } catch {
-                    alert.onFailure('Something went wrong');
-                  }
-                }}
-              >
-                <Delete />
-              </DeleteButton>
-              <Typography>{userName}</Typography>
-              <Typography>
-                {responses?.[userName].length}{' '}
-                {pluralize('response', responses?.[userName].length)}
-              </Typography>
-              <Button onClick={() => navigate(userName)}>View responses</Button>
-            </Card>
-          ))
+          <>
+            {usernames.map((userName) => (
+              <Card key={userName}>
+                <DeleteButton
+                  onClick={async () => {
+                    try {
+                      const newResponses = { ...responses };
+                      delete newResponses[userName];
+                      mutate(newResponses, false);
+                      await del(`responses/${userName}`);
+                      mutate();
+                      alert.onSuccess('Success');
+                    } catch {
+                      alert.onFailure('Something went wrong');
+                    }
+                  }}
+                >
+                  <Delete />
+                </DeleteButton>
+                <Typography>{userName}</Typography>
+                <Typography>
+                  {responses?.[userName].length}{' '}
+                  {pluralize('response', responses?.[userName].length)}
+                </Typography>
+                <Button onClick={() => navigate(userName)}>
+                  View responses
+                </Button>
+              </Card>
+            ))}
+            {!usernames.length && (
+              <EmptyPlaceholder>
+                <Typography>No responses were recorded</Typography>
+              </EmptyPlaceholder>
+            )}
+          </>
         )}
       </Content>
     </PageWrapper>

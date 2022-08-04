@@ -86,6 +86,7 @@ const Questionnaire = () => {
     try {
       await post(`responses/${values.name}`, body);
       alert.onSuccess('Success');
+      methods.reset({}, { keepValues: true });
     } catch {
       alert.onFailure('Something went wrong');
     }

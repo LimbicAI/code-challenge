@@ -1,6 +1,7 @@
 import React from 'react';
 import { Delete } from '@mui/icons-material';
 import { Button, CircularProgress, Stack } from '@mui/material';
+import EmptyPlaceholder from 'components/EmptyPlaceholder';
 import Title from 'components/Title';
 import useAlert from 'hooks/useAlert';
 import {
@@ -50,6 +51,7 @@ const Questions = () => {
     try {
       await put('questions', body);
       alert.onSuccess('Success');
+      methods.reset({}, { keepValues: true });
     } catch {
       alert.onFailure('Something went wrong');
     }
@@ -64,19 +66,28 @@ const Questions = () => {
             {isFetchingQuestions ? (
               <CircularProgress />
             ) : (
-              <Styled.QuestionsWrapper>
-                {questionFields.map((field, id) => (
-                  <div key={field.id}>
-                    <Styled.Line>
-                      <Question index={id} />
-                      <Styled.IconButton onClick={() => remove(id)}>
-                        <Delete />
-                      </Styled.IconButton>
-                    </Styled.Line>
-                    <QuestionOptions questionIndex={id} />
-                  </div>
-                ))}
-              </Styled.QuestionsWrapper>
+              <>
+                <Styled.QuestionsWrapper>
+                  {questionFields.map((field, id) => (
+                    <div key={field.id}>
+                      <Styled.Line>
+                        <Question index={id} />
+                        <Styled.IconButton onClick={() => remove(id)}>
+                          <Delete />
+                        </Styled.IconButton>
+                      </Styled.Line>
+                      <QuestionOptions questionIndex={id} />
+                    </div>
+                  ))}
+                </Styled.QuestionsWrapper>
+                {!questionFields.length && (
+                  <EmptyPlaceholder>
+                    {isDirty
+                      ? `You've removed all question. Submit form to keep your changes`
+                      : 'No questions. To create one, press button below'}
+                  </EmptyPlaceholder>
+                )}
+              </>
             )}
             <Stack
               direction="row"
