@@ -1,6 +1,6 @@
 import React from 'react';
 import { MenuItem, MenuItemProps, SelectProps, TextField } from '@mui/material';
-import { Controller, FieldValues, useFormContext } from 'react-hook-form';
+import { Controller, FieldValues } from 'react-hook-form';
 
 import { RHFInputProps } from '../Input';
 
@@ -20,12 +20,9 @@ function Select<T extends FieldValues>({
   options,
   ...rest
 }: RHFSelectProps<T>) {
-  const { control } = useFormContext<T>();
-
   return (
     <Controller
       name={name}
-      control={control}
       render={({ field: { onChange, value } }) => (
         <TextField
           size="small"

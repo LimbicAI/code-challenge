@@ -6,6 +6,7 @@ export const QuestionsWrapper = styled(Paper)`
   flex-direction: column;
   max-width: 600px;
   flex: 1;
+  margin-bottom: 16px;
 
   > div {
     padding: 8px 8px 16px;

@@ -19,7 +19,6 @@ interface Props {
 
 const FormQuestion = ({ question }: Props) => {
   const {
-    control,
     formState: { errors },
     clearErrors,
   } = useFormContext();
@@ -36,7 +35,6 @@ const FormQuestion = ({ question }: Props) => {
               <Controller
                 key={title}
                 name={`${question.id}[${i}]`}
-                control={control}
                 render={({ field }) => (
                   <FormControlLabel
                     control={
@@ -70,7 +68,6 @@ const FormQuestion = ({ question }: Props) => {
           <Controller
             key={question.title}
             name={question.id as string}
-            control={control}
             render={({ field }) => (
               <RadioGroup {...field} value={field.value || ''}>
                 {question.options?.map(({ title }) => (

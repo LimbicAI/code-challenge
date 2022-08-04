@@ -2,7 +2,7 @@ import { Card as MuiCard } from '@mui/material';
 import styled from 'styled-components';
 
 export const PageWrapper = styled.div`
-  padding: 16px;
+  padding: 16px 16px 0;
   position: relative;
   display: flex;
   flex-direction: column;

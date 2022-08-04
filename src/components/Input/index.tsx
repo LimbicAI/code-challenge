@@ -1,6 +1,6 @@
 import React from 'react';
 import TextField, { TextFieldProps } from '@mui/material/TextField';
-import { Controller, FieldValues, Path, useFormContext } from 'react-hook-form';
+import { Controller, FieldValues, Path } from 'react-hook-form';
 
 export interface RHFInputProps<T> extends Omit<TextFieldProps, 'name'> {
   name: Path<T>;
@@ -12,12 +12,9 @@ function Input<T extends FieldValues>({
   helperText,
   ...rest
 }: RHFInputProps<T>) {
-  const { control } = useFormContext<T>();
-
   return (
     <Controller
       name={name}
-      control={control}
       render={({
         field: { onChange, value, ref, onBlur },
         fieldState: { error },
