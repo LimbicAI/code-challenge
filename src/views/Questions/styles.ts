@@ -40,11 +40,3 @@ export const Form = styled.form`
   flex-direction: column;
   flex: 1;
 `;
-
-export const Snackbar = styled.div`
-  position: sticky;
-  bottom: 0px;
-  padding-bottom: 24px;
-  z-index: 2;
-  background-color: #fff;
-`;

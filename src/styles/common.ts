@@ -37,3 +37,11 @@ export const Card = styled(MuiCard)`
   flex-direction: column;
   position: relative;
 `;
+
+export const Snackbar = styled.div`
+  position: sticky;
+  bottom: 0px;
+  padding-bottom: 24px;
+  z-index: 2;
+  background-color: #fff;
+`;

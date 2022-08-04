@@ -12,7 +12,7 @@ import {
   useFieldArray,
   useForm,
 } from 'react-hook-form';
-import { Content, PageWrapper } from 'styles/common';
+import { Content, PageWrapper, Snackbar } from 'styles/common';
 import { QuestionFormValues } from 'types/questions';
 import { put } from 'utils/requests';
 import { v4 } from 'uuid';
@@ -98,7 +98,7 @@ const Questions = () => {
                 )}
               </>
             )}
-            <Styled.Snackbar>
+            <Snackbar>
               <Stack
                 direction="row"
                 spacing={2}
@@ -116,7 +116,7 @@ const Questions = () => {
                   Add new question
                 </Button>
               </Stack>
-            </Styled.Snackbar>
+            </Snackbar>
           </Styled.Form>
         </FormProvider>
       </Content>

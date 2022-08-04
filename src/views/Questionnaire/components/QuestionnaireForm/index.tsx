@@ -1,11 +1,12 @@
-import React, { useMemo } from 'react';
-import { Button } from '@mui/material';
+import React from 'react';
+import { Button, Stack } from '@mui/material';
 import Input from 'components/Input';
 import Title from 'components/Title';
 import useQuestions from 'data/useQuestions';
 import useAlert from 'hooks/useAlert';
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 import styled from 'styled-components';
+import { Snackbar } from 'styles/common';
 import { QuestionType } from 'types/questions';
 import { QuestionnaireResponse, UserResponse } from 'types/responses';
 import { requiredMessage } from 'utils/constants';
@@ -113,9 +114,18 @@ const QuestionnaireForm = () => {
             <FormQuestion question={question} />
           </QuestionWrapper>
         ))}
-        <Button disabled={!isDirty || isSubmitting} type="submit">
-          Submit
-        </Button>
+        <Snackbar>
+          <Stack
+            direction="row"
+            spacing={2}
+            marginTop={2}
+            justifyContent="center"
+          >
+            <Button disabled={!isDirty || isSubmitting} type="submit">
+              Submit
+            </Button>
+          </Stack>
+        </Snackbar>
       </StyledForm>
     </FormProvider>
   );
