@@ -63,6 +63,7 @@ const ResponseQuestion = ({ userResponse }: Props) => {
     default:
       return (
         <TextField
+          fullWidth
           label={userResponse.title}
           value={userResponse.userValue}
           inputProps={{ disabled: true }}

@@ -31,6 +31,5 @@ export const Card = styled(MuiCard)`
   margin-bottom: 16px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   position: relative;
 `;
