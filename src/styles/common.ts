@@ -20,6 +20,10 @@ export const Content = styled.div`
   max-width: 600px;
   margin: 16px auto 0;
   flex: 1;
+
+  .MuiCircularProgress-root {
+    margin: 0 auto;
+  }
 `;
 
 export const Card = styled(MuiCard)`
