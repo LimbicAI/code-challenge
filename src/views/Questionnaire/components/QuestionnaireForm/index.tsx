@@ -54,7 +54,12 @@ const QuestionnaireForm = () => {
           return {
             ...schemaInProgress,
             [id]: isMultipleOptions
-              ? yup.array().required(requiredMessage)
+              ? yup
+                  .array()
+                  .transform((value) =>
+                    value.length > 1 ? value.filter((v: string) => !!v) : value
+                  )
+                  .min(1, requiredMessage)
               : yup.string().min(10).required(requiredMessage),
           };
         }
@@ -71,9 +76,7 @@ const QuestionnaireForm = () => {
       questions.reduce(
         (pv, cv) => ({
           ...pv,
-          [cv.id as string]: isOptionsQuestion(cv)
-            ? cv.options?.map(() => false)
-            : undefined,
+          [cv.id as string]: undefined,
         }),
         {}
       ),

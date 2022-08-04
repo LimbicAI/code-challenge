@@ -44,6 +44,11 @@ const FormQuestion = ({ question }: Props) => {
                   )}
                 />
               ))}
+              {errors[question.id] && (
+                <FormHelperText error>
+                  {(errors[question.id] as unknown as FieldError).message}
+                </FormHelperText>
+              )}
             </FormGroup>
           </FormControl>
         </>
