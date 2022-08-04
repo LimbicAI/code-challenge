@@ -40,22 +40,8 @@ const QuestionWrapper = styled.div`
 const QuestionnaireForm = () => {
   const { questions } = useQuestions();
 
-  const defaultValues = useMemo(
-    () =>
-      questions.reduce(
-        (pv, cv) => ({
-          ...pv,
-          [cv.id as string]: undefined,
-        }),
-        {}
-      ),
-    [questions]
-  );
-
   const alert = useAlert();
-  const methods = useForm<FormValues>({
-    defaultValues,
-  });
+  const methods = useForm<FormValues>();
   const {
     formState: { isDirty, isSubmitting },
   } = methods;
