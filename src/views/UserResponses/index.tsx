@@ -32,7 +32,7 @@ const UserResponses = () => {
   const userName = params.userName as string;
 
   React.useEffect(() => {
-    if (responses && !isFetching && !responses[userName]) {
+    if (responses && !isFetching && !responses[userName]?.length) {
       navigate('/responses');
     }
   }, [responses]);

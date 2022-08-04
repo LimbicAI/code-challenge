@@ -58,9 +58,11 @@ const ResponsesView = () => {
                   {responses?.[userName].length}{' '}
                   {pluralize('response', responses?.[userName].length)}
                 </Typography>
-                <Button onClick={() => navigate(userName)}>
-                  View responses
-                </Button>
+                {responses?.[userName].length > 0 && (
+                  <Button onClick={() => navigate(userName)}>
+                    View responses
+                  </Button>
+                )}
               </Card>
             ))}
             {!usernames.length && (
