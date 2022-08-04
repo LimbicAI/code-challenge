@@ -15,7 +15,8 @@ export const checkStatus = (response: Response) => {
   throw error;
 };
 
-const getUrl = (url: string) => `http://localhost:8000/${url}`;
+const getUrl = (url: string) =>
+  `${process.env.REACT_APP_PUBLIC_API_PATH}${url}`;
 
 export const post = async (url: string, data: Record<string, any>) => {
   return fetch(getUrl(url), {

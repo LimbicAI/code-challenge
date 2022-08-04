@@ -25,9 +25,10 @@ function App() {
     <SWRConfig
       value={{
         fetcher: (resource, init) =>
-          fetch(`http://localhost:8000/${resource}`, init).then((res) =>
-            res.json()
-          ),
+          fetch(
+            `${process.env.REACT_APP_PUBLIC_API_PATH}${resource}`,
+            init
+          ).then((res) => res.json()),
       }}
     >
       <BrowserRouter>
