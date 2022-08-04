@@ -21,6 +21,7 @@ const FormQuestion = ({ question }: Props) => {
   const {
     control,
     formState: { errors },
+    clearErrors,
   } = useFormContext();
 
   const label = question.required ? `${question.title}*` : question.title;
@@ -39,7 +40,16 @@ const FormQuestion = ({ question }: Props) => {
                   control={control}
                   render={({ field }) => (
                     <FormControlLabel
-                      control={<Checkbox {...field} checked={!!field.value} />}
+                      control={
+                        <Checkbox
+                          {...field}
+                          onChange={(e) => {
+                            field.onChange(e);
+                            clearErrors(question.id);
+                          }}
+                          checked={!!field.value}
+                        />
+                      }
                       label={title}
                       value={title}
                     />
