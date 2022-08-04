@@ -25,7 +25,7 @@ import { getDefaultQuestion } from './utils';
 
 const Questions = () => {
   const alert = useAlert();
-  const { questions, isFetching: isFetchingQuestions } = useQuestions();
+  const { questions, isFetching: isFetchingQuestions, mutate } = useQuestions();
   const methods = useForm<QuestionFormValues>();
   const {
     control,
@@ -53,6 +53,7 @@ const Questions = () => {
     try {
       await put('questions', body);
       alert.onSuccess('Success');
+      mutate();
       methods.reset({}, { keepValues: true });
     } catch {
       alert.onFailure('Something went wrong');
@@ -89,7 +90,7 @@ const Questions = () => {
                 {!questionFields.length && (
                   <EmptyPlaceholder>
                     {isDirty
-                      ? `You've removed all question. Submit form to keep your changes`
+                      ? `You've removed all questions. Submit form to keep your changes`
                       : 'No questions. To create one, press button below'}
                   </EmptyPlaceholder>
                 )}

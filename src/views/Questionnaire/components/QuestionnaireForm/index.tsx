@@ -60,7 +60,7 @@ const QuestionnaireForm = () => {
                     value.length > 1 ? value.filter((v: string) => !!v) : value
                   )
                   .min(1, requiredMessage)
-              : yup.string().min(10).required(requiredMessage),
+              : yup.string().required(requiredMessage),
           };
         }
         return {

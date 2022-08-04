@@ -23,6 +23,8 @@ const FormQuestion = ({ question }: Props) => {
     formState: { errors },
   } = useFormContext();
 
+  const label = question.required ? `${question.title}*` : question.title;
+
   switch (question.type) {
     case QuestionType.Checkbox:
       return (
@@ -38,7 +40,7 @@ const FormQuestion = ({ question }: Props) => {
                   render={({ field }) => (
                     <FormControlLabel
                       control={<Checkbox {...field} checked={!!field.value} />}
-                      label={title}
+                      label={label}
                       value={title}
                     />
                   )}
@@ -67,7 +69,7 @@ const FormQuestion = ({ question }: Props) => {
                   <FormControlLabel
                     key={`${question.id}${title}`}
                     control={<Radio />}
-                    label={title}
+                    label={label}
                     value={title}
                   />
                 ))}
@@ -82,9 +84,7 @@ const FormQuestion = ({ question }: Props) => {
         </FormControl>
       );
     default:
-      return (
-        <Input fullWidth name={question.id as string} label={question.title} />
-      );
+      return <Input fullWidth name={question.id as string} label={label} />;
   }
 };
 
