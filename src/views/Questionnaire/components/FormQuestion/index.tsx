@@ -30,7 +30,7 @@ const FormQuestion = ({ question }: Props) => {
       return (
         <>
           <FormControl component="fieldset">
-            <Typography variant="caption">{question.title}</Typography>
+            <Typography variant="caption">{label}</Typography>
             <FormGroup>
               {question.options?.map(({ title }, i) => (
                 <Controller
@@ -40,7 +40,7 @@ const FormQuestion = ({ question }: Props) => {
                   render={({ field }) => (
                     <FormControlLabel
                       control={<Checkbox {...field} checked={!!field.value} />}
-                      label={label}
+                      label={title}
                       value={title}
                     />
                   )}
@@ -58,7 +58,7 @@ const FormQuestion = ({ question }: Props) => {
     case QuestionType.Radiobutton:
       return (
         <FormControl component="fieldset">
-          <Typography variant="caption">{question.title}</Typography>
+          <Typography variant="caption">{label}</Typography>
           <Controller
             key={question.title}
             name={question.id as string}
@@ -69,7 +69,7 @@ const FormQuestion = ({ question }: Props) => {
                   <FormControlLabel
                     key={`${question.id}${title}`}
                     control={<Radio />}
-                    label={label}
+                    label={title}
                     value={title}
                   />
                 ))}
