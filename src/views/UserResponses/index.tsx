@@ -6,6 +6,7 @@ import useResponses from 'data/useResponses';
 import format from 'date-fns/format';
 import parseISO from 'date-fns/parseISO';
 import useAlert from 'hooks/useAlert';
+import useTitle from 'hooks/useTitle';
 import { useNavigate, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { Card, Content, PageWrapper } from 'styles/common';
@@ -30,6 +31,8 @@ const UserResponses = () => {
   const navigate = useNavigate();
 
   const userName = params.userName as string;
+
+  useTitle(`${userName}'s Responses`);
 
   React.useEffect(() => {
     if (responses && !isFetching && !responses[userName]?.length) {

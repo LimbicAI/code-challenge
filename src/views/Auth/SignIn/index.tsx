@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '@mui/material';
 import Title from 'components/Title';
+import useTitle from 'hooks/useTitle';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { PageWrapper } from 'styles/common';
@@ -24,6 +25,7 @@ const Card = styled.div`
 
 const SignIn = () => {
   const navigate = useNavigate();
+  useTitle('Auth');
 
   return (
     <PageWrapper>

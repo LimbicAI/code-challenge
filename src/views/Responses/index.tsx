@@ -10,6 +10,7 @@ import EmptyPlaceholder from 'components/EmptyPlaceholder';
 import Title from 'components/Title';
 import useResponses from 'data/useResponses';
 import useAlert from 'hooks/useAlert';
+import useTitle from 'hooks/useTitle';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { Card, Content, PageWrapper } from 'styles/common';
@@ -23,6 +24,7 @@ const DeleteButton = styled(IconButton)`
 `;
 
 const ResponsesView = () => {
+  useTitle('User Responses');
   const { responses, usernames, isFetching, mutate } = useResponses();
   const navigate = useNavigate();
   const alert = useAlert();

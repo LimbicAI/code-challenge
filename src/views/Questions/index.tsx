@@ -4,6 +4,7 @@ import { Button, CircularProgress, Stack } from '@mui/material';
 import EmptyPlaceholder from 'components/EmptyPlaceholder';
 import Title from 'components/Title';
 import useAlert from 'hooks/useAlert';
+import useTitle from 'hooks/useTitle';
 import {
   FormProvider,
   SubmitHandler,
@@ -24,6 +25,7 @@ import * as Styled from './styles';
 import { getDefaultQuestion } from './utils';
 
 const Questions = () => {
+  useTitle('Questions');
   const alert = useAlert();
   const { questions, isFetching: isFetchingQuestions, mutate } = useQuestions();
   const methods = useForm<QuestionFormValues>();
