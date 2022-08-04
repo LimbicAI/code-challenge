@@ -67,7 +67,7 @@ const Questions = () => {
       <Title>Questions</Title>
       <Content>
         <FormProvider {...methods}>
-          <form onSubmit={handleSubmit(onSubmit)}>
+          <Styled.Form onSubmit={handleSubmit(onSubmit)}>
             {isFetchingQuestions ? (
               <CircularProgress />
             ) : (
@@ -98,24 +98,26 @@ const Questions = () => {
                 )}
               </>
             )}
-            <Stack
-              direction="row"
-              spacing={2}
-              marginTop={2}
-              justifyContent="center"
-            >
-              <Button
-                variant="outlined"
-                disabled={!isDirty || isSubmitting}
-                type="submit"
+            <Styled.Snackbar>
+              <Stack
+                direction="row"
+                spacing={2}
+                marginTop={2}
+                justifyContent="center"
               >
-                Submit
-              </Button>
-              <Button onClick={() => append(getDefaultQuestion())}>
-                Add new question
-              </Button>
-            </Stack>
-          </form>
+                <Button
+                  variant="outlined"
+                  disabled={!isDirty || isSubmitting}
+                  type="submit"
+                >
+                  Submit
+                </Button>
+                <Button onClick={() => append(getDefaultQuestion())}>
+                  Add new question
+                </Button>
+              </Stack>
+            </Styled.Snackbar>
+          </Styled.Form>
         </FormProvider>
       </Content>
     </PageWrapper>

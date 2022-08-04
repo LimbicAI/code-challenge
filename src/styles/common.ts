@@ -4,6 +4,9 @@ import styled from 'styled-components';
 export const PageWrapper = styled.div`
   padding: 16px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 
   h1 {
     position: sticky;
@@ -20,6 +23,7 @@ export const Content = styled.div`
   max-width: 600px;
   margin: 16px auto 0;
   flex: 1;
+  width: 100%;
 
   .MuiCircularProgress-root {
     margin: 0 auto;

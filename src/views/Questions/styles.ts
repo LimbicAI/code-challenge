@@ -6,9 +6,6 @@ export const QuestionsWrapper = styled(Paper)`
   flex-direction: column;
   max-width: 600px;
   flex: 1;
-  margin: 32px auto 0;
-  max-height: 500px;
-  overflow: scroll;
 
   > div {
     padding: 8px 8px 16px;
@@ -35,4 +32,18 @@ export const Line = styled.div`
 
 export const IconButton = styled(IButton)`
   min-width: 50px;
+`;
+
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+`;
+
+export const Snackbar = styled.div`
+  position: sticky;
+  bottom: 0px;
+  padding-bottom: 24px;
+  z-index: 2;
+  background-color: #fff;
 `;
