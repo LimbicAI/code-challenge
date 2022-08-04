@@ -21,7 +21,7 @@ import QuestionOptions from './components/QuestionOptions';
 import QuestionRequired from './components/QuestionRequired';
 import QuestionTypeSelect from './components/QuestionTypeSelect';
 import * as Styled from './styles';
-import { defaultQuestion } from './utils';
+import { getDefaultQuestion } from './utils';
 
 const Questions = () => {
   const alert = useAlert();
@@ -108,7 +108,7 @@ const Questions = () => {
               >
                 Submit
               </Button>
-              <Button onClick={() => append(defaultQuestion)}>
+              <Button onClick={() => append(getDefaultQuestion())}>
                 Add new question
               </Button>
             </Stack>
