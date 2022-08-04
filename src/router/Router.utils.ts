@@ -2,13 +2,19 @@ const pathResolver = (modulePath: string) => modulePath
 
 export const appRoutes = {
   root: () => '/',
-  about: () => pathResolver('/about'),
+  about: () => pathResolver('/question'),
+  signin: () => pathResolver('/auth/sign-in'),
+  adminSignin: () => pathResolver('/auth/admin-sign-in')
 }
 
 export const appRoutePaths: {
   root: string
-  about: string
+  question: string
+  signin: string
+  adminSignin: string
 } = {
   root: appRoutes.root(),
-  about: appRoutes.about(),
+  question: appRoutes.about(),
+  signin: appRoutes.signin(),
+  adminSignin: appRoutes.adminSignin()
 }

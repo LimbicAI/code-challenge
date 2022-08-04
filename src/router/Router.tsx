@@ -1,15 +1,26 @@
-import { FC } from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route} from 'react-router-dom'
 import { appRoutePaths } from './Router.utils'
 
-import Home from '../pages/home'
-import About from '../pages/about'
+import Home from 'pages/Home/home'
+import Question from 'pages/Question/question'
+import AdminSignin from 'pages/Auth/Login/Admin/SignIn'
+import UserSignin from 'pages/Auth/Login/User/Signin'
 
-const Router: FC = () => (
-  <Routes>
-    <Route path={appRoutePaths.root} element={<Home />} />
-    <Route path={appRoutePaths.about} element={<About />} />
-  </Routes>
-)
+const Router = () => {
+  
+  return (
+    <Routes>
+      <Route path={appRoutePaths.root} element={<Home />} />
+      <Route path={appRoutePaths.question} element={<Question />} />
+      <Route path={appRoutePaths.signin} element={<UserSignin />} />
+      <Route path={appRoutePaths.adminSignin} element={<AdminSignin />} />
 
-export default Router
+    </Routes>
+  )
+
+}
+
+
+export default Router;
+
+

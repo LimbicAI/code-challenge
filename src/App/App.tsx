@@ -2,7 +2,7 @@ import { FC } from 'react'
 import { Router as BrowserRouter } from 'react-router-dom'
 import history from '../utils/history'
 import { getBaseUrlPath } from '../utils/location'
-import Router from '../router/Router'
+import Router from 'router/Router'
 
 const App: FC = () => {
   const basename = getBaseUrlPath()

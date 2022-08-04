@@ -1,0 +1,10 @@
+.mainform{
+    display: flex;
+    justify-content: center;
+
+    &__admin_btn{
+        display: flex;
+        justify-content: flex-end;
+        padding-top:  1rem;
+    }
+}

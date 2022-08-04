@@ -8,4 +8,68 @@ body {
   font-family: Imported, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  .error {
+    color: red;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 13px;
+    padding-bottom: 1rem;
+  }
+
+  .pl {
+    padding-left: 1rem;
+  }
+}
+
+.question {
+  display: flex;
+  padding: 1%;
+  margin-top: 2rem;
+  flex-direction: row;
+  gap: 3%;
+  &__btn {
+    display: flex;
+    flex-direction: column;
+    gap: 15%;
+    margin-top: 1.5rem;
+  }
+
+  &__del--btn {
+    background: rgb(246, 13, 13);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    cursor: pointer;
+  }
+}
+
+.add__btn {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  right: 10rem;
+  top: 2rem;
+}
+
+.modal {
+  &__text {
+    width: 400px;
+    height: 300px;
+    &__add {
+      display: flex;
+      justify-content: center;
+      padding-top: 3%;
+    }
+  }
+  &__title {
+    text-align: center;
+  }
+
+  &__close{
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+  }
 }
