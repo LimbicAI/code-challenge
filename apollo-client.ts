@@ -5,7 +5,9 @@ const client = new ApolloClient({
   headers: {
     'x-hasura-admin-secret': process.env.NEXT_PUBLIC_GRAPHQL_SECRET,
   },
-  cache: new InMemoryCache(),
+  cache: new InMemoryCache({
+    addTypename: false,
+  }),
 });
 
 export default client;

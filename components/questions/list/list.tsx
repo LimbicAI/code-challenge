@@ -1,19 +1,26 @@
 import { useQuery } from '@apollo/client';
 import GET_QUESTIONS from './query';
+import Table from '../../ui/table';
 
 export default function QuestionsList() {
-  const { data, loading, error } = useQuery(GET_QUESTIONS);
-  console.log('data', data);
+  const { data: { questions } = [], loading, error } = useQuery(GET_QUESTIONS);
 
-  // if (loading) {
-  //   return 'Loading...';
-  // }
+  if (loading) {
+    return 'Loading...';
+  }
 
   if (error) {
     console.error(error);
     return 'error....';
   }
+  console.log('data222222', questions);
 
-  console.log('data222222', data);
-  return <div> Question list</div>;
+  const handleEdit = (row) => {
+    console.log('row', row);
+  };
+
+  const columns = ['#', 'Type', 'Text'];
+  return (
+    <Table columns={columns} data={questions} handleEdit={handleEdit} />
+  );
 }
