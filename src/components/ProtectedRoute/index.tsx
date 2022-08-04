@@ -8,7 +8,7 @@ interface Props {
   isProtected?: boolean;
 }
 
-const ProtectedRoute = ({ children, isProtected }: Props): JSX.Element => {
+const ProtectedRoute = ({ children, isProtected }: Props) => {
   const authType = getAuthType();
 
   if (!authType) {
