@@ -1,8 +1,7 @@
 import React from 'react';
+import Input from 'components/Input';
 import { useFormContext, useWatch } from 'react-hook-form';
-
-import Input from '../../../../components/Input';
-import { QuestionFormValues, QuestionType } from '../../../../types/questions';
+import { QuestionFormValues, QuestionType } from 'types/questions';
 
 interface Props {
   index: number;

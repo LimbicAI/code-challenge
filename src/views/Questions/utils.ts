@@ -1,6 +1,5 @@
+import { Question, QuestionType } from 'types/questions';
 import { v4 } from 'uuid';
-
-import { Question, QuestionType } from '../../types/questions';
 
 export const getDefaultQuestion: () => Question = () => ({
   type: QuestionType.FreeText,

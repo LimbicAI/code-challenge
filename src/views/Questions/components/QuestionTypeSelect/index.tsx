@@ -5,16 +5,11 @@ import {
   HdrStrong,
   TextFields,
 } from '@mui/icons-material';
+import Select from 'components/Select';
 import { Path, useFormContext } from 'react-hook-form';
 import styled from 'styled-components';
-
-import Select from '../../../../components/Select';
-import {
-  Option,
-  QuestionFormValues,
-  QuestionType,
-} from '../../../../types/questions';
-import { defaultChoiceQuestion } from '../../utils';
+import { Option, QuestionFormValues, QuestionType } from 'types/questions';
+import { defaultChoiceQuestion } from 'views/Questions/utils';
 
 interface Props {
   questionPath: Path<QuestionFormValues>;

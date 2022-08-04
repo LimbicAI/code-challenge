@@ -3,6 +3,7 @@ import { Delete } from '@mui/icons-material';
 import { Button, CircularProgress, Stack } from '@mui/material';
 import EmptyPlaceholder from 'components/EmptyPlaceholder';
 import Title from 'components/Title';
+import useQuestions from 'data/useQuestions';
 import useAlert from 'hooks/useAlert';
 import useTitle from 'hooks/useTitle';
 import {
@@ -12,11 +13,10 @@ import {
   useForm,
 } from 'react-hook-form';
 import { Content, PageWrapper } from 'styles/common';
+import { QuestionFormValues } from 'types/questions';
+import { put } from 'utils/requests';
 import { v4 } from 'uuid';
 
-import useQuestions from '../../data/useQuestions';
-import { QuestionFormValues } from '../../types/questions';
-import { put } from '../../utils/requests';
 import Question from './components/Question';
 import QuestionOptions from './components/QuestionOptions';
 import QuestionRequired from './components/QuestionRequired';

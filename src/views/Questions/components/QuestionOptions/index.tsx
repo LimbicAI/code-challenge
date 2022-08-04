@@ -3,11 +3,10 @@ import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { Button, IconButton } from '@mui/material';
+import Input from 'components/Input';
 import { useFieldArray, useFormContext, useWatch } from 'react-hook-form';
 import styled from 'styled-components';
-
-import Input from '../../../../components/Input';
-import { QuestionFormValues, QuestionType } from '../../../../types/questions';
+import { QuestionFormValues, QuestionType } from 'types/questions';
 
 interface Props {
   questionIndex: number;
