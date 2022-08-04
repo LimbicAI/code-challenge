@@ -3,7 +3,6 @@ import { useFormContext, useWatch } from 'react-hook-form';
 
 import Input from '../../../../components/Input';
 import { QuestionFormValues, QuestionType } from '../../../../types/questions';
-import QuestionTypeSelect from '../QuestionTypeSelect';
 
 interface Props {
   index: number;
@@ -17,27 +16,21 @@ const QuestionComponent = ({ index }: Props) => {
     case QuestionType.Checkbox:
     case QuestionType.Radiobutton:
       return (
-        <>
-          <Input<QuestionFormValues>
-            name={`questions.${index}.title`}
-            variant="outlined"
-            label="Question title"
-          />
-          <QuestionTypeSelect questionPath={`questions.${index}`} />
-        </>
+        <Input<QuestionFormValues>
+          name={`questions.${index}.title`}
+          variant="outlined"
+          label="Question title"
+        />
       );
     case QuestionType.FreeText:
     case QuestionType.Number:
     default:
       return (
-        <>
-          <Input<QuestionFormValues>
-            name={`questions.${index}.title`}
-            variant="outlined"
-            label="Question title"
-          />
-          <QuestionTypeSelect questionPath={`questions.${index}`} />
-        </>
+        <Input<QuestionFormValues>
+          name={`questions.${index}.title`}
+          variant="outlined"
+          label="Question title"
+        />
       );
   }
 };

@@ -18,6 +18,8 @@ import { QuestionFormValues } from '../../types/questions';
 import { put } from '../../utils/requests';
 import Question from './components/Question';
 import QuestionOptions from './components/QuestionOptions';
+import QuestionRequired from './components/QuestionRequired';
+import QuestionTypeSelect from './components/QuestionTypeSelect';
 import * as Styled from './styles';
 import { defaultQuestion } from './utils';
 
@@ -72,10 +74,14 @@ const Questions = () => {
                     <div key={field.id}>
                       <Styled.Line>
                         <Question index={id} />
+                        <QuestionTypeSelect questionPath={`questions.${id}`} />
+                      </Styled.Line>
+                      <Stack direction="row" justifyContent="space-between">
+                        <QuestionRequired questionPath={`questions.${id}`} />
                         <Styled.IconButton onClick={() => remove(id)}>
                           <Delete />
                         </Styled.IconButton>
-                      </Styled.Line>
+                      </Stack>
                       <QuestionOptions questionIndex={id} />
                     </div>
                   ))}

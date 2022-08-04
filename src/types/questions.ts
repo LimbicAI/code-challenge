@@ -15,6 +15,7 @@ export interface Question {
   id?: string;
   title: string;
   description?: string;
+  required?: boolean;
 }
 
 export type Questionnaire = Question[];
