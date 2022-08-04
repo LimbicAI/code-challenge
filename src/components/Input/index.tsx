@@ -18,15 +18,9 @@ function Input<T extends FieldValues>({
     <Controller
       name={name}
       control={control}
-      rules={{
-        required: {
-          value: !!rest.required,
-          message: 'Field is required',
-        },
-      }}
       render={({
         field: { onChange, value, ref, onBlur },
-        fieldState: { error, isTouched },
+        fieldState: { error },
       }) => (
         <TextField
           inputRef={ref}
@@ -35,10 +29,8 @@ function Input<T extends FieldValues>({
             onChange(e);
           }}
           value={value || ''}
-          error={isTouched && !!error}
-          helperText={
-            isTouched && error ? error.message || error.type : helperText
-          }
+          error={!!error}
+          helperText={error ? error.message || error.type : helperText}
           {...rest}
         />
       )}

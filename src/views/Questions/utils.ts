@@ -4,6 +4,7 @@ export const defaultQuestion: Question = {
   type: QuestionType.FreeText,
   title: 'New Question',
   description: '',
+  id: '',
 };
 
 export const defaultChoiceQuestion: Question = {

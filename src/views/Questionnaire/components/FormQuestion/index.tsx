@@ -4,12 +4,13 @@ import {
   FormControl,
   FormControlLabel,
   FormGroup,
+  FormHelperText,
   Radio,
   RadioGroup,
   Typography,
 } from '@mui/material';
 import Input from 'components/Input';
-import { Controller, useFormContext } from 'react-hook-form';
+import { Controller, FieldError, useFormContext } from 'react-hook-form';
 import { Question, QuestionType } from 'types/questions';
 
 interface Props {
@@ -17,7 +18,10 @@ interface Props {
 }
 
 const FormQuestion = ({ question }: Props) => {
-  const { control } = useFormContext();
+  const {
+    control,
+    formState: { errors },
+  } = useFormContext();
 
   switch (question.type) {
     case QuestionType.Checkbox:
@@ -65,10 +69,17 @@ const FormQuestion = ({ question }: Props) => {
               </RadioGroup>
             )}
           />
+          {errors[question.id] && (
+            <FormHelperText error>
+              {(errors[question.id] as unknown as FieldError).message}
+            </FormHelperText>
+          )}
         </FormControl>
       );
     default:
-      return <Input name={question.id as string} label={question.title} />;
+      return (
+        <Input fullWidth name={question.id as string} label={question.title} />
+      );
   }
 };
 

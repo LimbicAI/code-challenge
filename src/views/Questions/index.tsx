@@ -25,7 +25,7 @@ import { defaultQuestion } from './utils';
 
 const Questions = () => {
   const alert = useAlert();
-  const { data: questions, isFetching: isFetchingQuestions } = useQuestions();
+  const { questions, isFetching: isFetchingQuestions } = useQuestions();
   const methods = useForm<QuestionFormValues>();
   const {
     control,
@@ -48,7 +48,7 @@ const Questions = () => {
   }, [questions]);
 
   const onSubmit: SubmitHandler<QuestionFormValues> = async (values) => {
-    const body = values.questions.map((q) => ({ ...q, id: q.id ?? v4() }));
+    const body = values.questions.map((q) => ({ ...q, id: q.id || v4() }));
 
     try {
       await put('questions', body);

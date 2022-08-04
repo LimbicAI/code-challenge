@@ -12,7 +12,7 @@ export interface Option {
 export interface Question {
   type: QuestionType;
   options?: Option[];
-  id?: string;
+  id: string;
   title: string;
   description?: string;
   required?: boolean;
