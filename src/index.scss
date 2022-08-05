@@ -1,6 +1,6 @@
 @font-face {
   font-family: Imported;
-  src: url('../src/assets/fonts/AltersanTrial-Regular.ttf');
+  src: url('../src/assets/fonts/OpenSans-VariableFont.ttf');
 }
 
 body {
@@ -36,11 +36,12 @@ body {
   }
 
   &__del--btn {
-    background: rgb(246, 13, 13);
+    background: #DA7F8F;
     color: #fff;
     border: none;
     border-radius: 8px;
     padding: 10px 16px;
+    font-weight: 600;
     cursor: pointer;
   }
 }
@@ -67,7 +68,7 @@ body {
     text-align: center;
   }
 
-  &__close{
+  &__close {
     display: flex;
     justify-content: flex-end;
     cursor: pointer;

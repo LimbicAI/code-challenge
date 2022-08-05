@@ -12,7 +12,6 @@ const LoginForm = () => {
 
     const redirect = () => {
         navigate('/auth/admin-sign-in')
-        window.location.reload()
     }
 
     const handleSubmit = (values: object) => {

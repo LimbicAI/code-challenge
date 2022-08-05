@@ -9,11 +9,10 @@ const Header = () => {
     switch (location.pathname) {
       case '/':
         return 'Clients'
-
       case '/question':
         return 'Questions'
       default:
-        return '/'
+        return 'Go Back'
     }
   }
 
