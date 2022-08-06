@@ -1,3 +1,12 @@
+interface TextProps {
+  name: string;
+  placeholder: string;
+  register: (name: string, validations?: any) => any;
+  required?: boolean;
+  minLength?: number;
+  multiLine?: boolean;
+  isNumber?: boolean;
+}
 export default function TextInput({
   name,
   placeHolder,
@@ -6,7 +15,7 @@ export default function TextInput({
   multiLine = false,
   minLength = 0,
   isNumber = false,
-}) {
+}: TextProps) {
   const validations = {};
   if (required) {
     validations.required = 'Required';

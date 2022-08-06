@@ -34,6 +34,7 @@
                 "tsx": "never"
             }
         ],
+        "react/require-default-props": "off",
         "no-console": "off",
         "react/button-has-type": "off",
         "import/prefer-default-export": "off",

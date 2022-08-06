@@ -1,6 +1,14 @@
+interface SelectProps {
+  options: Array<{ key: string, value: string }>;
+  name: string;
+  register: (name: string, validations?: any) => any;
+  required?: boolean;
+  value?: string;
+}
+
 export default function SelectInput({
   options, name, required = false, register, value,
-}) {
+}: SelectProps) {
   return (
     <div className="inline-block relative w-1/2">
       <select

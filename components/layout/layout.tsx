@@ -17,7 +17,7 @@ export default function Layout({ children } : ReactNode) {
 
         <Navbar />
 
-        <main className="mb-auto h-screen p-5 bg-gray-100">{children}</main>
+        <main className="mb-10 h-full p-5 bg-gray-100">{children}</main>
 
         <Footer />
       </div>

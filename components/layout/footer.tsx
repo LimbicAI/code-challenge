@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: '#f79ca8' }} className="h-12 p-2 bg-gray-400">
+    <div className="bg-pink-300 p-2 bg-gray-400 text-center fixed bottom-0 w-full">
       <p>Limbic code challenge</p>
-    </footer>
+    </div>
   );
 }

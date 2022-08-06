@@ -1,13 +1,21 @@
 import { useMutation } from '@apollo/client';
 import { useForm } from 'react-hook-form';
+import { useState } from 'react';
 import FormLabel from '../../ui/FormLabel';
-import SelectInput from '../../ui/SelectInput';
 import TextInput from '../../ui/textInput';
 import Button from '../../ui/button';
 import { INSERT_ANSWER } from './query';
 import { prepareDefaultValues } from './helpers';
+import { Answer } from '../../../types/answer';
+import { Question } from '../../../types/question';
 
-export default function AnswerForm({ answers, questions }) {
+interface AnswerFormProps {
+  answers?: Answer[];
+  questions?: Question[];
+}
+
+export default function AnswerForm({ answers, questions }: AnswerFormProps) {
+  const [saveSuccess, setSaveSuccess] = useState(false);
   const defaultValues = prepareDefaultValues(answers);
 
   const {
@@ -16,13 +24,21 @@ export default function AnswerForm({ answers, questions }) {
 
   const [insertAnswer] = useMutation(INSERT_ANSWER);
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     console.log('data', data);
-    insertAnswer({ variables: { answer: data } });
+
+    const preparedAnswers = [];
+    Object.keys(data).forEach((key) => {
+      const questionId = key.split('_')[1];
+      preparedAnswers.push({ question_id: questionId, answer: data[key] });
+    });
+
+    await insertAnswer({ variables: { answers: preparedAnswers } });
+    setSaveSuccess(true);
   };
 
   return (
-    <form className="bg-white rounded p-4 " onSubmit={handleSubmit(onSubmit)}>
+    <form className="bg-white rounded p-4" onSubmit={handleSubmit(onSubmit)}>
       {questions.map((question) => (
         <div key={question.id}>
           <FormLabel htmlFor={`q_${question.id}`} label={question.text} />
@@ -56,11 +72,13 @@ export default function AnswerForm({ answers, questions }) {
         </div>
 
       ))}
-      <div>
+      <div className="mb-12">
         <Button
           type="submit"
           text="Submit"
         />
+        {saveSuccess && <p className="text-green-500">Saved successfully</p>}
+
       </div>
     </form>
   );

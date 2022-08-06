@@ -1,4 +1,8 @@
-export default function FormLabel({ htmlFor, label }) {
+interface LabelProps {
+  label: string;
+  htmlFor: string;
+}
+export default function FormLabel({ htmlFor, label }: LabelProps) {
   return (
     <label
       htmlFor={htmlFor}

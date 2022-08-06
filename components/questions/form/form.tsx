@@ -1,15 +1,20 @@
-import { useState } from 'react';
-import { useRouter } from 'next/router';
 import { useMutation } from '@apollo/client';
+import { useRouter } from 'next/router';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { questionTypes } from '../../../constants/questionTypes';
+import { Question } from '../../../types/question';
+import Button from '../../ui/button';
 import FormLabel from '../../ui/FormLabel';
 import SelectInput from '../../ui/SelectInput';
 import TextInput from '../../ui/textInput';
-import Button from '../../ui/button';
-import { UPDATE_QUESTION, INSERT_QUESTION } from './query';
+import { INSERT_QUESTION, UPDATE_QUESTION } from './query';
 
-export default function QuestionsForm({ question }) {
+interface QuestionsFormProps {
+  question?: Question;
+}
+
+export default function QuestionsForm({ question }: QuestionsFormProps) {
   const router = useRouter();
   const [saveSuccess, setSaveSuccess] = useState(false);
 
@@ -20,11 +25,11 @@ export default function QuestionsForm({ question }) {
     register, handleSubmit, formState: { errors },
   } = useForm({ defaultValues: question });
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     if (question) {
-      updateQuestion({ variables: { id: question.id, question: data } });
+      await updateQuestion({ variables: { id: question.id, question: data } });
     } else {
-      insertQuestion({ variables: { question: data } });
+      await insertQuestion({ variables: { question: data } });
     }
     setSaveSuccess(true);
     router.push('/questions');
