@@ -36,13 +36,18 @@ body {
   }
 
   &__del--btn {
-    background: #DA7F8F;
+    background: #fa8a87;
     color: #fff;
     border: none;
     border-radius: 8px;
     padding: 10px 16px;
     font-weight: 600;
     cursor: pointer;
+  }
+
+  &__no__question {
+    text-align: center;
+    margin-top: 14rem ;
   }
 }
 

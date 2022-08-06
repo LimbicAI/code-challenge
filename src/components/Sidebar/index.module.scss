@@ -1,7 +1,8 @@
 .sidebar {
   &__wrapper {
     width: 17%;
-    background: #DA7F8F;
+    background-image: url('../../assets/images/background-image.png');
+    object-fit: contain;
     border-radius: 16px;
     padding: 2.5rem 1rem 2rem 1rem;
     position: fixed;

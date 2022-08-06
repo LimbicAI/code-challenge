@@ -13,6 +13,7 @@ const instance = axios.create({
 instance.interceptors.request.use((config) => {
     // check if user is authenticated or making auth requests
     if (isAuthenticated() || config.url?.includes('auth')) {
+        
     } else {
         const navigate = useNavigate();
         navigate('auth/sign-in')
