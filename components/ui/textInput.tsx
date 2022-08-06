@@ -5,6 +5,7 @@ export default function TextInput({
   required = false,
   multiLine = false,
   minLength = 0,
+  isNumber = false,
 }) {
   const validations = {};
   if (required) {
@@ -12,6 +13,9 @@ export default function TextInput({
   }
   if (minLength > 0) {
     validations.minLength = { value: minLength, message: `At lease ${minLength} characters` };
+  }
+  if (isNumber) {
+    validations.pattern = { value: /^\d+$/, message: 'Must be a number' };
   }
 
   return multiLine ? (

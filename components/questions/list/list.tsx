@@ -2,7 +2,7 @@ import { useMutation, useQuery } from '@apollo/client';
 import { useRouter } from 'next/router';
 import Table from '../../ui/table';
 import { DELETE_QUESTION } from '../form/query';
-import GET_QUESTIONS from './query';
+import { GET_QUESTIONS } from './query';
 import Button from '../../ui/button';
 
 export default function QuestionsList() {

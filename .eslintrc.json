@@ -34,6 +34,7 @@
                 "tsx": "never"
             }
         ],
+        "no-console": "off",
         "react/button-has-type": "off",
         "import/prefer-default-export": "off",
         "react/no-array-index-key": "off",

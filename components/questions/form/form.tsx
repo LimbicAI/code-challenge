@@ -58,7 +58,7 @@ export default function QuestionsForm({ question }) {
       <div>
         <Button
           type="submit"
-          text="submit"
+          text="Submit"
         />
       </div>
       {saveSuccess && <p className="text-green-500">Saved Successfully</p>}
