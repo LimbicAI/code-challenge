@@ -1,68 +1,57 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Front End Code Challenge
 
-## Available Scripts
+This is Limbic's React/React Native Coding Challenge which will allow us to get a glimpse into our candidates' overall developer skills.
 
-In the project directory, you can run:
+You are free to create a React web app, or a React Native mobile app, it's up to you. We'd rather you use something you are comfortable with so that time isn't wasted on project setup and we can get a real feel for your coding patterns and understanding of best practices with React and/or React Native, regardless of the end use case.
 
-### `npm start`
+### Instructions
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. **Submitting Code:**
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+   Option A:
 
-### `npm test`
+   - Fork this repo
+   - Issue a Pull Request when you're ready to start. This will count as your starting date.
+   - Setup your development environment for React or React Native
+   - Implement your solution
+   - Commit your changes into the forked repo
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   Option B:
 
-### `npm run build`
+   - Setup your development environment for React or React Native
+   - Implement your solution
+   - Archive your solution into a zip file
+   - Send us the zip file. We should be able to extract the content and run it from there (w/o node_modules)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. **Deadline:**
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+   You have 1 week to complete as much tasks as you can from the challenge below. Countdown starts from the date you issued the PR or from the date you were invited to complete this challenge via email.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. **Implementation:**
 
-### `npm run eject`
+   There is no correct way to do it, you are free to use whatever libraries you like. We want to see what you come up with on your own.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### The Challenge
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Jane is a clinical therapist and wants her clients to answer simple questionnaires in order to better understand them. She needs a way to add/delete/edit questions and also see the answers of each client.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Requirements
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Your app should be able to complete the following tasks:
 
-## Learn More
+- See a list of questions
+- Add a new question
+- Edit a question
+- Delete a question
+- See a list of clients
+- See a client's answers
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Bonus Points
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The following tasks will **NOT** have a negative impact in how well you did, but you will get bonus points for completing any of them.
 
-### Code Splitting
+- Ability to persist data locally
+- Ability to select the type of answer a question will have. Types like free text, single choice from a predefined list, multiple choice from a predefined list, etc.
+- Ability for the app to answer the questions. Basically using a fake login it could determine if the user is a client and display the questionnaire they need to answer. (fake login can be two buttons chosing the type of user
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Good Luck!
