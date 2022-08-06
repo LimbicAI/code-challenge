@@ -1,47 +1,72 @@
 import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export default function Table({
-  columns, data, handleClick, handleRemove, handleEdit,
-}) {
+interface TableProps {
+  data: any[];
+  headers: string[];
+  keys: string[];
+  handleEdit: (row: any) => void;
+  handleRemove: (row: any) => void;
+}
+export default function Table(
+  {
+    headers,
+    data,
+    keys,
+    handleRemove,
+    handleEdit,
+  }: TableProps,
+
+) {
   return (
-    <div className="mt-2">
-      <table className="max-w-5xl mx-auto table-auto">
+    <div className="mt-2 w-full">
+      <table className="mx-auto table-auto float-left w-full">
         <thead className="justify-between">
-          <tr className="bg-pink-600">
-            {columns.map((column) => (
-              <th key={column.name} className="px-16 py-2">
+          <tr className="bg-pink-500">
+            {headers.map((column, index) => (
+              <th key={index} className="px-16 py-2 text-left">
                 <span className="text-gray-100 font-semibold">{column}</span>
               </th>
             ))}
 
             {/* add actions header if icons are visible */}
             {(handleEdit || handleRemove)
-            && (<th className="text-gray-100 font-semibold">actions</th>)}
+            && (<th className="text-gray-100 font-semibold text-center">actions</th>)}
           </tr>
         </thead>
         <tbody className="bg-gray-200">
           {data.map((row, index) => (
             <tr
               key={index}
-              onClick={handleClick ? () => handleClick(row) : null}
               className="bg-white border-b-2 border-gray-200"
             >
-              {Object.values(row).map((value, i) => (
+              {Object.keys(row).filter((key) => keys.includes(key)).map((key, i) => (
                 <td
                   key={i}
                   className="px-16 py-2"
                 >
-                  {value}
+                  {row[key]}
                 </td>
 
               ))}
-              <td className="px-16 py-2">
+              <td className="px-16 py-2 text-center">
                 {/* Show  actions conditionally based on handler existence */}
                 {handleEdit
-                && <FontAwesomeIcon className="h-5 w-5 text-red-700 mx-2" icon={faTrash} />}
+                && (
+                <FontAwesomeIcon
+                  className="h-5 w-5 text-green-700 mx-2 cursor-pointer inline"
+                  icon={faEdit}
+                  onClick={() => handleEdit(row)}
+                />
+                )}
                 {handleRemove
-                && <FontAwesomeIcon className="h-5 w-5 text-green-700 mx-2" icon={faEdit} />}
+                && (
+                <FontAwesomeIcon
+                  className="h-5 w-5 text-red-700 mx-2 cursor-pointer inline"
+                  icon={faTrash}
+                  onClick={() => handleRemove(row)}
+                />
+                )}
 
               </td>
             </tr>
