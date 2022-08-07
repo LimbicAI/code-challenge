@@ -29,4 +29,4 @@ Some highlights about implementation
  4. ESLint to maintain code style
  5. [Apollo client](https://www.apollographql.com/docs/react) for graphql client
  6. [react hook form](https://react-hook-form.com/) to simplify working with forms
-
+ 7. No usage of 3d party UI libraries to show case some simple ui component implementation
