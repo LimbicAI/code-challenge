@@ -30,3 +30,6 @@ Some highlights about implementation
  5. [Apollo client](https://www.apollographql.com/docs/react) for graphql client
  6. [react hook form](https://react-hook-form.com/) to simplify working with forms
  7. No usage of 3d party UI libraries to show case some simple ui component implementation
+
+Here is a quick screen capture of project
+https://drive.google.com/file/d/18cXAP4NBL7Q1BRlU8rZY2mNl9HUMLYIk/view?usp=sharing
