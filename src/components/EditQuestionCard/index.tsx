@@ -1,25 +1,25 @@
 import { Formik } from 'formik';
 import * as Yup from 'yup';
-import {
-  TextField,
-  Card,
-  Grid,
-  Button,
-  Typography
-} from '@material-ui/core';
+import { TextField, Card, Grid, Button, Typography } from '@material-ui/core';
 import { Question } from '../../types/Question';
 
-const EditQuestionCard = ({ question, handleCloseModal, trigger, setTrigger }: any) => {
-
+const EditQuestionCard = ({
+  question,
+  handleCloseModal,
+  trigger,
+  setTrigger
+}: any) => {
   const editQuestion = (editedQuestion: Question) => {
     const getQuestions: Question[] = JSON.parse(
       localStorage.getItem('questions')!
     );
-    const editedQuestions: Question[] = getQuestions.filter((item) => item.id !== editedQuestion.id)
-    editedQuestions.push(editedQuestion)
-    localStorage.setItem('questions', JSON.stringify(editedQuestions))
-    handleCloseModal()
-    setTrigger(!trigger)
+    const editedQuestions: Question[] = getQuestions.filter(
+      (item) => item.id !== editedQuestion.id
+    );
+    editedQuestions.push(editedQuestion);
+    localStorage.setItem('questions', JSON.stringify(editedQuestions));
+    handleCloseModal();
+    setTrigger(!trigger);
   };
 
   return (
@@ -77,7 +77,8 @@ const EditQuestionCard = ({ question, handleCloseModal, trigger, setTrigger }: a
               <Grid container justify="center">
                 <Grid item>
                   <Button
-                    variant="outlined"
+                    variant="contained"
+                    color="primary"
                     type="submit"
                     size="small"
                     className="m-1 btn-secondary"

@@ -5,13 +5,13 @@ export default makeStyles((theme) => ({
     minWidth: 275,
     marginBottom: '5px'
   },
-  button: {
-    backgroundColor: '#f979ae'
-  },
   title: {
     fontSize: 14
   },
   pos: {
     marginBottom: 12
+  },
+  button:{
+    marginLeft:'10px'
   }
 }));

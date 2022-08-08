@@ -17,7 +17,7 @@ import { Answer } from '../../types/Answer';
 
 const ClientDetails = () => {
   const location = useLocation();
-  const history = useHistory()
+  const history = useHistory();
   const { user }: any = location.state;
   const [answers, setAnswers] = useState([]);
   const classes = useStyles();
@@ -32,8 +32,8 @@ const ClientDetails = () => {
   );
 
   const backToDashboard = () => {
-    history.push('/therapist')
-  }
+    history.push('/therapist');
+  };
 
   const EnhancedTableToolbar = () => {
     return (
@@ -56,7 +56,7 @@ const ClientDetails = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {filteredAnswers?.map((answer: any) => (
+            {filteredAnswers?.map((answer: Answer) => (
               <TableRow key={answer?.id}>
                 <TableCell> {answer?.question} </TableCell>
                 <TableCell> {answer?.answer} </TableCell>
@@ -65,7 +65,12 @@ const ClientDetails = () => {
           </TableBody>
         </Table>
       </TableContainer>
-      <Button className={classes.button} variant="contained" color="primary" onClick={backToDashboard}>
+      <Button
+        className={classes.button}
+        variant="contained"
+        color="primary"
+        onClick={backToDashboard}
+      >
         Back to Dashboard
       </Button>
     </div>

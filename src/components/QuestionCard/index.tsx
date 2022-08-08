@@ -9,17 +9,12 @@ import {
 } from '@material-ui/core';
 import useStyles from './styles';
 import { Answer } from '../../types/Answer';
-import { User } from '../../types/User';
 
-const QuestionCard = ({ question }: any) => {
+const QuestionCard = ({ question, user }: any) => {
   const textInput = useRef<HTMLInputElement>(null);
   const classes = useStyles();
   const [answer, setAnswer] = useState<string>('');
   const clientAnswers: Answer[] = [];
-
-  const userString = sessionStorage.getItem('user');
-
-  const user: User = JSON.parse(userString!);
 
   const handleChange = (e: any) => {
     setAnswer(e.target.value);
@@ -54,7 +49,7 @@ const QuestionCard = ({ question }: any) => {
   return (
     <Card className={classes.root}>
       <CardContent>
-        <Typography variant="h5" component="h2">
+        <Typography variant="h6" component="h2">
           {question?.question}
         </Typography>
         <TextField
@@ -70,7 +65,13 @@ const QuestionCard = ({ question }: any) => {
         />
       </CardContent>
       <CardActions>
-        <Button className={classes.button} size="small" onClick={handleSubmit}>
+        <Button
+          className={classes.button}
+          variant="contained"
+          color="primary"
+          size="small"
+          onClick={handleSubmit}
+        >
           Answer
         </Button>
       </CardActions>

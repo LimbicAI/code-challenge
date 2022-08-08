@@ -19,8 +19,8 @@ const ClientsTable = () => {
   const EnhancedTableToolbar = () => {
     return (
       <Toolbar style={{ paddingLeft: 12 }}>
-        <Typography variant="h4" id="tableTitle" component="h1">
-          Clients
+        <Typography variant="h5" id="tableTitle" component="h1">
+          Your Clients
         </Typography>
       </Toolbar>
     );

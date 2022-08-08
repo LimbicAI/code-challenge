@@ -4,15 +4,15 @@ import * as Yup from 'yup';
 import { TextField, Card, Grid, Button, Typography } from '@material-ui/core';
 import { Question } from '../../types/Question';
 
-const initialQuestions: any = [];
-const QuestionForm = ({trigger, setTrigger}: any) => {
+const initialQuestions: Question[] = [];
+const QuestionForm = ({ trigger, setTrigger }: any) => {
   const [questions, setQuestions] = useState([{}]);
   const question = {
     id: '',
     question: ''
   };
 
-  const addQuestion = (question: any) => {
+  const addQuestion = (question: Question) => {
     const getQuestions: Question[] = JSON.parse(
       localStorage.getItem('questions')!
     );
@@ -25,7 +25,7 @@ const QuestionForm = ({trigger, setTrigger}: any) => {
       const questionsToString = JSON.stringify(initialQuestions);
       localStorage.setItem('questions', questionsToString);
     }
-    setTrigger(!trigger)
+    setTrigger(!trigger);
   };
 
   return (
@@ -61,7 +61,7 @@ const QuestionForm = ({trigger, setTrigger}: any) => {
               style={{ marginTop: '10px', marginBottom: '10px' }}
             >
               <Grid>
-                <Typography>Please Enter A Question</Typography>
+                <Typography>Please enter a Question</Typography>
               </Grid>
               <Grid item>
                 <TextField
@@ -84,7 +84,8 @@ const QuestionForm = ({trigger, setTrigger}: any) => {
               <Grid container justify="center" className="pb-3">
                 <Grid item>
                   <Button
-                    variant="outlined"
+                    variant="contained"
+                    color="primary"
                     type="submit"
                     size="small"
                     className="m-1 btn-primary"
