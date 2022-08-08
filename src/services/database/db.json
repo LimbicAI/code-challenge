@@ -1,7 +1,7 @@
 {
   "questions": [
     {
-      "data": "How are you",
+      "data": "How are ",
       "id": 1
     }
   ],
@@ -31,9 +31,7 @@
       "id": 3
     }
   ],
-  "answers": [
-    
-  ],
+  "answers": [],
   "admin": [
     {
       "name": "Janet",
