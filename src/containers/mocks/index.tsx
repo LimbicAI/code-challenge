@@ -6,6 +6,9 @@ export const clientHeaders = [
         text: "Phone"
     },
     {
+        text: "gender"
+    },
+    {
         text: "Email"
     },
     {
@@ -25,7 +28,8 @@ export const requests = [
         address: '1901 Thornridge Cir. Shiloh, Hawaii 81...',
         email: 'ajalenkoko@gmail.com',
         time: 'August 1st, 12:15PM',
-        question: 'How often do you go to the gym'
+        question: 'How often do you go to the gym',
+        gender: 'Male'
     },
     {
         id: 245,
@@ -34,7 +38,9 @@ export const requests = [
         phone: '(629) 555-0129',
         address: '1901 Thornridge Cir. Shiloh, Hawaii 81...',
         email: 'ajalenkoko@gmail.com',
-        time: 'August 1st, 12:15PM'
+        time: 'August 1st, 12:15PM',
+        gender: 'Male'
+
 
     },
     {
@@ -44,7 +50,9 @@ export const requests = [
         phone: '(629) 555-0129',
         address: '1901 Thornridge Cir. Shiloh, Hawaii 81...',
         email: 'ajalenkoko@gmail.com',
-        time: 'August 1st, 12:15PM'
+        time: 'August 1st, 12:15PM',
+        gender: 'Male'
+
 
     },
     {
@@ -54,7 +62,9 @@ export const requests = [
         phone: '(629) 555-0129',
         address: '1901 Thornridge Cir. Shiloh, Hawaii 81...',
         email: 'ajalenkoko@gmail.com',
-        time: 'August 1st, 12:15PM'
+        time: 'August 1st, 12:15PM',
+        gender: 'Male'
+
 
     },
     {
@@ -64,7 +74,9 @@ export const requests = [
         phone: '(629) 555-0129',
         address: '1901 Thornridge Cir. Shiloh, Hawaii 81...',
         email: 'ajalenkoko@gmail.com',
-        time: 'August 1st, 12:15PM'
+        time: 'August 1st, 12:15PM',
+        gender: 'Male'
+
 
     },
     {
@@ -74,7 +86,9 @@ export const requests = [
         phone: '(629) 555-0129',
         address: '1901 Thornridge Cir. Shiloh, Hawaii 81...',
         email: 'ajalenkoko@gmail.com',
-        time: 'August 1st, 12:15PM'
+        time: 'August 1st, 12:15PM',
+        gender: 'Male'
+
 
     },
     {
@@ -84,7 +98,9 @@ export const requests = [
         phone: '(629) 555-0129',
         address: '1901 Thornridge Cir. Shiloh, Hawaii 81...',
         email: 'ajalenkoko@gmail.com',
-        time: 'August 1st, 12:15PM'
+        time: 'August 1st, 12:15PM',
+        gender: 'Male'
+
 
     },
     {
@@ -94,7 +110,9 @@ export const requests = [
         phone: '(629) 555-0129',
         address: '1901 Thornridge Cir. Shiloh, Hawaii 81...',
         email: 'ajalenkoko@gmail.com',
-        time: 'August 1st, 12:15PM'
+        time: 'August 1st, 12:15PM',
+        gender: 'Male'
+
 
     }
 ]
@@ -113,5 +131,30 @@ export const questions = [
         id: 3,
         name: 'how many times'
     },
-    
+
+]
+
+export const answers = [
+    {
+        text: "Date"
+    },
+    {
+        text: "Question"
+    },
+    {
+        text: "Answer"
+    }
+]
+
+export const questionList = [
+    {
+        id: 234,
+        question: 'How are you',
+        date: '2018'
+    },
+    {
+        id: 234,
+        question: 'Have you eaten',
+        date: '2018'
+    }
 ]

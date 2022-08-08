@@ -1,3 +1,50 @@
 {
-  "questions": []
+  "questions": [
+    {
+      "data": "How are you",
+      "id": 1
+    },
+    {
+      "data": "Have you eaten",
+      "id": 2
+    },
+    {
+      "data": "when are you coming?",
+      "id": 3
+    },
+    {
+      "data": "Tell me more",
+      "id": 4
+    }
+  ],
+  "clients": [
+    {
+      "full_name": "Ifeoluwa Oluwafemi",
+      "email": "ife@email.com",
+      "phone": "+2347038521460",
+      "gender": "female",
+      "date": "6-07-2022",
+      "id": 1
+    },
+    {
+      "full_name": "Gabriel Godwin",
+      "email": "gabe@email.com",
+      "phone": "+2347038521460",
+      "gender": "male",
+      "date": "6-07-2022",
+      "id": 2
+    },
+    {
+      "full_name": "Gabriel Ofukowoicho",
+      "email": "ofu@gmail.com",
+      "phone": "+2347038521460",
+      "gender": "male",
+      "date": "7-07-2022",
+      "id": 3
+    }
+  ],
+  "answers": [
+   
+  ],
+  "login": []
 }

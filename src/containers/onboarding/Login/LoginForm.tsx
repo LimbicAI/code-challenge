@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Formik, Form } from 'formik';
+import { toast } from 'react-toastify';
 
 import { SignInSchema } from 'utils/validation';
+import { authService } from 'services/auth';
 import Input from 'components/Input/Input';
 import Button from 'components/Button/Button';
 import styles from '../onboarding.module.scss';
@@ -14,8 +16,18 @@ const LoginForm = () => {
         navigate('/auth/admin-sign-in')
     }
 
-    const handleSubmit = (values: object) => {
-        console.log()
+    const handleSubmit = (values: any) => {
+        authService.login(values).then((response) => {
+            if (response.length === 0) {
+                toast.error('user not found')
+            } else {
+                localStorage.setItem(`client`, JSON.stringify(response[0]));
+                navigate('/client')
+                toast.success('Success')
+
+            }
+        })
+
     }
 
     return (

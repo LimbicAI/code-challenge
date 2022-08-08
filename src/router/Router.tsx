@@ -6,6 +6,7 @@ import Question from 'pages/Question/question'
 import AdminSignin from 'pages/Auth/Login/Admin/SignIn'
 import UserSignin from 'pages/Auth/Login/User/Signin'
 import SingleClient from 'pages/Home/singleClient'
+import Client from 'pages/Client/Client'
 
 const Router = () => {
   
@@ -17,6 +18,8 @@ const Router = () => {
       <Route path={appRoutePaths.question} element={<Question />} />
       <Route path={appRoutePaths.signin} element={<UserSignin />} />
       <Route path={appRoutePaths.adminSignin} element={<AdminSignin />} />
+      <Route path={appRoutePaths.client} element={<Client />} />
+
 
     </Routes>
   )

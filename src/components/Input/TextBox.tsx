@@ -7,6 +7,7 @@ export interface Props {
     value: string;
     maxLength?: number;
     height?: any;
+    className?: string;
 }
 
 export const Textarea = ({
@@ -15,6 +16,7 @@ export const Textarea = ({
     maxLength,
     value,
     height,
+    className,
     ...props
 }: Props) => (
     <textarea
