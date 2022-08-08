@@ -59,7 +59,7 @@ const LoginForm = () => {
                                 name='password'
                                 onChange={formik.handleChange}
                             />
-                            {formik.errors.email ? <span className='error'>{formik.errors.password}</span> : null}
+                            {formik.errors.password ? <span className='error'>{formik.errors.password}</span> : null}
                         </div>
 
                         <div>

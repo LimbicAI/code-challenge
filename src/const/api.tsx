@@ -1,5 +1,6 @@
 export default {
     QUESTIONS: '/questions',
     CLIENTS: '/clients',
-    ANSWERS: '/answers'
+    ANSWERS: '/answers',
+    ADMIN: '/admin'
 }

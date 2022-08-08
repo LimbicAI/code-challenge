@@ -3,18 +3,6 @@
     {
       "data": "How are you",
       "id": 1
-    },
-    {
-      "data": "Have you eaten",
-      "id": 2
-    },
-    {
-      "data": "when are you coming?",
-      "id": 3
-    },
-    {
-      "data": "Tell me more",
-      "id": 4
     }
   ],
   "clients": [
@@ -44,7 +32,18 @@
     }
   ],
   "answers": [
-   
+    {
+      "user_id": 1,
+      "question": 1,
+      "answer": "I am fine",
+      "id": 1
+    }
   ],
-  "login": []
+  "admin": [
+    {
+      "name": "Janet",
+      "email": "janet@limbic.com",
+      "role": "admin"
+    }
+  ]
 }
