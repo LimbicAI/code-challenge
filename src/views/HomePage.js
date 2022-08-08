@@ -15,7 +15,7 @@ export default function HomePage() {
       >
         Survey App
       </Box>
-      <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 5, lg: 8 }}>
+      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{ base: 5, lg: 8 }}>
         <Box
           px={{ base: 4, md: 8 }}
           py={'5'}

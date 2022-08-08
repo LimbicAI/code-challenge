@@ -28,3 +28,15 @@ export const defaultQuestions = [
     ],
   },
 ];
+
+export const answerTypes = [
+  {
+    label: 'text-area',
+  },
+  {
+    label: 'radio',
+  },
+  {
+    label: 'checkbox',
+  },
+];

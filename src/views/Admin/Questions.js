@@ -1,74 +1,38 @@
 import React, { useEffect, useState } from 'react';
 import {
-  List,
-  ListItem,
-  ListIcon,
   OrderedList,
-  UnorderedList,
   Box,
-  Textarea,
-  Radio,
-  RadioGroup,
-  Stack,
-  Checkbox,
-  CheckboxGroup,
   Select,
   Button,
   Flex,
   FormControl,
   FormLabel,
-  FormErrorMessage,
-  FormHelperText,
   Input,
   IconButton,
   InputGroup,
   InputRightElement,
   useToast,
-  Badge,
   Center,
 } from '@chakra-ui/react';
-import { PhoneIcon, DeleteIcon, CloseIcon, AddIcon } from '@chakra-ui/icons';
-
-import { defaultQuestions } from '../../configs/defaultQuestions';
+import { DeleteIcon, CloseIcon, AddIcon } from '@chakra-ui/icons';
+import { answerTypes } from '../../configs/globalVariables';
 export default function Questions() {
   const [questionsData, setQuestionsData] = useState([]);
-  const [editQuestionsFlag, setEditQuestionsFlag] = useState(false);
   const toast = useToast();
 
-  const questionTypeOptions = [
-    {
-      label: 'text-area',
-    },
-    {
-      label: 'radio',
-    },
-    {
-      label: 'checkbox',
-    },
-  ];
+  const questionTypeOptions = answerTypes;
   useEffect(() => {
     questionsInit();
   }, []);
 
   const questionsInit = () => {
     let storedQuestions = localStorage.getItem('storedQuestions');
-    let finalValue;
+    let finalValue = [];
     if (storedQuestions) {
       storedQuestions = JSON.parse(storedQuestions);
       finalValue = storedQuestions;
-    } else {
-      console.log('defaultQuestions', defaultQuestions);
-      let defaultQuestions2 = defaultQuestions;
-      localStorage.setItem(
-        'storedQuestions',
-        JSON.stringify(defaultQuestions2)
-      );
-      finalValue = defaultQuestions2;
     }
     setQuestionsData(finalValue);
-  };
-  const inputHandling = e => {
-    console.log('input', e);
   };
   const removeQuestion = questionIndex => {
     const questionsCopy = JSON.parse(JSON.stringify(questionsData));
@@ -175,24 +139,6 @@ export default function Questions() {
     <div>
       <Flex justify="center">
         <Box width={'70%'}>
-          {/* <Select placeholder="Select option">
-            {questionTypeOptions.map(item => {
-              return (
-                <option key={item.label} value={item.label}>
-                  {item.label}
-                </option>
-              );
-            })}
-          </Select>
-          <Button
-            colorScheme="whatsapp"
-            size="lg"
-            onClick={() => {
-              setEditQuestionsFlag(!editQuestionsFlag);
-            }}
-          >
-            {`${editQuestionsFlag}`}
-          </Button> */}
           <OrderedList>
             <FormControl>
               {questionsData.map((item, index) => {
@@ -206,51 +152,6 @@ export default function Questions() {
                     borderColor={'gray.800'}
                     rounded={'lg'}
                   >
-                    {/* <ListItem fontSize={'2xl'} py={2}>
-                    {item.questionString}
-                  </ListItem>
-                  {(() => {
-                    switch (item.type) {
-                      case 'text-area':
-                        return (
-                          <div>
-                            <Textarea placeholder="Here is a sample placeholder" />
-                          </div>
-                        );
-                      case 'radio':
-                        return (
-                          <div>
-                            <RadioGroup name="form-name">
-                              <Stack spacing={3}>
-                                {item.options.map(item2 => {
-                                  return (
-                                    <Radio key={item2.value}>
-                                      {item2.value}
-                                    </Radio>
-                                  );
-                                })}
-                              </Stack>
-                            </RadioGroup>
-                          </div>
-                        );
-                      case 'checkbox':
-                        return (
-                          <div>
-                            <Stack spacing={3}>
-                              {item.options.map(item2 => {
-                                return (
-                                  <Checkbox key={item2.value}>
-                                    {item2.value}
-                                  </Checkbox>
-                                );
-                              })}
-                            </Stack>
-                          </div>
-                        );
-                      default:
-                        return <div>divs</div>;
-                    }
-                  })()} */}
                     <Flex justify="space-between">
                       {' '}
                       <Center>{index + 1}</Center>
@@ -283,6 +184,9 @@ export default function Questions() {
                       value={item.type}
                       onChange={e => {
                         item.type = e.target.value;
+                        if (e.target.value !== 'text-area') {
+                          item.options = [];
+                        }
                         setQuestionsData([...questionsData]);
                       }}
                     >
@@ -314,15 +218,6 @@ export default function Questions() {
                           item.options.map((item2, index2) => {
                             return (
                               <Box py={2} key={index2}>
-                                {/* <Input
-                                key={index2}
-                                type="email"
-                                value={item2.value}
-                                onChange={e => {
-                                  console.log('input2', e);
-                                  item2 = { ...item2, value: e.target.value };
-                                }}
-                              /> */}
                                 <InputGroup size="md">
                                   <Input
                                     placeholder={'input option value here'}
@@ -336,13 +231,6 @@ export default function Questions() {
                                     }}
                                   />
                                   <InputRightElement width="4.5rem">
-                                    {/* <Button
-                                    h="1.75rem"
-                                    size="sm"
-                                    onClick={() => {}}
-                                  >
-                                    Click me
-                                  </Button> */}
                                     <IconButton
                                       h="1.75rem"
                                       size="sm"
