@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
-import { TextField, Card, Grid, Button, Typography, Modal, Box } from '@material-ui/core';
+import { TextField, Card, Grid, Button, Typography } from '@material-ui/core';
 import { Question } from '../../types/Question';
 
 const initialQuestions: any = [];
@@ -13,13 +13,11 @@ const QuestionForm = ({trigger, setTrigger}: any) => {
   };
 
   const addQuestion = (question: any) => {
-    //check for current questions in localStorage
     const getQuestions: Question[] = JSON.parse(
       localStorage.getItem('questions')!
     );
     if (getQuestions) {
       getQuestions.push(question);
-      console.log('getQuestions', getQuestions);
       localStorage.setItem('questions', JSON.stringify(getQuestions));
     } else {
       initialQuestions.push(question);
@@ -29,8 +27,6 @@ const QuestionForm = ({trigger, setTrigger}: any) => {
     }
     setTrigger(!trigger)
   };
-
-  console.log(questions);
 
   return (
     <Card>

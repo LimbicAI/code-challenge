@@ -23,7 +23,6 @@ const ClientDetails = () => {
   const classes = useStyles();
   useEffect(() => {
     const answersAsString: any = localStorage.getItem('answers');
-    console.log('answers', answersAsString);
     const listOfAnswers = JSON.parse(answersAsString);
     setAnswers(listOfAnswers);
   }, []);

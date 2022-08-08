@@ -16,7 +16,6 @@ import { Visibility, VisibilityOff } from '@material-ui/icons';
 import { Alert } from '@material-ui/lab';
 import CloseIcon from '@material-ui/icons/Close';
 import { User } from '../../types/User';
-import { useHistory } from 'react-router-dom';
 
 export const userDatabase = [
   {
@@ -59,21 +58,18 @@ const Login = ({ setUser }: any) => {
   const [passwordError, setPasswordError] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: React.ChangeEvent<{ value: unknown, name: string }>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    console.log('form data', formData);
 
     //Find user login information
     const userData = userDatabase.find((user) => user.name === formData.name);
-    console.log('The user is', userData);
     if (userData) {
       if (userData.password === formData.password) {
         if (userData.role === 'therapist') {
-          console.log('role', userData.role);
           sessionStorage.setItem('user', JSON.stringify(userData));
           window.location.assign('/therapist');
         } else {
@@ -82,16 +78,12 @@ const Login = ({ setUser }: any) => {
         }
         setUser(formData);
       } else {
-        console.log('wrong password');
         setPasswordError(true);
       }
     } else {
-      console.log('user doesnt exist');
       setError(true);
     }
   };
-
-  console.log('error', error);
 
   const handleShowPassword = () => setShowPassword(!showPassword);
 

@@ -9,6 +9,7 @@ import ClientsTable from '../../components/ClientsTable';
 const Therapist = () => {
   const classes = useStyles();
   const [trigger, setTrigger] = useState(false);
+
   return (
     <Grid container className={classes.root}>
       <Grid item>

@@ -13,7 +13,6 @@ const AnswerTable = () => {
   const [answers, setAnswers] = useState([]);
   useEffect(() => {
     const answersAsString: any = localStorage.getItem('answers');
-    console.log('answers', answersAsString);
     const listOfAnswers = JSON.parse(answersAsString);
     setAnswers(listOfAnswers);
   }, []);

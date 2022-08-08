@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import {
@@ -6,9 +5,7 @@ import {
   Card,
   Grid,
   Button,
-  Typography,
-  Modal,
-  Box
+  Typography
 } from '@material-ui/core';
 import { Question } from '../../types/Question';
 
@@ -71,7 +68,6 @@ const EditQuestionCard = ({ question, handleCloseModal, trigger, setTrigger }: a
                   value={values.question}
                   onChange={handleChange}
                   error={touched.question && Boolean(errors.question)}
-                  //helperText={touched.question && errors.question}
                   InputLabelProps={{
                     shrink: true
                   }}
