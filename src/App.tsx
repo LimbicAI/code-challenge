@@ -1,24 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Login from './components/LoginForm';
+import Therapist from './pages/therapist';
+import Client from './pages/client';
+import { User } from './types/User';
+import ClientDetails from './pages/client/ClientDetails';
 
 function App() {
+  const [user, setUser] = useState<User>();
+  useEffect(() => {
+    getUser();
+  },[]);
+  const getUser = () => {
+    const currentUser: User = JSON.parse(sessionStorage.getItem('user')!);
+    setUser(currentUser);
+  };
+  if (!user) {
+    return <Login setUser={setUser} />;
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/therapist">
+            <Therapist />
+          </Route>
+          <Route path="/client">
+            <Client />
+          </Route>
+          <Route path="/client-details">
+          <ClientDetails/>
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
