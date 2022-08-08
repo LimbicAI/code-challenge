@@ -32,18 +32,7 @@
     }
   ],
   "answers": [
-    {
-      "user_id": 1,
-      "question": 1,
-      "answer": "I am fine",
-      "id": 1
-    },
-    {
-      "user_id": 1,
-      "question": 1,
-      "answer": "I am fine",
-      "id": 2
-    }
+    
   ],
   "admin": [
     {
