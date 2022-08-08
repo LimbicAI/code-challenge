@@ -1,16 +1,6 @@
 import React from 'react';
-// import Head from 'next/head';
 
-import {
-  Box,
-  chakra,
-  SimpleGrid,
-  Stat,
-  StatLabel,
-  StatNumber,
-  useColorModeValue,
-  Button,
-} from '@chakra-ui/react';
+import { Box, SimpleGrid, useColorModeValue, Button } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 
 export default function HomePage() {
@@ -58,7 +48,7 @@ export default function HomePage() {
             <Button colorScheme="blue">Admin</Button>
           </Link>
         </Box>
-        <Box
+        {/* <Box
           px={{ base: 4, md: 8 }}
           py={'5'}
           shadow={'xl'}
@@ -73,7 +63,7 @@ export default function HomePage() {
           <Link to="/">
             <Button colorScheme="blue">Home</Button>
           </Link>
-        </Box>
+        </Box> */}
       </SimpleGrid>
     </Box>
   );

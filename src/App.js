@@ -14,7 +14,7 @@ import { Link, Routes, Route } from 'react-router-dom';
 
 import { Logo } from './boiler-plate/Logo';
 import HomePage from './views/HomePage';
-import QuestionsListingPage from './views/QuestionsListingPage';
+// import QuestionsListingPage from './views/QuestionsListingPage';
 import SurveyPage from './views/SurveyPage';
 import AdminPage from './views/Admin/index';
 
@@ -56,7 +56,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="survey" element={<SurveyPage />} />
-            <Route path="questions" element={<QuestionsListingPage />} />
+            {/* <Route path="questions" element={<QuestionsListingPage />} /> */}
             <Route path="admin" element={<AdminPage />} />
           </Routes>
         </div>

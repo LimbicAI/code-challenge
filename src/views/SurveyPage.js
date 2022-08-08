@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {
-  List,
   ListItem,
-  ListIcon,
   OrderedList,
-  UnorderedList,
   Box,
   Textarea,
   Radio,
@@ -17,7 +14,7 @@ import {
   Spacer,
   useToast,
 } from '@chakra-ui/react';
-import { Link, Routes, Route, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Survey() {
   const [questionsData, setQuestionsData] = useState([]);
@@ -64,11 +61,12 @@ export default function Survey() {
     try {
       let storedAnswers = localStorage.getItem('storedAnswers');
       let finalAnswersValue;
+      const sortedAnswers = sortAnswers(formData);
       if (storedAnswers) {
         storedAnswers = JSON.parse(storedAnswers);
-        finalAnswersValue = [...storedAnswers, formData];
+        finalAnswersValue = [...storedAnswers, sortedAnswers];
       } else {
-        finalAnswersValue = [formData];
+        finalAnswersValue = [sortedAnswers];
       }
       localStorage.setItem('storedAnswers', JSON.stringify(finalAnswersValue));
       toast({
@@ -79,6 +77,7 @@ export default function Survey() {
       });
       navigate('/');
     } catch (error) {
+      console.log('error', error);
       toast({
         title: 'Error while saving data',
         status: 'error',
@@ -93,6 +92,15 @@ export default function Survey() {
     if (dataIsValid) {
       saveAnswers();
     }
+  };
+  const sortAnswers = answersObject => {
+    let questionKeys = Object.keys(answersObject);
+    questionKeys = questionKeys.sort();
+    let returnedObject = {};
+    questionKeys.forEach(item => {
+      returnedObject[item] = answersObject[item];
+    });
+    return returnedObject;
   };
   return (
     <div>
