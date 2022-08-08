@@ -9,17 +9,19 @@ You are free to create a React web app, or a React Native mobile app, it's up to
 1. **Submitting Code:**
 
    Option A:
-      - Fork this repo
-      - Issue a Pull Request when you're ready to start. This will count as your starting date.
-      - Setup your development environment for React or React Native
-      - Implement your solution
-      - Commit your changes into the forked repo
+
+   - Fork this repo
+   - Issue a Pull Request when you're ready to start. This will count as your starting date.
+   - Setup your development environment for React or React Native
+   - Implement your solution
+   - Commit your changes into the forked repo
 
    Option B:
-      - Setup your development environment for React or React Native
-      - Implement your solution
-      - Archive your solution into a zip file
-      - Send us the zip file. We should be able to extract the content and run it from there (w/o node_modules)
+
+   - Setup your development environment for React or React Native
+   - Implement your solution
+   - Archive your solution into a zip file
+   - Send us the zip file. We should be able to extract the content and run it from there (w/o node_modules)
 
 2. **Deadline:**
 
@@ -27,7 +29,7 @@ You are free to create a React web app, or a React Native mobile app, it's up to
 
 3. **Implementation:**
 
-   There is no correct way to do it, you are free to use whatever libraries you like.  We want to see what you come up with on your own.
+   There is no correct way to do it, you are free to use whatever libraries you like. We want to see what you come up with on your own.
 
 ### The Challenge
 
@@ -53,3 +55,15 @@ The following tasks will **NOT** have a negative impact in how well you did, but
 - Ability for the app to answer the questions. Basically using a fake login it could determine if the user is a client and display the questionnaire they need to answer. (fake login can be two buttons chosing the type of user
 
 Good Luck!
+
+### Solution
+
+Clone the branch
+
+- clone the forked repository
+- run npm install to install all the dependencies
+- run the application using npm start
+- You can log in as a therapist (Jane) with credentials (name: Jane, password:1234)
+- As a therapist, you can see a list of clients, add questions, edit, delete questions and see client responses
+- You can also log in as one of the Clients (name: James, password: 1234, name: John, password: 1234, name: Bruce, password: 1234)
+- as a client, you can answer questions asked by the therapist
