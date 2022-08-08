@@ -9,17 +9,19 @@ You are free to create a React web app, or a React Native mobile app, it's up to
 1. **Submitting Code:**
 
    Option A:
-      - Fork this repo
-      - Issue a Pull Request when you're ready to start. This will count as your starting date.
-      - Setup your development environment for React or React Native
-      - Implement your solution
-      - Commit your changes into the forked repo
+
+   - Fork this repo
+   - Issue a Pull Request when you're ready to start. This will count as your starting date.
+   - Setup your development environment for React or React Native
+   - Implement your solution
+   - Commit your changes into the forked repo
 
    Option B:
-      - Setup your development environment for React or React Native
-      - Implement your solution
-      - Archive your solution into a zip file
-      - Send us the zip file. We should be able to extract the content and run it from there (w/o node_modules)
+
+   - Setup your development environment for React or React Native
+   - Implement your solution
+   - Archive your solution into a zip file
+   - Send us the zip file. We should be able to extract the content and run it from there (w/o node_modules)
 
 2. **Deadline:**
 
@@ -27,7 +29,7 @@ You are free to create a React web app, or a React Native mobile app, it's up to
 
 3. **Implementation:**
 
-   There is no correct way to do it, you are free to use whatever libraries you like.  We want to see what you come up with on your own.
+   There is no correct way to do it, you are free to use whatever libraries you like. We want to see what you come up with on your own.
 
 ### The Challenge
 
