@@ -15,7 +15,7 @@ const Client = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <Typography>Here are some questions from your Therapist</Typography>
+      <Typography variant="h6">Here are some questions from your Therapist</Typography>
       {questions.map((question :  Question) => (
         <QuestionCard question={question} />
       ))}

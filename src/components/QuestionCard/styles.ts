@@ -3,10 +3,10 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles((theme) => ({
   root: {
     minWidth: 275,
-    paddingBottom: '30px'
+    marginBottom: '5px'
   },
   button: {
-    backgroundColor: '#00FFFF'
+    backgroundColor: '#f979ae'
   },
   title: {
     fontSize: 14

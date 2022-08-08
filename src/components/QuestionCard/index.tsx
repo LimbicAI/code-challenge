@@ -12,9 +12,9 @@ import { Answer } from '../../types/Answer';
 import { User } from '../../types/User';
 
 const QuestionCard = ({ question }: any) => {
-  const textInput = useRef(null);
+  const textInput = useRef<HTMLInputElement>(null);
   const classes = useStyles();
-  const [answer, setAnswer] = useState();
+  const [answer, setAnswer] = useState<string>('');
   const clientAnswers: Answer[] = [];
 
   const userString = sessionStorage.getItem('user');
@@ -27,22 +27,27 @@ const QuestionCard = ({ question }: any) => {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    const myAnswer: Answer = {
-      id: Math.floor(Math.random() * 100),
-      userName: user.name,
-      questionId: question.id,
-      question: question.question,
-      answer: answer
-    };
-    clientAnswers.push(myAnswer);
-    const currentAnswers = localStorage.getItem('answers');
-    const currentAnswerArray: Answer[] = JSON.parse(currentAnswers!);
+    if (answer !== '') {
+      const myAnswer: Answer = {
+        id: Math.floor(Math.random() * 100),
+        userName: user.name,
+        questionId: question.id,
+        question: question.question,
+        answer: answer
+      };
+      clientAnswers.push(myAnswer);
+      const currentAnswers = localStorage.getItem('answers');
+      const currentAnswerArray: Answer[] = JSON.parse(currentAnswers!);
 
-    if (currentAnswerArray) {
-      currentAnswerArray.push(myAnswer);
-      localStorage.setItem('answers', JSON.stringify(currentAnswerArray));
-    } else {
-      localStorage.setItem('answers', JSON.stringify(clientAnswers));
+      if (currentAnswerArray) {
+        currentAnswerArray.push(myAnswer);
+        localStorage.setItem('answers', JSON.stringify(currentAnswerArray));
+      } else {
+        localStorage.setItem('answers', JSON.stringify(clientAnswers));
+      }
+      if (textInput.current != null) {
+        textInput.current.value = '';
+      }
     }
   };
 
@@ -63,7 +68,6 @@ const QuestionCard = ({ question }: any) => {
           autoFocus
           InputProps={{}}
         />
-        <Typography variant="body2" component="p"></Typography>
       </CardContent>
       <CardActions>
         <Button className={classes.button} size="small" onClick={handleSubmit}>
