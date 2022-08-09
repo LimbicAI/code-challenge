@@ -1,0 +1,48 @@
+.header {
+  position: fixed;
+  width: 90%;
+  height: 7rem;
+  right: 0;
+  right: 85px;
+
+  margin-top: 20px;
+  border-radius: 14px;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+
+  &__title {
+    color: #364469;
+    font-weight: 600;
+    font-size: 28px;
+    padding-left: 4%;
+    padding-top: 1%;
+  }
+}
+
+.user {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: right;
+  margin-right: 8rem;
+  margin-top: -3.5rem;
+
+  &__role {
+    margin-top: 2px;
+    color: #83889d;
+  }
+  div {
+    display: flex;
+    justify-content: end;
+    position: relative;
+    left: 4rem;
+    bottom: 4rem;
+  }
+}

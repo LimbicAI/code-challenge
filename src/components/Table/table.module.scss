@@ -1,0 +1,129 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 4px;
+  border-spacing: 0px;
+  border-collapse: inherit;
+  &__header {
+    th {
+      padding: 1rem;
+      font-weight: 600;
+      font-size: 13px;
+      text-align: left;
+      height: 48px;
+      // TODO: Add to colors variable
+      color: #7b7171;
+      background: #ffffff;
+      border-bottom: 1px solid #EBF1F5;
+      box-shadow:  0px -1px 0px 0px #EBF1F5;
+      button {
+        padding-left: 3px;
+        cursor: pointer;
+      }
+    }
+    &__secondary {
+      th{
+      background: #F4F5F6;
+      color: #0D0F11;
+      }
+    }
+  }
+  &__row {
+    position: relative;
+    td {
+      padding: 1rem;
+      font-size: 14px;
+      vertical-align: middle;
+      height: 48px;
+      color: #363740;
+      background-color: #ffffff;
+      border-bottom: 1px solid #EBF1F5;
+      text-transform: capitalize;
+    }
+    td:first-child {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 20px;
+    }
+    td:first-child + td {
+      text-transform: lowercase;
+    }
+    &__secondary {
+      td:first-child {
+        color: #3A434B;
+    }
+  }
+  &:hover {
+    background: #eef5ff;
+  }
+  }
+}
+
+.emptyText {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.skeleton {
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__shimmer {
+    height: 42px;
+    min-width: 250px;
+    background: linear-gradient(to right, #eff1f3 4%, #f8f9fb 25%, #eff1f3 36%);
+    background-size: 1000px 100%;
+    animation: shimmer 3s infinite linear;
+    margin-bottom: 1rem;
+    &--sm {
+      min-width: 60px;
+      margin-left: 1rem;
+    }
+    &--lg {
+      max-width: 400px;
+      height: 24px;
+    }
+    &--slim {
+      height: 24px;
+      max-width: 350px;
+    }
+  }
+  &__head {
+    height: 54px;
+    background: linear-gradient(to right, #eff1f3 4%, #f8f9fb 25%, #eff1f3 36%);
+    background-size: 1000px 100%;
+    animation: shimmer 1s infinite linear;
+    margin-bottom: 2rem;
+  }
+  &__row {
+    border-bottom: 1px solid #f8f9fb;
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  &__item {
+    height: 12px;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    background: linear-gradient(to right, #eff1f3 4%, #f8f9fb 25%, #eff1f3 36%);
+    background-size: 1000px 100%;
+    flex-grow: 1;
+    animation: shimmer 2s infinite linear;
+    &:not(:last-of-type) {
+      margin-right: 50px;
+    }
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}

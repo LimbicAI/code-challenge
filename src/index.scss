@@ -1,0 +1,157 @@
+@font-face {
+  font-family: Imported;
+  src: url('../src/assets/fonts/OpenSans-VariableFont.ttf');
+}
+
+body {
+  margin: 0;
+  font-family: Imported, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  .error {
+    color: red;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 13px;
+    padding-bottom: 1rem;
+  }
+
+  .pl {
+    padding-left: 1rem;
+  }
+}
+
+.question {
+  display: flex;
+  padding: 1%;
+  margin-top: 2rem;
+  flex-direction: row;
+  gap: 3%;
+  &__btn {
+    display: flex;
+    flex-direction: column;
+    gap: 15%;
+    margin-top: 1.5rem;
+  }
+
+  &__del--btn {
+    background: #fa8a87;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  &__no__question {
+    text-align: center;
+    margin-top: 14rem;
+  }
+}
+
+.add__btn {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  right: 10rem;
+  top: 2rem;
+}
+
+.modal {
+  &__text {
+    width: 370px;
+    height: 300px;
+    &__add {
+      display: flex;
+      justify-content: center;
+      padding-top: 3%;
+    }
+  }
+  &__title {
+    text-align: center;
+  }
+
+  &__close {
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+  }
+}
+
+.client {
+  &__btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 20rem;
+  }
+
+  &__content {
+    margin-top: 15rem;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+
+  &__question {
+    width: 200%;
+    height: 50px;
+  }
+
+  &__modal__submit {
+    text-align: center;
+    margin-top: 3%;
+  }
+  &__empty {
+    text-align: center;
+  }
+  &__answer {
+    text-align: center;
+  }
+
+  &__answer_box {
+    width: 33rem;
+    margin-bottom: 4%;
+  }
+}
+
+.edit {
+  text-align: center;
+
+  &__text {
+    width: 33rem;
+    margin-bottom: 2%;
+  }
+
+  &__close {
+    position: absolute;
+    top: 4%;
+    right: 3%;
+    cursor: pointer;
+  }
+}
+
+.response {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 5rem;
+  margin-left: 8rem;
+  margin-right: 8rem;
+  h1{
+    font-weight: 1000;
+    font-size: 40px;
+    color: #fa8a87;
+  }
+  p{
+    font-size: 18px;
+  }
+
+  &__answer{
+    display: flex;
+    justify-content: center;
+    margin-top: 15rem;
+  }
+
+
+}

@@ -1,0 +1,21 @@
+.main {
+  &__layout {
+    padding: 24px;
+    flex: 1;
+    display: flex;
+    height: 100%;
+    column-gap: 2%;
+    background: #fafafa;
+  }
+
+  &__page {
+    width: 69%;
+    min-height: 100vh;
+    position: relative;
+    left: 26%;
+    top: 115px;
+    background: #ffffff;
+    border-radius: 16px;
+    padding-top: 30% 10px;
+  }
+}
