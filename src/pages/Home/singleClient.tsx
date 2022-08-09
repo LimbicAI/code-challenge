@@ -30,7 +30,7 @@ const singleClient = () => {
   return (
     <DashboardLayout>
 
-       {singleAnswer?.length > 1 ? (
+       {singleAnswer?.length >= 1 ? (
         <div className='response'>
           <div>
             <h1>Questions</h1>

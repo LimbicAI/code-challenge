@@ -1,7 +1,7 @@
 {
   "questions": [
     {
-      "data": "How are ",
+      "data": "Have you eaten?",
       "id": 1
     }
   ],
@@ -31,7 +31,14 @@
       "id": 3
     }
   ],
-  "answers": [],
+  "answers": [
+    {
+      "user_id": 2,
+      "question": 1,
+      "answer": "I am fine",
+      "id": 1
+    }
+  ],
   "admin": [
     {
       "name": "Janet",
