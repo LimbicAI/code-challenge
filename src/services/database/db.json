@@ -1,10 +1,5 @@
 {
-  "questions": [
-    {
-      "data": "How are ",
-      "id": 1
-    }
-  ],
+  "questions": [],
   "clients": [
     {
       "full_name": "Ifeoluwa Oluwafemi",

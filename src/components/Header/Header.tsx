@@ -4,9 +4,7 @@ import styles from './index.module.scss'
 
 const Header = () => {
   const location = useLocation()
-  const getUser: any = localStorage.getItem('client')
-  const name = JSON?.parse(getUser?.toString())?.full_name
-
+  
 
   const headerTitle = () => {
     switch (location.pathname) {
@@ -15,7 +13,7 @@ const Header = () => {
       case '/question':
         return 'Questions'
       case '/client':
-        return `Hello ${name}`
+        return `Hello `
       default:
         return ""
     }
